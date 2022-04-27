@@ -1,0 +1,69 @@
+<div class="rong-dialog rong-titlebar" v-show="closeBefore">
+    <div class="rong-dialog-inner rong-messagebox">
+        <a @click.prevent="closeBefore = false" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a>
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">{{locale.tips.closeBefore}}</div>
+        <div class="rong-messagebox-ft">
+            <button @click="closeBefore = false" class="rong-button" type="button">{{locale.btns.cancel}}</button>
+            <button @click="enterClose" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>
+<div class="rong-dialog rong-titlebar" v-show="networkErrorVisible">
+    <div class="rong-dialog-inner rong-messagebox">
+        <!-- <a @click.prevent="closeBefore = false" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a> -->
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">{{locale.tips.networkError}}</div>
+        <div class="rong-messagebox-ft">
+            <button @click="networkErrorClose" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>
+<!--将人移除会议-->
+<div class="rong-dialog rong-titlebar" v-if="currentDialogUser.remove">
+    <div class="rong-dialog-inner rong-messagebox">
+        <a @click.prevent="currentDialogUser = {}" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a>
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">确认移除</div>
+        <div class="rong-messagebox-ft">
+            <button @click="currentDialogUser = {}" class="rong-button" type="button">{{locale.btns.cancel}}</button>
+            <button @click="doRemoveUser(currentDialogUser)" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>
+<!--将人降级-->
+<div class="rong-dialog rong-titlebar" v-if="currentDialogUser.down">
+    <div class="rong-dialog-inner rong-messagebox">
+        <a @click.prevent="currentDialogUser = {}" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a>
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">确认将此人降级为观察者</div>
+        <div class="rong-messagebox-ft">
+            <button @click="currentDialogUser = {}" class="rong-button" type="button">{{locale.btns.cancel}}</button>
+            <button @click="doDownUser(currentDialogUser)" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>
+<!--主持人邀请发言-->
+<div class="rong-dialog rong-titlebar" v-if="currentDialogUser.beInviteSpark">
+    <div class="rong-dialog-inner rong-messagebox">
+        <a @click.prevent="currentDialogUser = {}" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a>
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">主持人邀请你你发言</div>
+        <div class="rong-messagebox-ft">
+            <button @click="currentDialogUser = {}" class="rong-button" type="button">{{locale.btns.cancel}}</button>
+            <button @click="acceptBeRequestToUser(currentDialogUser)" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>
+<!--主持人邀请媒体设备-->
+<div class="rong-dialog rong-titlebar" v-if="currentDialogUser.bd">
+    <div class="rong-dialog-inner rong-messagebox">
+        <a @click.prevent="currentDialogUser = {}" href="#close" :title="locale.btns.close" class="rong-dialog-close">×</a>
+        <div class="rong-dialog-hd"><h2 class="rong-dialog-title">{{locale.tips.messageBoxTitle}}</h2></div>
+        <div class="rong-messagebox-bd">主持人邀请你{{currentDialogUser.bd}}</div>
+        <div class="rong-messagebox-ft">
+            <button @click="currentDialogUser = {}" class="rong-button" type="button">{{locale.btns.cancel}}</button>
+            <button @click="doControleUserDev(currentDialogUser)" class="rong-button rong-submit" type="button">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<transition name="rong-setting-slide" appear>
+<div class="rong-approve-detail" :class="{'rong-waitapprove': showControl}" v-if="show" @click.stop="">
+    <!-- <button class="rong-dialog-close" @click="close">X</button> -->
+    <!-- <a href="#" class="rong-dialog-close" @click.precent="close"></a> -->
+    <div class="rong-approve-detail-hd">{{approval.proposer.name}}的外出</div>
+    <div class="rong-approve-detail-bd">
+        <ul class="rong-approve-info">
+            <li>
+                <div class="rong-proposer">
+                    <component is="avatar" :user="approval.proposer"></component>
+                    <div class="rong-propose-name">{{approval.proposer.name}}</div>
+                    <span class="rong-approval-pending" v-if="approval.status == 1">审批中</span>
+                    <span class="rong-approval-passed" v-if="approval.status == 2">审批通过</span>
+                    <span class="rong-approval-refused" v-if="approval.status == 3">审批拒绝</span>
+                </div>
+            </li>
+            <li>
+                <label>审批编号</label>
+                <span>{{approval.id}}</span>
+            </li>
+            <li>
+                <label>所在部门</label>
+                <span>{{approval.department}}</span>
+            </li>
+            <li>
+                <label>开始时间</label>
+                <span>{{getTimeString(approval.startTime)}}</span>
+            </li>
+            <li>
+                <label>结束时间</label>
+                <span>{{getTimeString(approval.endTime)}}</span>
+            </li>
+            <li>
+                <label>外出事由</label>
+                <span>{{approval.reason}}</span>
+            </li>
+        </ul>
+        <div class="rong-proposer">
+            <component is="avatar" :user="approval.proposer"></component>
+            <span class="rong-user-name">{{getShowName(approval.proposer)}} 发起申请</span>
+            <div class="rong-operation-time">{{getTimeString(approval.createdTime)}}</div>
+        </div>
+        <div class="rong-approver">
+            <component is="avatar" :user="approval.approver"></component>
+            <span class="rong-user-name">{{getShowName(approval.approver)}}</span>
+            <span class="rong-approval-pending" v-if="approval.status == 1">审批中</span>
+            <span class="rong-approval-passed" v-if="approval.status == 2">审批通过</span>
+            <span class="rong-approval-refused" v-if="approval.status == 3">审批拒绝</span>
+            <!-- <div class="rong-operation-time">2017/12/12 12:12</div> -->
+        </div>
+    </div>
+    <div class="rong-approve-detail-ft" v-if="showControl">
+        <button class="rong-button" @click="reject">拒绝</button>
+        <button class="rong-button rong-submit" @click="agree">同意</button>
+    </div>
+</div>
+</transition>

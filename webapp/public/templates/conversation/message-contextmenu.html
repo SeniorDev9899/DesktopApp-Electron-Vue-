@@ -1,0 +1,17 @@
+<ul class="rong-menu" :style="{left: context.style.left, top: context.style.top, bottom: context.style.bottom}" @contextmenu.prevent="close">
+    <li class="rong-menu-link" v-if="showSave"><a @click="download">{{locale.btns.save}}</a></li>
+    <!-- <li class="rong-menu-link" v-if="showDownload && !canOpenFile"><a @click="download" :href="fileURL" :download="filename" target="_blank">{{locale.btns.saveAs}}</a></li> -->
+    <!-- 38807 - 【小视频】移动端发送的小视频，PC 端查看失败，无法查看-->
+    <li class="rong-menu-link" v-if="showSaveAs"><a @click="download"  target="_blank">{{locale.btns.saveAs}}</a></li>
+    <li class="rong-menu-link" v-if="showDownload && canOpenFile"><a @click.prevent="open" href="#open-folder">{{locale.btns.view}}</a></li>
+    <li v-if="showRecall" @click="recall">{{locale.btns.recall}}</li>
+    <li v-if="showCopy" class="rong-copy">
+        <button  @click.prevent="copy">{{locale.btns.copy}}</button>
+    </li>
+    <li v-if="showForward" @click="forward">{{locale.btns.forward}}</li>
+    <li v-if="showQuote" @click="quote">{{locale.btns.quote}}</li>
+    <li @click="remove">{{locale.btns.remove}}</li>
+    <li v-if="showCollect" @click="collect">{{locale.btns.collect}}</li>
+    <!-- 38807 - 【小视频】移动端发送的小视频，PC 端查看失败，无法查看-->
+    <li @click="multiSelect">{{locale.btns.multiSelect}}</li>
+</ul>

@@ -1,0 +1,102 @@
+<div class="rong-work">
+    <div class="rong-work-inner" :class="['rong-os-' + os]">
+        <div v-if="os === 'win32' || os === 'linux' " class="rong-titlebar">
+            <div class="rong-titlebar-logo"><span v-text="productName"></span></div>
+            <div class="rong-titlebar-buttons">
+                <a @click.prevent="min" class="rong-titlebar-min" href="" :title="locale.btns.minimize"></a>
+                <a @click.prevent="restore" v-if="isMaxWindow" class="rong-titlebar-restore" href="" :title="locale.btns.restore"></a>
+                <a @click.prevent="max" v-else class="rong-titlebar-max" href="" :title="locale.btns.maximize"></a>
+                <a @click.prevent="close" class="rong-titlebar-close" href="" :title="locale.btns.close"></a>
+            </div>
+        </div>
+        <div class="rong-work-list rong-dragable">
+            <div class="rong-work-list-content">
+                <div class="rong-app-group">
+                    <div class="rong-app-group-title">{{locale.frequently}}
+                        <a href="###" class="rong-edit-btn" @click="edit">{{locale.btns.edit}}</a> 
+                    </div>
+                    <ul class="rong-app-item-list">
+                        <li v-for="app in likeAppList"  @click="openApp(app)" :class="{'rong-selected': isSelected(app)}">
+                            <img class="rong-app-icon" :src="app.logo_url" _keep="2">
+                            <span class="rong-app-name" v-text="app.name"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rong-app-group" v-if="baseApps.length > 0">
+                    <div class="rong-app-group-title">{{locale.basicApps}}</div>
+                    <ul class="rong-app-item-list">
+                        <li v-for="app in baseApps"  @click="openApp(app)" :class="{'rong-selected': isSelected(app)}" >
+                            <img class="rong-app-icon" :src="app.logo_url" _keep="2">
+                            <span class="rong-app-name" v-text="app.name"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rong-app-group">
+                    <div class="rong-app-group-title" v-if="otherApps.length > 0">{{locale.otherApps}}
+                    </div>
+                    <!-- 其他应用 不带分类的 -->
+                    <ul class="rong-app-item-list" v-if="otherApps.length > 0">
+                        <li v-for="app in otherApps"  @click="openApp(app)" :class="{'rong-selected': isSelected(app)}">
+                            <img class="rong-app-icon" :src="app.logo_url" _keep="2">
+                            <span class="rong-app-name" v-text="app.name"></span>
+                        </li>
+                    </ul>
+                    <!-- 其他应用 带分类的 -->
+                    <div class="rong-app-list-types" v-if="otherApps_types.length > 0">
+                        <div class="rong-app-item-types rong-clearfix" v-for="item in otherApps_types" :key="item.id">
+                            <div class="sort-title">{{ item.type_name }}</div>
+                            <div class="rong-app-item"  v-for="app in item.apps" :key="app.id" @click="openApp(app)">
+                                <img  class="rong-app-icon" :src="app.logo_url">
+                                <div class="rong-app-name" :title="app.name">{{app.name}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rong-work-main" v-if="tabList.length > 0">
+            <div class="rong-work-control rong-dragable">
+                <div class="rong-work-buttons" v-if="isDesktop">
+                    <button class="rong-button rong-icon-back" :disabled="!canGoBack" @click="goBack"></button>
+                    <button class="rong-button rong-icon-go" :disabled="!canGoForward" @click="goForward"></button>
+                    <button class="rong-button rong-icon-fresh" :disabled="!canReload" @click="reload"></button>
+                </div>
+                <div class="rong-tab" :style="tabPadding">
+                    <ul class="rong-tab-list">
+                        <li class="rong-tab-item" 
+                        v-for="tab in tabList"
+                        :style="{width: tabWidth}"
+                        :class="{'rong-selected': isSelected(tab)}" @click="openApp(tab)">
+                            <span v-text="tab.name"></span>
+                            <a class="rong-close" href="#" @click.prevent.stop="closeTab(tab)"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rong-work-content">
+                <template v-for="item in tabList">
+                    <component v-if="item.type === -1" v-show="isSelected(item)" is="editOtherapp" @complete="reloadFavApp"></component>
+                    <template v-else>
+                        <div v-if="showPublicDetail(item)" v-show="isSelected(item)" class="rong-work-public">
+                            <img class="rong-app-icon" :src="item.logo_url" _keep="2">
+                            <div class="rong-app-name">{{item.name}}</div>
+                            <div class="rong-app-description">{{item.description}}</div>
+                            <button v-if="os === 'win32' || os === 'linux' || os ==='darwin' " class="rong-enter-public"  @click="enterPublic(item)">{{locale.enterApp}}</button>
+                        </div>
+                        <div v-if="!showPublicDetail(item)" v-show="isSelected(item)">
+                            <webview v-if="isDesktop" class="rong-iframe"
+                            :src="item.pc_home_page_url + search"
+                            :ref="item.id"></webview>
+                            <iframe v-else="isDesktop" class="rong-iframe" frameborder="0"
+                            :src="item.pc_home_page_url + search"
+                            ref="tab"></iframe>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </div>
+        <div class="rong-welcome rong-dragable" v-else>
+            <span class="rong-welcaome-text">{{locale.welcome}}</span>
+        </div>
+    </div>
+</div>

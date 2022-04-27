@@ -1,0 +1,29 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+.rce-main {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+  height: 100%; }
+  .rce-main .rce-error {
+    height: 480px;
+    top: 50%;
+    position: relative;
+    margin-top: -240px;
+    text-align: center; }
+    .rce-main .rce-error img {
+      width: 550px;
+      height: 360px;
+      margin-bottom: 25px; }
+    .rce-main .rce-error .rce-error-text {
+      color: #1d2d55;
+      letter-spacing: -0.17px;
+      line-height: 30px; }
+
+/*# sourceMappingURL=error.css.map */

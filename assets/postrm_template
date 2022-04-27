@@ -1,0 +1,14 @@
+users=`who | awk '{print $1}' | sort -u`
+for user in $users
+do
+  if [ -f "/home/$user/Desktop/appid.desktop" ]
+  then
+  rm "/home/$user/Desktop/appid.desktop"
+  fi
+
+  if [ -f "/home/$user/桌面/appid.desktop" ]
+  then
+  rm "/home/$user/桌面/appid.desktop"
+  fi
+
+done

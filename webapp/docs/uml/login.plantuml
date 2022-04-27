@@ -1,0 +1,18 @@
+@startuml login
+
+(*) --> 检查自动登录标识
+检查自动登录标识 -> [不存在] 进入登录页面
+检查自动登录标识 --> [存在] refreshLogin
+refreshLogin -> [cookie 失效, 清理原登录用户缓存数据，如id、自动登录标识] 进入登录页面
+refreshLogin -down-> [cookie 有效] LoginSuccess
+
+进入登录页面 -> 账号密码登录
+--> 记录登录账号以备自动填充
+--> 记录自动登录标识
+-left-> 记录用户Id
+进入登录页面 --> 扫码登录
+--> 记录用户Id
+-down-> LoginSuccess
+--> [登录完成] (*)
+
+@enduml

@@ -1,0 +1,4511 @@
+.rong-icon, .rong-conversation-mute-icon, .rong-conversation-fail, .rong-conversation-video, .rong-conversation-audio, .rong-tools button,
+.rong-tools a, .rong-message-failed, .rong-toolbar-item button, .rong-toolbar-item .rong-screenshot-toggle:before, .rong-file-icon, .rong-audio-icon, .rong-conversation-add,
+.rong-conversation-remove, .rong-group-edit, .rong-group-search-hd i, .rong-common-search-clear,
+.rong-group-search-clear, .rong-group-selected-bd .rong-item-remove, .rong-image-button {
+  display: flex;
+  background-image: url(images/icon.svg);
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  background-color: transparent;
+}
+
+.rong-conversation-item:hover {
+  background-color: #ecf0f6;
+}
+
+.rong-scroll-bar-y {
+  display: none;
+  position: absolute;
+  right: 1px;
+  top: 0;
+  width: 9px;
+  height: 100%;
+  overflow: auto;
+  z-index: 10;
+}
+
+.rong-conversation-content::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.rong-collect-content::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.rong-os-darwin .rong-scroll-content::-webkit-scrollbar, .rong-os-web-darwin .rong-scroll-content::-webkit-scrollbar, .rong-os-win32 .rong-scroll-content::-webkit-scrollbar, .rong-os-web-win32 .rong-scroll-content::-webkit-scrollbar, .rong-os-linux .rong-scroll-content::-webkit-scrollbar, .rong-os-web-linux .rong-scroll-content::-webkit-scrollbar {
+  width: 0;
+}
+
+.rong-os-darwin .rong-search-result div::-webkit-scrollbar, .rong-os-web-darwin .rong-search-result div::-webkit-scrollbar, .rong-os-win32 .rong-search-result div::-webkit-scrollbar, .rong-os-web-win32 .rong-search-result div::-webkit-scrollbar, .rong-os-linux .rong-search-result div::-webkit-scrollbar, .rong-os-web-linux .rong-search-result div::-webkit-scrollbar {
+  width: 0;
+}
+
+.rong-os-darwin .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar, .rong-os-web-darwin .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar, .rong-os-win32 .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar, .rong-os-web-win32 .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar, .rong-os-linux .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar, .rong-os-web-linux .rong-search-result div.rong-scroll-bar-y::-webkit-scrollbar {
+  width: 7px;
+}
+
+.rong-os-darwin .rong-scroll-bar-y, .rong-os-web-darwin .rong-scroll-bar-y, .rong-os-win32 .rong-scroll-bar-y, .rong-os-web-win32 .rong-scroll-bar-y, .rong-os-linux .rong-scroll-bar-y, .rong-os-web-linux .rong-scroll-bar-y {
+  display: inline-block;
+}
+
+.rong-os-darwin .rong-scroll-bar-y, .rong-os-web-darwin .rong-scroll-bar-y, .rong-os-win32 .rong-scroll-bar-y, .rong-os-web-win32 .rong-scroll-bar-y, .rong-os-linux .rong-scroll-bar-y, .rong-os-web-linux .rong-scroll-bar-y {
+  opacity: 0;
+}
+
+.rong-os-darwin .rong-scroll-bar-safari, .rong-os-web-darwin .rong-scroll-bar-safari, .rong-os-win32 .rong-scroll-bar-safari, .rong-os-web-win32 .rong-scroll-bar-safari, .rong-os-linux .rong-scroll-bar-safari, .rong-os-web-linux .rong-scroll-bar-safari {
+  transition: 0s;
+}
+
+.rong-os-darwin .rong-scroll-bar-show, .rong-os-web-darwin .rong-scroll-bar-show, .rong-os-win32 .rong-scroll-bar-show, .rong-os-web-win32 .rong-scroll-bar-show, .rong-os-linux .rong-scroll-bar-show, .rong-os-web-linux .rong-scroll-bar-show {
+  opacity: 1;
+}
+
+.rong-group-notice-content .rong-scroll-bar-y {
+  right: -5px;
+}
+
+.rong-conversation-list {
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rong-conversation-list .rong-selected {
+  background-color: #e0e8f2;
+}
+
+.rong-conversation-aside {
+  float: left;
+  position: relative;
+  width: 36px;
+  margin-right: 10px;
+  min-height: 36px;
+}
+
+.rong-empty {
+  line-height: 50px;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-empty em {
+  color: #008af3;
+}
+
+.rong-conversation-item {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.rong-message-count {
+  position: absolute;
+  z-index: 5;
+  right: -7px;
+  top: -6px;
+  display: inline-block;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 10px;
+  background: #f45349;
+  color: #fff;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.rong-nav-contact .rong-message-count {
+  right: -9px;
+  top: -4px;
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.rong-nav-contact .rong-message-count em {
+  display: none;
+}
+
+.rong-conversation-mute {
+  right: -9px;
+  top: -4px;
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.rong-conversation-mute em {
+  display: none;
+}
+
+.rong-message-more {
+  position: relative;
+  top: -3px;
+}
+
+.rong-item-main {
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.rong-conversation-name em {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.rong-conversation-name {
+  height: 19px;
+  margin-right: 40px;
+  white-space: nowrap;
+}
+
+.rong-conversation-name .rong-tag {
+  position: relative;
+  left: -52px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.rong-conversation-name em {
+  display: inline-block;
+  max-width: 95%;
+  vertical-align: middle;
+  margin-top: -4px;
+  line-height: 19px;
+}
+
+.rong-conversation-grouptype em {
+  padding-right: 56px;
+}
+
+.rong-conversation-message {
+  max-width: 75%;
+  height: 18px;
+  overflow: hidden;
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-simpletext {
+  padding-right: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rong-richtext {
+  position: relative;
+  padding-right: 10px;
+  max-height: 34px;
+  word-break: break-all;
+}
+
+.rong-richtext:after {
+  content: "...";
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+  margin-bottom: 17px;
+}
+
+.rong-conversation-time {
+  float: right;
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-conversation-mute-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 16px;
+  height: 16px;
+  background-position: -10px -247px;
+}
+
+/* .rong-conversation-mute {
+    .rong-conversation-mute-icon {
+        display: block;
+    }
+} */
+.rong-conversation-fail {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-position: -8px -183px;
+  background-size: 125px auto;
+  margin-top: 1px;
+  vertical-align: text-top;
+}
+
+.rong-conversation-sending {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(images/loading-default.svg) no-repeat center center;
+  background-size: contain;
+  vertical-align: text-top;
+}
+
+.rong-draft label,
+.rong-list-voicemessage.rong-list-unread .rong-latest-message,
+.rong-conversation-at {
+  color: #f45349;
+}
+
+.rong-conversation-message span.rong-latest-message {
+  line-height: 18px;
+}
+
+.rong-conversation-message span.rong-latest-message-web-darwin, .rong-conversation-message span.rong-latest-message-darwin {
+  line-height: 18px;
+}
+
+.rong-latest-message em {
+  color: #008af3;
+}
+
+.rong-list-sent .rong-sentstatus {
+  color: #008af3;
+}
+
+.rong-conversation-top:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top-color: #008af3;
+  border-left-color: #008af3;
+}
+
+.rong-videosummarymessage .rong-conversation-one-message,
+.rong-videomessage .rong-conversation-one-message,
+.rong-audiomessage .rong-conversation-one-message {
+  cursor: pointer;
+}
+
+.rong-conversation-other .rong-videosummarymessage .rong-conversation-one-message, .rong-conversation-other
+.rong-videomessage .rong-conversation-one-message, .rong-conversation-other
+.rong-audiomessage .rong-conversation-one-message {
+  padding-left: 50px;
+}
+
+.rong-conversation-me .rong-videosummarymessage .rong-conversation-one-message, .rong-conversation-me
+.rong-videomessage .rong-conversation-one-message, .rong-conversation-me
+.rong-audiomessage .rong-conversation-one-message {
+  padding-right: 50px;
+}
+
+.rong-conversation-video {
+  position: absolute;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.rong-conversation-other .rong-conversation-video {
+  left: 10px;
+  background-position: -5px -1762px;
+}
+
+.rong-conversation-me .rong-conversation-video {
+  right: 10px;
+  background-position: -5px -1729px;
+}
+
+.rong-conversation-audio {
+  position: absolute;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.rong-conversation-other .rong-conversation-audio {
+  left: 10px;
+  background-position: -45px -1762px;
+}
+
+.rong-conversation-me .rong-conversation-audio {
+  right: 10px;
+  background-position: -45px -1729px;
+}
+
+.rong-conversation-other .rong-conversation-audio-cancel {
+  background-position: -85px -1762px;
+}
+
+.rong-conversation-me .rong-conversation-audio-cancel {
+  background-position: -85px -1729px;
+}
+
+.rong-voip-unread {
+  position: absolute;
+  right: -27px;
+  top: 50%;
+  margin-top: -5px;
+  width: 9px;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f45349;
+}
+
+.rong-message-bottom {
+  margin-top: 15px;
+}
+
+.rong-conversation {
+  position: relative;
+  height: 100%;
+  padding: 56px 0 120px 0;
+}
+
+.rong-conversation-menu {
+  padding: 56px 0 50px 0;
+}
+
+.rong-conversation-public-menu-none {
+  padding: 56px 0 0 0;
+}
+
+.rong-conversation-content {
+  position: relative;
+  visibility: hidden;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rong-conversation-hd {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #ececed;
+}
+
+.rong-conversation-hd .rong-avatar-group {
+  cursor: default;
+}
+
+.rong-conversation-hd .rong-profile {
+  float: left;
+  width: auto;
+  margin: 10px 0 0 20px;
+}
+
+.rong-tools {
+  float: right;
+  padding: 15px 25px 0 0;
+}
+
+.rong-tools button,
+.rong-tools a {
+  display: inline-block;
+  border: 0;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.rong-tools button[disabled],
+.rong-tools a[disabled] {
+  cursor: default;
+}
+
+.rong-tools-conversation {
+  vertical-align: top;
+  background-position: -9px -144px;
+}
+
+.rong-tools-conversation, .rong-tools-conversation[disabled], .rong-tools-conversation[disabled]:hover {
+  background-position: -9px -144px;
+}
+
+.rong-tools-conversation[disabled] {
+  opacity: 0.4;
+}
+
+.rong-tools-conversation:hover {
+  background-position: -60px -144px;
+}
+
+.rong-selected-conversation-setting .rong-tools-conversation {
+  background-position: -111px -144px;
+}
+
+.rong-tools-group, .rong-tools-group[disabled], .rong-tools-group[disabled]:hover {
+  background-position: -9px -587px;
+}
+
+.rong-tools-group[disabled] {
+  opacity: 0.4;
+}
+
+.rong-tools-group:hover {
+  background-position: -57px -587px;
+}
+
+.rong-selected-group-setting .rong-tools-group {
+  background-position: -112px -587px;
+}
+
+.rong-tools-history {
+  background-position: -10px -1520px;
+}
+
+.rong-tools-history:hover {
+  background-position: -60px -1520px;
+}
+
+.rong-selected-group-history .rong-tools-history {
+  background-position: -112px -1520px;
+}
+
+.rong-conversation-one {
+  position: relative;
+  min-height: 36px;
+  padding: 10px 0 10px 0;
+}
+
+.rong-conversation-tip + .rong-conversation-one {
+  margin-top: 0;
+}
+
+.rong-conversation-other .rong-message-avatar {
+  float: left;
+  margin-left: 20px;
+  margin-right: 13px;
+}
+
+.rong-conversation-me .rong-message-avatar {
+  float: right;
+  margin-right: 20px;
+  margin-left: 13px;
+}
+
+rong-conversation-me .rong-disreadable-message .rong-conversation-one-message {
+  float: right;
+  border-color: #e3e3e3;
+  background: #e3e3e3;
+}
+
+rong-conversation-me .rong-disreadable-message .rong-conversation-one-message:before {
+  border-left-color: #e3e3e3;
+}
+
+rong-conversation-me .rong-disreadable-message .rong-conversation-one-message:after {
+  display: none;
+}
+
+.rong-conversation-one-username {
+  display: none;
+  font-size: 12px;
+}
+
+.rong-conversation-one-username, .rong-conversation-one-username a {
+  color: #777;
+}
+
+.conversation-view-group .rong-conversation-one-username {
+  display: block;
+}
+
+.rong-conversation-one-message.rong-file {
+  position: relative;
+  padding: 9px 12px;
+  border: 1px solid #ECECED;
+  border-radius: 5px;
+  line-height: 1.3;
+}
+
+.rong-conversation-one-message em {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.rong-cardmessage .rong-conversation-one-message {
+  background-color: #fff;
+}
+
+.rong-message .rong-conversation-one-message {
+  position: relative;
+  padding: 9px 12px;
+  border: 1px solid #ECECED;
+  border-radius: 5px;
+  line-height: 1.3;
+}
+
+.rong-conversation-other .rong-message .rong-conversation-one-message {
+  float: left;
+  background: #fff;
+}
+
+.rong-message .rong-conversation-one-message:before, .rong-message .rong-conversation-one-message:after {
+  position: absolute;
+  top: 12px;
+  content: "";
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.rong-textmessage .rong-conversation-one-message {
+  line-height: 1.6;
+}
+
+.rong-message-bd {
+  max-width: 100%;
+}
+
+.rong-conversation-other .rong-message-bd {
+  float: left;
+}
+
+.rong-conversation-me .rong-message-bd {
+  float: right;
+}
+
+.rong-conversation-content .rong-textmessage, .rong-conversation-content .rong-groupnoticenotifymessage, .rong-conversation-content .rong-referencemessage {
+  max-width: 70%;
+}
+
+.rong-conversation-me .rong-videomessage .rong-conversation-one-message,
+.rong-conversation-me .rong-audiomessage .rong-conversation-one-message,
+.rong-conversation-me .rong-videosummarymessage .rong-conversation-one-message,
+.rong-conversation-me .rong-referencemessage .rong-conversation-one-message,
+.rong-conversation-me .rong-sharescreenmessage .rong-conversation-one-message,
+.rong-conversation-me .rong-textmessage .rong-conversation-one-message,
+.rong-conversation-me .rong-rccombinemessage .rong-conversation-one-message,
+.rong-conversation-me .rong-groupnoticenotifymessage .rong-conversation-one-message,
+.rong-conversation-me .rong-voicemessage .rong-conversation-one-message {
+  float: right;
+  border-color: #cae7fd;
+  background: #cae7fd;
+}
+
+.rong-conversation-me .rong-videomessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-audiomessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-videosummarymessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-referencemessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-sharescreenmessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-textmessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-rccombinemessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-groupnoticenotifymessage .rong-conversation-one-message:before,
+.rong-conversation-me .rong-voicemessage .rong-conversation-one-message:before {
+  border-left-color: #cae7fd;
+}
+
+.rong-conversation-me .rong-videomessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-audiomessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-videosummarymessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-referencemessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-sharescreenmessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-textmessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-rccombinemessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-groupnoticenotifymessage .rong-conversation-one-message:after,
+.rong-conversation-me .rong-voicemessage .rong-conversation-one-message:after {
+  display: none;
+}
+
+.rong-conversation-other .rong-conversation-one-message:before {
+  left: -7px;
+  border-right: 6px solid #e0e0e0;
+}
+
+.rong-conversation-other .rong-conversation-one-message:after {
+  left: -5px;
+  border-right: 6px solid #fff;
+}
+
+.rong-conversation-other .rong-thumbnail-small {
+  padding-left: 9px;
+}
+
+.rong-conversation-other .rong-thumbnail .rong-thumbnail-small {
+  padding: 0;
+}
+
+.rong-conversation-me .rong-conversation-one-message:before {
+  right: -6px;
+  border-left: 6px solid #e0e0e0;
+}
+
+.rong-conversation-me .rong-conversation-one-message:after {
+  position: absolute;
+  right: -5px;
+  border-left: 6px solid #fff;
+}
+
+.rong-conversation-me .rong-thumbnail-small {
+  padding-right: 9px;
+}
+
+.rong-rccombine {
+  width: 260px;
+}
+
+.rong-msg-hidden {
+  display: none;
+}
+
+.rong-combine-message-title {
+  margin-bottom: 5px;
+  text-indent: 0;
+  color: #333;
+}
+
+.rong-message-item {
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-combine-bottom {
+  border-top: 1px solid #adadad;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.rong-combine-dialog-content {
+  height: 400px;
+  overflow: auto;
+}
+
+.unsupport-view-image {
+  width: 160px;
+  height: 90px;
+  padding: 19px 40px;
+}
+
+.unsupport-view-image .rong-thumbnail-small {
+  content: url("images/unsupport.svg");
+  width: 80px;
+  height: 52px;
+}
+
+.rong-conversation-tip {
+  margin: 15px 0;
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.rong-message {
+  position: relative;
+  max-width: 100%;
+}
+
+.rong-conversation-me .rong-message {
+  float: right;
+  border: none;
+  padding-bottom: 0;
+  margin: 0;
+  color: #333;
+}
+
+.rong-conversation-other .rong-message {
+  float: left;
+  border: none;
+  padding-bottom: 0;
+  margin: 0;
+  color: #333;
+}
+
+.rong-public-message .rong-publicservicerichcontentmessage,
+.rong-public-message .rong-publicservicemultirichcontentmessage {
+  left: 50%;
+  margin-left: -180px;
+}
+
+.rong-cardmessage .rong-conversation-one-message {
+  width: 200px;
+  border: 1px solid #e0e0e0;
+}
+
+.rong-cardmessage-ft {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+  padding-top: 5px;
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-message-status {
+  display: none;
+  position: absolute;
+  left: -23px;
+  top: 50%;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+}
+
+.rong-voicemessage .rong-message-status {
+  position: static;
+  float: right;
+  margin: 8px 40px 0 0;
+}
+
+.rong-message-sending {
+  display: block;
+  background: url(images/loading-default.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.rong-message-failed {
+  display: block;
+  background-position: -10px -220px;
+  cursor: pointer;
+}
+
+.rong-message-failed[disabled] {
+  cursor: default;
+}
+
+.rong-locationmessage {
+  width: 220px;
+}
+
+.rong-conversation-one-message {
+  max-width: 100%;
+  user-select: text;
+}
+
+.rong-locationmessage .rong-conversation-one-message {
+  padding: 0;
+}
+
+.rong-conversation-me .rong-locationmessage .rong-conversation-one-message {
+  background: none;
+  border-color: #cae7fd;
+}
+
+.rong-conversation-me .rong-locationmessage .rong-conversation-one-message:before {
+  border-left-color: #cae7fd;
+}
+
+.rong-message .rong-file-uploading {
+  border-color: #cae7fd;
+}
+
+.rong-message .rong-file-uploading:before {
+  border-left-color: #cae7fd;
+}
+
+.rong-locationmessage-text {
+  padding: 10px;
+}
+
+.rong-locationmessage-bd {
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-locationmessage-thumbnail {
+  display: block;
+  width: 100%;
+}
+
+.rong-ack {
+  position: absolute;
+  left: -90px;
+  bottom: 0;
+  width: 80px;
+  text-align: right;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.rong-ack a {
+  color: #008af3;
+}
+
+.rong-ack span {
+  color: #777;
+}
+
+.rong-voicemessage .rong-ack {
+  left: -120px;
+}
+
+.rong-dialog-ack {
+  width: 690px;
+}
+
+.rong-ack-tab {
+  width: 230px;
+  margin: 10px auto;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.rong-ack-tab a {
+  float: left;
+  width: 50%;
+}
+
+.rong-ack-selected-unread .rong-ack-tab-unread,
+.rong-ack-selected-read .rong-ack-tab-read {
+  background: #008af3;
+  color: #fff;
+  cursor: default;
+}
+
+.rong-ack-selected-unread .rong-ack-tab-unread:hover,
+.rong-ack-selected-read .rong-ack-tab-read:hover {
+  color: #fff;
+}
+
+.rong-ack-user {
+  height: 300px;
+  overflow: hidden;
+}
+
+.rong-ack-user:hover {
+  overflow: auto;
+}
+
+.rong-ack-user li {
+  float: left;
+  width: 55px;
+  margin: 0 0 10px 4px;
+  text-align: center;
+}
+
+.rong-ack-user .rong-avatar {
+  margin: 0 auto;
+}
+
+.rong-ack-username {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rong-new-message {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  width: 100%;
+  bottom: 8px;
+  text-align: center;
+}
+
+.rong-new-message a {
+  display: inline-block;
+  line-height: 24px;
+  padding: 0 15px;
+  border-radius: 100px;
+  background: #afafb1;
+  color: #fff;
+}
+
+.rong-conversation-editor {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ececed;
+  height: 120px;
+  min-height: 120px;
+  max-height: 346px;
+  background: #FBFBFD;
+}
+
+.rong-toolbar {
+  height: 40px;
+  padding: 10px;
+}
+
+.rong-toolbar-item {
+  float: left;
+  position: relative;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.rong-toolbar-item button {
+  display: block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.rong-toolbar-item button[disabled] {
+  opacity: 0.4;
+}
+
+.rong-toolbar-item input[type="file"] {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.rong-toolbar-item .rong-toolbar-file {
+  background-position: -9px -1483px;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-file {
+  background-position: -47px -1483px;
+}
+
+.rong-toolbar-item .rong-toolbar-screenshot {
+  background-position: -11px -1562px;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-screenshot {
+  background-position: -63px -1562px;
+}
+
+.rong-toolbar-item .rong-screenshot-toggle {
+  width: 10px;
+  height: 10px;
+  margin-top: 10px;
+}
+
+.rong-toolbar-item .rong-screenshot-toggle:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  background-position: 0 -9999px;
+}
+
+.rong-toolbar-item .rong-screenshot-toggle:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -3px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-top: 6px solid #969696;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  transition: transform 0.3s;
+}
+
+.rong-toolbar-item .rong-toolbar-card {
+  background-position: -14px -803px;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-card {
+  background-position: -51px -803px;
+}
+
+.rong-toolbar-item .rong-toolbar-video {
+  background-position: -9px -1666px;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-video {
+  background-position: -47px -1666px;
+}
+
+.rong-toolbar-item .rong-toolbar-audio {
+  background-image: url(images/audioicon.svg);
+  background-size: 22px 22px;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-audio {
+  background-image: url(images/audiohovericon.svg);
+  background-size: 22px 22px;
+}
+
+.rong-toolbar-item .rong-toolbar-toggle-button {
+  background-image: url(images/1.5.0.svg);
+  background-position: -19px -137px;
+  background-size: auto;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-toggle-button {
+  background-position: -57px -137px;
+}
+
+.rong-toolbar-item .rong-toolbar-toggle-collect {
+  background-image: url(images/collect-icon1.svg);
+  background-size: cover;
+}
+
+.rong-toolbar-item:hover .rong-toolbar-toggle-collect {
+  background-image: url(images/collect-icon2.svg);
+}
+
+.rong-toolbar-toggle {
+  float: right;
+}
+
+.rong-toolbar-item-screenshot {
+  margin-right: 5px;
+}
+
+.rong-screenshot-option {
+  display: inline;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  background: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 40px;
+  left: 60px;
+}
+
+.rong-toolbar-emoji {
+  background-position: -9px -183px;
+}
+
+.rong-toolbar-emoji:hover,
+.rong-toolbar-emoji-selected {
+  background-position: -61px -183px;
+}
+
+.rong-emoji-panel {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 400px;
+  height: 310px;
+  padding: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 6px;
+  font-size: 0;
+}
+
+.rong-emoji-panel ul {
+  width: 105%;
+}
+
+.rong-emoji-panel li {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.rong-emoji-item {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 6px solid transparent;
+  cursor: pointer;
+}
+
+.rong-emoji-item:hover {
+  border-color: #eee;
+  background-color: #eee;
+}
+
+.rong-emoji-item .rong-emoji-item-content {
+  font-size: 22px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rong-emoji-mac-item {
+  text-align: center;
+  position: relative;
+  border: none;
+}
+
+.rong-conversation-field {
+  position: relative;
+  padding: 0 120px 0 10px;
+}
+
+.rong-conversation-field textarea {
+  display: block;
+  width: 100%;
+  height: 70px;
+  border: 0;
+  resize: none;
+  background-color: transparent;
+}
+
+.rong-conversation-field .rong-submit {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 85px;
+  height: 38px;
+}
+
+.rong-conversation-field-bd {
+  position: relative;
+}
+
+.rong-conversation-public-menu {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ececed;
+  min-height: 50px;
+  max-height: 346px;
+  background: #FFF;
+  font-size: 12px;
+}
+
+.rong-conversation-public-menu .rong-richfit-toolbar-toggle {
+  position: relative;
+  width: 10%;
+  height: 50px;
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.rong-conversation-public-menu .rong-richfit-toolbar-toggle .rong-toolbar-toggle-input {
+  display: block;
+  position: relative;
+  width: 26px;
+  height: 22px;
+  cursor: pointer;
+  left: 50%;
+  margin-left: -13px;
+  top: 50%;
+  margin-top: -11px;
+  background-image: url(images/1.5.0.svg);
+  background-size: auto;
+  background-color: transparent;
+  background-position: -19px -92px;
+  border: none;
+}
+
+.rong-conversation-public-menu .rong-richfit-toolbar-toggle .rong-toolbar-toggle-input:hover {
+  background-position: -61px -92px;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list {
+  display: table;
+  table-layout: fixed;
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list .rong-officialaccount-menu-item {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  color: #777777;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list .rong-officialaccount-menu-item span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list .rong-public-menu-parent span:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  right: 5px;
+  background-image: url(images/1.5.0.svg);
+  background-position: -20px -180px;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list .rong-public-menu-parent span:hover::before {
+  background-position: -48px -180px;
+}
+
+.rong-conversation-public-menu .rong-public-menu-list .rong-officialaccount-menu-item:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  height: 20px;
+  width: 1px;
+  background-color: #ECECED;
+}
+
+.rong-conversation-public-menu .rong-sub-menu-list {
+  position: absolute;
+  left: 3%;
+  bottom: 60px;
+  width: 94%;
+  background-color: #fff;
+  font-size: 12px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #ECECED;
+  border-radius: 2px;
+}
+
+.rong-conversation-public-menu .rong-sub-menu-list li {
+  margin: 0 16px;
+  height: 40px;
+  line-height: 40px;
+  color: #777777;
+}
+
+.rong-conversation-public-menu .rong-sub-menu-list > li + li {
+  border-top: 1px solid #ECECED;
+}
+
+.rong-conversation-public-menu .rong-sub-menu-list:after {
+  content: "";
+  position: absolute;
+  margin-top: -3px;
+  width: 0;
+  bottom: -6px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  overflow: hidden;
+  border-top: 6px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.rong-at {
+  position: absolute;
+  z-index: 20;
+  max-width: 300px;
+  max-height: 160px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  background: #fff;
+  overflow: auto;
+  width: 169px;
+}
+
+.rong-at li {
+  position: relative;
+  padding: 0 10px 0 40px;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.rong-at li:hover,
+.rong-at .rong-selected {
+  background: #e0e8f2;
+}
+
+.rong-at .rong-avatar {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+}
+
+.rong-at .rong-avatar span {
+  font-size: 20px;
+}
+
+.rong-at .rong-avatar-item {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.rong-at-all {
+  background: #008af3;
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.rong-file {
+  width: 260px;
+  height: 56px;
+  background-color: #fff;
+}
+
+.rong-file-inner {
+  position: relative;
+  min-height: 36px;
+  padding: 0 46px 0 44px;
+}
+
+.rong-file-hd {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.rong-file-hd a {
+  cursor: pointer;
+}
+
+.rong-file-basename {
+  float: left;
+  max-width: 95px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rong-file-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background-position: -55px -1037px;
+}
+
+.rong-file-doc,
+.rong-file-docx {
+  background-position: -11px -990px;
+}
+
+.rong-file-doc-expired,
+.rong-file-docx-expired {
+  background-position: -13px -2170px;
+}
+
+.rong-file-pages {
+  background-position: -14px -2394px;
+}
+
+.rong-file-pages-expired {
+  background-position: -66px -2394px;
+}
+
+.rong-file-numbers {
+  background-position: -14px -2439px;
+}
+
+.rong-file-numbers-expired {
+  background-position: -66px -2439px;
+}
+
+.rong-file-key {
+  background-position: -14px -2484px;
+}
+
+.rong-file-key-expired {
+  background-position: -66px -2484px;
+}
+
+.rong-file-txt {
+  background-position: -14px -2529px;
+}
+
+.rong-file-txt-expired {
+  background-position: -66px -2529px;
+}
+
+.rong-file-mpeg,
+.rong-file-avi,
+.rong-file-mov,
+.rong-file-wmv,
+.rong-file-mkv,
+.rong-file-rmvb,
+.rong-file-rm,
+.rong-file-mov,
+.rong-file-qt,
+.rong-file-ogv,
+.rong-file-oga,
+.rong-file-mod,
+.rong-file-mp4 {
+  background-position: -9px -1801px;
+}
+
+.rong-file-mpeg-expired,
+.rong-file-avi-expired,
+.rong-file-mov-expired,
+.rong-file-wmv-expired,
+.rong-file-mkv-expired,
+.rong-file-rmvb-expired,
+.rong-file-rm-expired,
+.rong-file-mov-expired,
+.rong-file-qt-expired,
+.rong-file-ogv-expired,
+.rong-file-oga-expired,
+.rong-file-mod-expired,
+.rong-file-mp4-expired {
+  background-position: -13px -2264px;
+}
+
+.rong-file-ogg,
+.rong-file-wma,
+.rong-file-asf,
+.rong-file-ape,
+.rong-file-midi,
+.rong-file-mp3 {
+  background-position: -55px -990px;
+}
+
+.rong-file-ogg-expired,
+.rong-file-wma-expired,
+.rong-file-asf-expired,
+.rong-file-ape-expired,
+.rong-file-midi-expired,
+.rong-file-mp3-expired {
+  background-position: -57px -2170px;
+}
+
+.rong-file-xls,
+.rong-file-xlsx {
+  background-position: -99px -990px;
+}
+
+.rong-file-xls-expired,
+.rong-file-xlsx-expired {
+  background-position: -101px -2170px;
+}
+
+.rong-file-pdf {
+  background-position: -11px -1037px;
+}
+
+.rong-file-pdf-expired {
+  background-position: -13px -2217px;
+}
+
+.rong-file-ppt,
+.rong-file-pptx {
+  background-position: -99px -1037px;
+}
+
+.rong-file-ppt-expired,
+.rong-file-pptx-expired {
+  background-position: -101px -2217px;
+}
+
+.rong-file-rar,
+.rong-file-zip {
+  background-position: -53px -1801px;
+}
+
+.rong-file-rar-expired,
+.rong-file-zip-expired {
+  background-position: -57px -2264px;
+}
+
+.rong-file-state,
+.rong-file-metadata,
+.rong-file-size {
+  color: #777;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline;
+}
+
+.rong-file-state {
+  margin-left: 10px;
+}
+
+.rong-file-state-min {
+  margin-left: 4px;
+}
+
+.rong-file-metadata {
+  display: none;
+}
+
+.rong-file-progress {
+  height: 2px;
+  background: #e3e3e3;
+  margin-top: 2px;
+  position: absolute;
+  width: 180px;
+}
+
+.rong-file-progress span {
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #008af3;
+  transition: all 0.3s;
+}
+
+.rong-file-cancel,
+.rong-file-open,
+.rong-file-download,
+.rong-file-resume-upload,
+.rong-file-resume-download {
+  position: absolute;
+  right: 12px;
+  top: 3px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  background-image: url(images/download-upload.svg);
+  background-repeat: no-repeat;
+  background-size: 279px auto;
+  background-color: transparent;
+}
+
+.rong-file-cancel:hover,
+.rong-file-open:hover,
+.rong-file-download:hover,
+.rong-file-resume-upload:hover,
+.rong-file-resume-download:hover {
+  cursor: pointer;
+}
+
+.rong-file-cancel {
+  background-position: -28px -267px;
+}
+
+.rong-file-cancel:hover {
+  background-position: -108px -267px;
+}
+
+.rong-file-cancel:active {
+  background-position: -188px -267px;
+}
+
+.rong-file-open {
+  background-position: -28px -27px;
+}
+
+.rong-file-open:hover {
+  background-position: -108px -27px;
+}
+
+.rong-file-open:active {
+  background-position: -188px -27px;
+}
+
+.rong-file-download {
+  background-position: -28px -207px;
+}
+
+.rong-file-download:hover {
+  background-position: -108px -207px;
+}
+
+.rong-file-download:active {
+  background-position: -188px -207px;
+}
+
+.rong-file-resume-download {
+  background-position: -28px -147px;
+}
+
+.rong-file-resume-download:hover {
+  background-position: -108px -147px;
+}
+
+.rong-file-resume-download:active {
+  background-position: -188px -147px;
+}
+
+.rong-file-resume-upload {
+  background-position: -28px -87px;
+}
+
+.rong-file-resume-upload:hover {
+  background-position: -108px -87px;
+}
+
+.rong-file-resume-upload:active {
+  background-position: -188px -87px;
+}
+
+.rong-voicemessage {
+  float: left;
+  height: 36px;
+  padding: 0;
+}
+
+.rong-conversation-me .rong-voicemessage,
+.rong-conversation-me .rong-conversation-one-message {
+  float: right;
+}
+
+.rong-audio-bd {
+  position: relative;
+  height: 36px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rong-audio-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+}
+
+.rong-history .rong-audio-icon,
+.rong-conversation-other .rong-audio-icon, .rong-audio-bd .rong-audio-icon {
+  left: 5px;
+  background-position: -6px -505px;
+}
+
+.rong-history .rong-audio:hover .rong-audio-icon,
+.rong-conversation-other .rong-audio:hover .rong-audio-icon {
+  background-position: -34px -505px;
+}
+
+.rong-collect-list-inner .rong-audio-playing .rong-audio-icon {
+  animation: 1.3s rong-other-playing steps(3) infinite;
+}
+
+.rong-history .rong-audio-playing .rong-audio-icon,
+.rong-conversation-other .rong-audio-playing .rong-audio-icon {
+  animation: 1.3s rong-other-playing steps(3) infinite;
+}
+
+.rong-conversation-me .rong-audio-playing .rong-audio-icon {
+  animation: 1.3s rong-me-playing steps(3) infinite;
+}
+
+.rong-conversation-me .rong-audio-icon {
+  right: 5px;
+  background-position: -5px -549px;
+}
+
+.rong-conversation-me .rong-audio:hover .rong-audio-icon {
+  background-position: -33px -549px;
+}
+
+.rong-audio-length {
+  position: absolute;
+  top: 0;
+  line-height: 34px;
+  color: #777;
+  font-size: 12px;
+  cursor: default;
+  right: -30px;
+}
+
+.rong-conversation-me .rong-audio-length {
+  left: -30px;
+}
+
+@-webkit-keyframes rong-other-playing {
+  from {
+    background-position: -92px -505px;
+  }
+  to {
+    background-position: -5px -505px;
+  }
+}
+
+@keyframes rong-other-playing {
+  from {
+    background-position: -92px -505px;
+  }
+  to {
+    background-position: -5px -505px;
+  }
+}
+
+@-webkit-keyframes rong-me-playing {
+  from {
+    background-position: -80px -549px;
+  }
+  to {
+    background-position: -8px -549px;
+  }
+}
+
+@keyframes rong-me-playing {
+  from {
+    background-position: -80px -549px;
+  }
+  to {
+    background-position: -8px -549px;
+  }
+}
+
+.rong-audio-unread {
+  position: absolute;
+  right: -47px;
+  top: 50%;
+  margin-top: -5px;
+  width: 9px;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f45349;
+}
+
+.rong-voice-to-text {
+  float: left;
+  clear: both;
+  margin-top: 6px;
+  max-width: 260px;
+  min-width: 80px;
+  padding: 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.rong-conversation-me .rong-voice-to-text {
+  float: right;
+}
+
+.rong-voice-to-text-loading {
+  width: 16px;
+  height: 16px;
+  background-image: url(images/loading-default.svg);
+  background-size: cover;
+  background-position: center;
+}
+
+.rong-voice-to-text-failed {
+  padding-left: 17px;
+  font-size: 12px;
+  position: relative;
+}
+
+.rong-voice-to-text-failed:before {
+  content: '';
+  left: 0;
+  top: 3px;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-image: url(images/voice-to-text.svg);
+  background-repeat: no-repeat;
+  background-position: -53px -39px;
+}
+
+.rong-voice-to-text-successful {
+  font-size: 12px;
+}
+
+.rong-voice-to-text-success-tip {
+  position: relative;
+  margin-top: 8px;
+  padding-left: 17px;
+  font-size: 12px;
+  color: #B1B1B1;
+}
+
+.rong-voice-to-text-success-tip:before {
+  content: '';
+  left: 0;
+  top: 3px;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-image: url(images/voice-to-text.svg);
+  background-repeat: no-repeat;
+  background-position: -26px -39px;
+}
+
+.rong-filemessage .rong-conversation-one-message:before {
+  border-left-color: #e0e0e0;
+}
+
+.rong-sight-status {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rong-sight-play {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rong-sight-play:after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  margin-right: 6px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-left: 15px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.rong-sight-download {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rong-sight-time {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  color: white;
+  font-size: 12px;
+}
+
+.rong-conversation-other .rong-sight-time {
+  right: 8px;
+}
+
+.rong-sightmessage .rong-conversation-one-message,
+.rong-imagemessage .rong-conversation-one-message {
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.rong-sightmessage .rong-conversation-one-message,
+.rong-conversation-other .rong-sightmessage .rong-conversation-one-message,
+.rong-imagemessage .rong-conversation-one-message,
+.rong-conversation-other
+.rong-imagemessage .rong-conversation-one-message {
+  background-color: transparent;
+}
+
+.rong-sightmessage .rong-conversation-one-message:before, .rong-sightmessage .rong-conversation-one-message:after,
+.rong-imagemessage .rong-conversation-one-message:before,
+.rong-imagemessage .rong-conversation-one-message:after {
+  display: none;
+}
+
+.rong-conversation-other .rong-sightmessage, .rong-conversation-other
+.rong-imagemessage {
+  margin-left: -10px;
+}
+
+.rong-conversation-me .rong-sightmessage, .rong-conversation-me
+.rong-imagemessage {
+  margin-right: -10px;
+}
+
+.rong-imagemessage .rong-conversation-one-message {
+  border-radius: 0;
+}
+
+.rong-thumbnail {
+  display: inline-block;
+  position: relative;
+  transform: scale(1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.rong-thumbnail i {
+  display: none;
+}
+
+.rong-conversation-content .rong-thumbnail i {
+  display: block;
+}
+
+.rong-conversation-other .rong-thumbnail {
+  border-radius: 0 5px 5px 0;
+}
+
+.rong-conversation-me .rong-thumbnail {
+  border-radius: 5px 0 0 5px;
+}
+
+.rong-thumbnail-small {
+  display: block;
+  max-width: 180px;
+  max-height: 180px;
+  min-width: 50px;
+  min-height: 36px;
+}
+
+.rong-thumbnail-large {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+}
+
+.rong-thumbnail-top {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  width: 14px;
+  height: 800px;
+  background: no-repeat 0 0;
+  background-size: 15px auto;
+}
+
+.rong-conversation-other .rong-thumbnail-top {
+  left: 0;
+  background-image: url(images/thumbnail-left.png);
+}
+
+.rong-conversation-me .rong-thumbnail-top {
+  right: 0;
+  background-image: url(images/thumbnail-right.png);
+}
+
+.rong-conversation-other.rong-collect-selected .rong-thumbnail-top {
+  background-image: url(images/thumbnail-left-select.png);
+}
+
+.rong-conversation-me.rong-collect-selected .rong-thumbnail-top {
+  background-image: url(images/thumbnail-right-select.png);
+}
+
+.rong-thumbnail-bottom {
+  position: absolute;
+  z-index: 30;
+  bottom: -1px;
+  width: 6px;
+  height: 6px;
+  background: url(images/round.png) no-repeat;
+  background-size: 12px;
+}
+
+.rong-conversation-other .rong-thumbnail-bottom {
+  left: 8px;
+  background-position: left bottom;
+}
+
+.rong-conversation-me .rong-thumbnail-bottom {
+  right: 8px;
+  background-position: right bottom;
+}
+
+.rong-richcontentmessage .rong-richcontent-message.rong-conversation-one-message {
+  padding: 10px;
+  background: #fff;
+}
+
+.rong-richcontent-message {
+  width: 220px;
+  height: 90px;
+}
+
+.rong-richcontent-message a {
+  display: inline-block;
+  width: 100%;
+}
+
+.rong-richcontent-collect-title {
+  margin-bottom: 8px;
+  width: 91%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.rong-richcontent-title {
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.rong-richcontent-content {
+  line-height: 16px;
+  display: inline-block;
+  height: 40px;
+  width: 145px;
+  color: #777777;
+  font-size: 12px;
+}
+
+.rong-richcontent-content-text {
+  width: 100%;
+  height: 48px;
+  position: relative;
+  top: -3px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.rong-richcontent-image {
+  display: inline-block;
+  margin-left: 8px;
+  height: 40px;
+  width: 40px;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center;
+}
+
+.rong-richcontent-collect-image {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center;
+}
+
+.rong-richcontent-image-default {
+  display: inline-block;
+  margin-left: 8px;
+  height: 40px;
+  width: 40px;
+  vertical-align: top;
+  background-image: url(images/image-text-base.png);
+  background-size: 100%;
+}
+
+.rong-richcontent-image-collect-link {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  vertical-align: top;
+  background-image: url(images/image-text-base.png);
+  background-size: 100%;
+}
+
+.rong-approval li {
+  margin-bottom: 5px;
+}
+
+.rong-approval-title, .rong-approval-pending {
+  color: #ff7a00;
+}
+
+.rong-approval-time {
+  color: #777777;
+}
+
+.rong-approval-passed {
+  color: #55c940;
+}
+
+.rong-approval-refused {
+  color: #f25d50;
+}
+
+.rong-approval-remind {
+  color: #0099ff;
+}
+
+.rong-message .rong-conversation-one-message.rong-psmultiimagetext,
+.rong-message .rong-conversation-one-message.rong-psimagetext {
+  background-color: #fff;
+  padding: 12px 12px 7px 12px;
+}
+
+.rong-message .rong-conversation-one-message.rong-psmultiimagetext:after, .rong-message .rong-conversation-one-message.rong-psmultiimagetext:before,
+.rong-message .rong-conversation-one-message.rong-psimagetext:after,
+.rong-message .rong-conversation-one-message.rong-psimagetext:before {
+  display: none;
+}
+
+.rong-message .rong-conversation-one-message.rong-psimagetext {
+  padding: 12px 11px 7px 11px;
+}
+
+.rong-publicservicerichcontentmessage .rong-psimagetext-img {
+  height: 200px;
+}
+
+.rong-psmultiimagetext,
+.rong-psimagetext {
+  width: 360px;
+  cursor: pointer;
+}
+
+.rong-psimagetext-title {
+  height: 36px;
+  line-height: 36px;
+  padding: 0 2px;
+  margin-top: 3px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rong-psimagetext-img {
+  position: relative;
+  height: 192px;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.rong-psmultiimagetext .rong-psimagetext-img {
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 4px;
+}
+
+.rong-psimagetext-digest {
+  height: auto;
+  line-height: 18px;
+  padding: 0 0 7px 2px;
+  color: #777777;
+  font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.rong-psimagetext-preview {
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 2px;
+  font-size: 12px;
+  color: #3A91F3;
+  border-top: 1px solid #ECECED;
+}
+
+.rong-psimagetext-preview:after {
+  position: absolute;
+  content: ' ';
+  right: 10px;
+  width: 6px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  background-image: url(images/publicservice.svg);
+  background-position: -32px -183px;
+}
+
+.rong-psimagetext-img + .rong-psmultiimagetext-sub-item .rong-psmultiimagetext-sub-title {
+  border-top: 0;
+}
+
+.rong-psmultiimagetext-sub-item {
+  height: 62px;
+  cursor: pointer;
+}
+
+.rong-psmultiimagetext-main-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 10px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.rong-psmultiimagetext-sub-image,
+.rong-psmultiimagetext-sub-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.rong-psmultiimagetext-sub-title {
+  width: 260px;
+  height: 100%;
+  border-top: 1px solid #ECECED;
+  padding-left: 2px;
+}
+
+.rong-multiline-hidden {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.rong-psmultiimagetext-sub-image {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: cover;
+  float: right;
+  top: 50%;
+  margin-top: -25px;
+  position: relative;
+}
+
+.rong-history,
+.rong-conversation-setting {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  width: 290px;
+  height: 100%;
+  border-left: 1px solid #e3e3e3;
+  padding-top: 56px;
+  background: #fff;
+}
+
+.rong-group-not-scroll {
+  width: 300px;
+}
+
+.rong-setting-slide-enter-active,
+.rong-setting-slide-leave-active {
+  transition: 0.5s all;
+}
+
+.rong-setting-slide-enter,
+.rong-setting-slide-leave-active {
+  transform: translateX(100%);
+}
+
+.rong-history-tab {
+  position: relative;
+  z-index: 10;
+  padding: 10px 10px 0 10px;
+}
+
+.rong-history-tab a {
+  display: inline-block;
+  width: 58px;
+  line-height: 26px;
+  margin-right: 8px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.rong-history-selected-all .rong-history-all, .rong-history-selected-all .rong-history-all:hover,
+.rong-history-selected-file .rong-history-file,
+.rong-history-selected-file .rong-history-file:hover,
+.rong-history-selected-image .rong-history-image,
+.rong-history-selected-image .rong-history-image:hover {
+  border-color: #008af3;
+  background-color: #008af3;
+  color: #fff;
+}
+
+.rong-history-selected-file .rong-history-item-hd,
+.rong-history-selected-file .rong-file-size, .rong-history-selected-file .rong-file-state {
+  display: none;
+}
+
+.rong-history-selected-file .rong-file-metadata {
+  display: block;
+}
+
+.rong-history-search {
+  position: relative;
+  z-index: 10;
+  margin: 10px;
+}
+
+.rong-history-main {
+  position: relative;
+  top: -45px;
+  height: 100%;
+  padding: 45px 0 0 10px;
+}
+
+.rong-history-main ul {
+  height: 100%;
+  padding-right: 10px;
+  overflow: auto;
+}
+
+.rong-history-main li {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.rong-history-selected-image .rong-history-main ul {
+  padding-right: 0;
+}
+
+.rong-history-selected-image .rong-history-main li {
+  clear: none;
+  float: left;
+  margin: 0;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time {
+  height: 25px;
+  line-height: 25px;
+  padding-left: 12px;
+  background-color: #eff3f8;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-image-item {
+  width: 100%;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list {
+  padding: 4px 0 0 3px;
+  overflow: hidden;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li {
+  position: relative;
+  margin: 1px 2px;
+  width: 23%;
+  height: 70px;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-conversation-image {
+  height: 66px;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-thumbnail {
+  width: 100%;
+  height: 66px;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-thumbnail .rong-sight-status .rong-sight-play {
+  width: 20px;
+  height: 12px;
+  top: 83%;
+  left: 20%;
+  border-radius: 0;
+  border: 0;
+  background-color: none;
+  background: url(images/video-icon.png) no-repeat;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-thumbnail .rong-sight-status .rong-sight-play:after {
+  border: 0;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-thumbnail .rong-sight-status .rong-sight-time {
+  bottom: 2px;
+  right: 15px;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li .rong-history-image-time {
+  display: none;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list li:hover .rong-history-image-time {
+  display: block;
+}
+
+.rong-history-selected-image .rong-history-main .rong-history-time-list .rong-history-image-time {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+  color: #fff;
+  border-radius: 0 0 3px 3px;
+  text-align: center;
+}
+
+.rong-history-selected-image .rong-history-pc {
+  top: -50px;
+  padding: 70px 0 0 0;
+}
+
+.rong-history-selected-image .rong-thumbnail-small {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rong-history-selected-image .rong-thumbnail-large {
+  display: none;
+}
+
+.rong-history-selected-image .rong-sight .rong-thumbnail-small {
+  display: block;
+}
+
+.rong-history-pc {
+  top: -68px;
+  padding: 70px 0 60px 10px;
+}
+
+.rong-history-item-hd {
+  color: #5585a5;
+  font-size: 12px;
+}
+
+.rong-history-text-bd em {
+  background-color: #fff0a6;
+}
+
+.rong-history-more {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #008af3;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.rong-pagination {
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+}
+
+.rong-pagination a {
+  float: left;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin-top: 8px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.rong-pagination-prev {
+  border-right: 7px solid #818181;
+}
+
+.rong-pagination-next {
+  border-left: 7px solid #818181;
+}
+
+.rong-pagination-disabled {
+  opacity: 0.3;
+}
+
+.rong-pagination-num {
+  float: left;
+  margin: 0 10px;
+  padding: 0 5px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  line-height: 25px;
+}
+
+.rong-conversation-setting-hd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.rong-conversation-setting-title {
+  font-size: 16px;
+  line-height: 55px;
+  text-align: center;
+}
+
+.rong-im .rong-conversation-setting-title {
+  font-size: 16px;
+}
+
+.rong-conversation-setting-bd {
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.rong-conversation-group-setting-bd {
+  padding: 0 3px;
+}
+
+.rong-conversation-setting-scroll {
+  width: 279px;
+  overflow-x: hidden;
+  padding: 0 7px;
+}
+
+.rong-conversation-switch {
+  margin: 5px 0;
+  border-top: 1px solid #e3e3e3;
+}
+
+.rong-conversation-switch .rong-item-label {
+  float: left;
+  line-height: 35px;
+}
+
+.rong-conversation-switch .rong-switch {
+  float: right;
+}
+
+.rong-group-setting .rong-members {
+  padding-bottom: 10px;
+}
+
+.rong-members ul {
+  width: 290px;
+}
+
+.rong-members li {
+  float: left;
+  width: 36px;
+  height: 55px;
+  margin: 8px 21px 0 0;
+}
+
+.rong-members-username {
+  width: 50px;
+  margin-left: -7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 12px;
+}
+
+.rong-conversation-add,
+.rong-conversation-remove {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.rong-conversation-add {
+  background-position: -10px -338px;
+}
+
+.rong-conversation-add:hover {
+  background-position: -62px -338px;
+}
+
+.rong-conversation-remove {
+  background-position: -10px -392px;
+}
+
+.rong-conversation-remove:hover {
+  background-position: -62px -392px;
+}
+
+.rong-group-has-quit {
+  padding-bottom: 65px;
+}
+
+.rong-group-quit {
+  width: 140px;
+}
+
+.rong-group-dismiss {
+  width: 110px;
+  color: #888888;
+}
+
+.rong-group-setting-buttons {
+  height: 65px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 13px;
+  text-align: center;
+}
+
+.rong-group-setting-buttons button {
+  width: 125px;
+  display: inline-block;
+  color: #ff7676;
+  height: 38px;
+  line-height: normal;
+}
+
+.rong-group-setting-buttons button:nth-child(2) {
+  margin-left: 10px;
+}
+
+.rong-group-setting-buttons .rong-group-dismiss {
+  color: #888888;
+}
+
+.rong-group-info {
+  padding-top: 10px;
+  line-height: 30px;
+}
+
+.rong-group-info li {
+  margin-top: 5px;
+}
+
+.rong-group-info li:first-child {
+  margin-top: 0;
+}
+
+.rong-group-info label {
+  margin-right: 10px;
+}
+
+.rong-group-info em,
+.rong-group-info .rong-group-username {
+  color: #777;
+}
+
+.rong-group-info .rong-field {
+  width: 185px;
+}
+
+.rong-group-info .rong-qrcode {
+  vertical-align: middle;
+}
+
+.rong-group-editable em,
+.rong-group-editable .rong-group-edit {
+  display: none;
+}
+
+.rong-group-editable .rong-field {
+  display: inline-block;
+}
+
+.rong-group-edit {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  vertical-align: middle;
+  background-position: -8px -440px;
+}
+
+.rong-group-edit:hover {
+  background-position: -50px -440px;
+}
+
+.rong-group-hd {
+  position: relative;
+  margin: 5px 0;
+  height: 30px;
+  overflow: hidden;
+}
+
+.rong-group-title {
+  line-height: 30px;
+}
+
+.rong-group-title em {
+  margin-right: 10px;
+}
+
+.rong-group-title span {
+  color: #777;
+}
+
+.rong-group-search {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.rong-search-selected {
+  width: 100%;
+}
+
+.rong-search-selected .rong-group-search-hd {
+  display: none;
+}
+
+.rong-search-selected .rong-group-search-cancel {
+  display: block;
+}
+
+.rong-search-selected .rong-group-search-bd {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.rong-group-search-button {
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+  color: #008af3;
+  white-space: nowrap;
+}
+
+.rong-group-search-hd {
+  position: relative;
+  padding-left: 18px;
+}
+
+.rong-group-search-hd i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  background-position: -12px -762px;
+}
+
+.rong-group-search-cancel {
+  display: none;
+  float: right;
+  line-height: 30px;
+  color: #000;
+  margin-left: 5px;
+}
+
+.rong-group-search-bd {
+  position: relative;
+  transform: translateX(100%);
+  opacity: 0.5;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  overflow: hidden;
+}
+
+.rong-group-member-icon {
+  display: inline-block;
+  margin-right: -2px;
+  position: relative;
+  top: 2px;
+  height: 12px;
+  width: 12px;
+  background-image: url(images/group-member.png);
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+  background-color: transparent;
+}
+
+.rong-common-search-field,
+.rong-group-search-field {
+  position: relative;
+}
+
+.rong-group-dialog .rong-common-search-field, .rong-group-dialog
+.rong-group-search-field {
+  margin: 10px 15px;
+}
+
+.rong-common-search-field input,
+.rong-group-search-field input {
+  display: block;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.rong-group-setting .rong-common-search-field input, .rong-group-setting
+.rong-group-search-field input {
+  padding: 0 25px 0 7px;
+}
+
+.rong-group-search-select.rong-custom-select {
+  width: 105px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  border-radius: 0;
+}
+
+.rong-common-search-clear,
+.rong-group-search-clear {
+  position: absolute;
+  z-index: 10;
+  right: 7px;
+  top: 50%;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background-position: -10px -307px;
+}
+
+.rong-common-search-clear:hover,
+.rong-group-search-clear:hover {
+  background-position: -40px -307px;
+}
+
+.rong-group-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.rong-group-userlist,
+.rong-group-selected {
+  float: left;
+  width: 50%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.rong-group-selected {
+  position: relative;
+  padding-top: 50px;
+}
+
+.rong-group-userlist {
+  position: relative;
+  border-right: 1px solid #e3e3e3;
+}
+
+.rong-group-tab-hd {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.rong-group-tab-hd a {
+  float: left;
+  width: 33.3%;
+  margin-bottom: -1px;
+  border-bottom: 3px solid transparent;
+  line-height: 47px;
+  text-align: center;
+}
+
+.rong-forward-dialog .rong-group-tab-hd a {
+  width: 25%;
+  overflow: hidden;
+  height: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rong-recent-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #777;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.rong-recent-empty em {
+  color: #008af3;
+}
+
+.rong-group-dialog .rong-group-tab-bd .rong-group-star-list-bd {
+  height: 290px;
+  overflow: scroll;
+}
+
+.rong-group-dialog .rong-group-tab-bd .rong-group-friend-list-bd {
+  height: 287px;
+  overflow: scroll;
+}
+
+.rong-group-dialog .rong-group-tab-bd .rong-group-recent-list-bd {
+  height: 282px;
+  overflow: scroll;
+}
+
+.rong-group-selected-group .rong-group-hd-group,
+.rong-group-selected-recent .rong-group-hd-recent,
+.rong-group-selected-friend .rong-group-hd-friend,
+.rong-group-selected-star .rong-group-hd-star,
+.rong-group-selected-org .rong-group-hd-org {
+  border-bottom-color: #008af3;
+}
+
+.rong-group-dialog {
+  width: 660px;
+}
+
+.rong-group-dialog .rong-checkbox {
+  margin-right: 8px;
+}
+
+.rong-group-dialog .rong-avatar {
+  cursor: default;
+}
+
+.rong-dialog-search {
+  margin: 10px 15px;
+}
+
+.rong-dialog-crumb {
+  margin-bottom: 10px;
+  padding-top: 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.rong-group-check,
+.rong-group-userlist-bd {
+  padding: 0 15px;
+}
+
+.rong-group-check {
+  margin-bottom: 15px;
+}
+
+.rong-group-userlist-bd {
+  overflow: auto;
+}
+
+.rong-group-dialog .rong-group-userlist-bd {
+  height: 245px;
+}
+
+.rong-group-org-keyword .rong-group-userlist-bd {
+  height: 285px;
+}
+
+.rong-group-userlist-bd li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 26px;
+}
+
+.rong-group-userlist-bd li:first-child {
+  margin-top: 10px;
+}
+
+.rong-group-userlist-bd .rong-checkbox {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -11px;
+}
+
+.rong-group-userlist-bd .rong-selected {
+  background-color: #e0e8f2;
+}
+
+.rong-group-userlist-bd .rong-disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.rong-dept-path {
+  width: 195px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #999;
+}
+
+.rong-group-org-keyword .rong-user-dutylist, .rong-group-org-keyword .rong-user-orglist {
+  height: 318px;
+}
+
+.rong-search-back {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.rong-pin-dialog .rong-search-back, .rong-group-dialog .rong-search-back {
+  color: #008af3;
+}
+
+.rong-search-label {
+  border-bottom: 1px solid #e3e3e3;
+  min-height: 40px;
+  padding: 5px 15px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-right: 50px;
+}
+
+.rong-group-children {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  color: #008af3;
+}
+
+.rong-group-dialog .rong-group-children {
+  color: #008af3;
+}
+
+.rong-group-buttons {
+  border-top: 1px solid #e3e3e3;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.rong-group-buttons button {
+  min-width: 120px;
+  height: 40px;
+}
+
+.rong-group-buttons button + button {
+  margin-left: 75px;
+}
+
+.rong-group-selected-hd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 15px;
+  line-height: 50px;
+  color: #777;
+}
+
+.rong-group-selected-bd {
+  height: 100%;
+  padding: 15px;
+  overflow: auto;
+}
+
+.rong-group-create .rong-group-selected-bd {
+  height: 285px;
+}
+
+.rong-group-selected-bd li {
+  position: relative;
+}
+
+.rong-group-selected-bd .rong-rccombine-message-tip {
+  position: absolute;
+  padding-left: 10px;
+  bottom: 8px;
+  width: 90%;
+  background: #E0E8F2;
+  z-index: 100;
+}
+
+.rong-group-selected-bd .rong-profile-main {
+  padding-right: 20px;
+}
+
+.rong-group-selected-bd .rong-item-remove {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  background-position: -10px -307px;
+}
+
+.rong-group-selected-bd .rong-item-remove:hover {
+  background-position: -40px -307px;
+}
+
+.rong-forward-dialog .rong-group-create .rong-group-selected-bd {
+  height: 100%;
+}
+
+.rong-dialog-addmembers .rong-group-selected-bd {
+  height: 370px;
+}
+
+.rong-group-remove .rong-group-userlist-bd {
+  height: 335px;
+}
+
+.rong-group-remove .rong-group-selected-bd {
+  height: 370px;
+}
+
+.rong-group-name {
+  border-top: 1px solid #e3e3e3;
+  padding: 15px 10px;
+}
+
+.rong-group-name .rong-field {
+  display: block;
+  width: 100%;
+}
+
+.rong-group-name-hd span {
+  color: #999;
+}
+
+.rong-search-members .rong-profile-main em {
+  color: #008af3;
+}
+
+.rong-search-members .rong-group-userlist-bd {
+  max-height: 160px;
+}
+
+.rong-search-selected-contacts .rong-search-members .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-search-selected-history .rong-search-history .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-search-selected-groups .rong-search-groups .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-search-selected-pubs .rong-search-pubs .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-search-selected-dutys .rong-search-dutys .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-search-selected-orgs .rong-search-orgs .rong-group-userlist-bd {
+  max-height: 100%;
+}
+
+.rong-org-all {
+  overflow: hidden;
+  height: 279px;
+}
+
+.rong-org .rong-field.rong-field-search {
+  width: 183px;
+  display: inline-block;
+  border: 0;
+  padding-right: 5px;
+}
+
+.rong-org .rong-field.rong-field-small-search {
+  padding-right: 20px;
+}
+
+.rong-org .rong-search-icon {
+  left: 111px;
+}
+
+.rong-org .rong-group-search-field {
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+
+.rong-preview {
+  width: 600px;
+}
+
+.rong-preview-bd {
+  position: relative;
+  height: 400px;
+}
+
+.rong-preview-bd img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.rong-forward {
+  overflow: hidden;
+}
+
+.rong-forward .rong-group-userlist-bd {
+  height: auto;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.rong-forward .rong-group-userlist-bd li {
+  margin-bottom: 15px;
+}
+
+.rong-forward .rong-crumb {
+  display: none;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.rong-forward .rong-profile-name,
+.rong-forward .rong-search-summary {
+  width: 200px;
+}
+
+.rong-conversation-profile-name {
+  overflow: visible;
+}
+
+.rong-conversation-profile-name a[disabled] {
+  cursor: default;
+}
+
+.rong-conversation-profile-name a[disabled]:hover {
+  color: black;
+}
+
+.rong-forward-selected-contacts .rong-group-userlist-bd,
+.rong-forward-selected-groups .rong-group-userlist-bd {
+  max-height: 335px;
+  height: 335px;
+  overflow: auto;
+}
+
+.rong-forward-selected-contacts .rong-crumb {
+  display: block;
+}
+
+.rong-image {
+  width: 500px;
+  height: 400px;
+}
+
+.rong-image .rong-image-focus {
+  position: absolute;
+  opacity: 0;
+}
+
+.rong-image-button {
+  display: inline-block;
+  border: 0;
+}
+
+.rong-image-size-normal {
+  width: 500px;
+  height: 400px;
+}
+
+.rong-image-size-normal .rong-image-button-normal {
+  display: none;
+}
+
+.rong-image-size-full {
+  width: 100%;
+  height: 100%;
+}
+
+.rong-image-size-full .rong-image-button-full {
+  display: none;
+}
+
+.rong-image-bd {
+  position: relative;
+  height: 100%;
+  border-radius: 8px;
+  transform: translate(0);
+  overflow: hidden;
+}
+
+.rong-image-main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  cursor: move;
+}
+
+/* .rong-image-loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0);
+    background: url(images/loading-default.svg) no-repeat center center;
+} */
+.rong-image-ft {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 7px 0;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0;
+  text-align: center;
+}
+
+.rong-image-ft li {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+
+.rong-image-ft li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+  border-left: 1px solid #7a7a7a;
+  height: 20px;
+}
+
+.rong-image-ft li:first-child:before {
+  display: none;
+}
+
+.rong-image-ft .rong-image-button {
+  width: 26px;
+  height: 26px;
+}
+
+.rong-image-ft .rong-image-button-normal {
+  display: none;
+}
+
+.rong-dialog:-webkit-full-screen .rong-image {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(0);
+  width: auto;
+  height: auto;
+}
+
+.rong-dialog:-webkit-full-screen .rong-image-button-normal {
+  display: inline-block;
+}
+
+.rong-dialog:-webkit-full-screen .rong-image-button-full {
+  display: none;
+}
+
+.rong-image-nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -28px;
+  width: 56px;
+  height: 56px;
+}
+
+.rong-image-prev {
+  left: 18px;
+  background-position: -7px -1138px;
+}
+
+.rong-image-prev:hover {
+  background-position: -7px -1199px;
+}
+
+.rong-image-prev:active {
+  background-position: -7px -1262px;
+}
+
+.rong-image-next {
+  right: 18px;
+  background-position: -82px -1138px;
+}
+
+.rong-image-next:hover {
+  background-position: -82px -1199px;
+}
+
+.rong-image-next:active {
+  background-position: -82px -1262px;
+}
+
+.rong-image-save {
+  background-position: -19px -1339px;
+}
+
+.rong-image-save:hover {
+  background-position: -63px -1339px;
+}
+
+.rong-image-normal {
+  background-position: -19px -1410px;
+}
+
+.rong-image-normal:hover {
+  background-position: -62px -1410px;
+}
+
+.rong-image-fullsize {
+  background-position: -19px -1377px;
+}
+
+.rong-image-fullsize:hover {
+  background-position: -63px -1377px;
+}
+
+.rong-im .rong-link-site,
+.rong-im .rong-link-email {
+  color: #008af3;
+}
+
+.rong-im .rong-link-site:hover,
+.rong-im .rong-link-email:hover {
+  text-decoration: underline;
+}
+
+.rong-disable-select {
+  user-select: none;
+  cursor: default;
+}
+
+.rong-item-cover-name {
+  padding-right: 10px;
+}
+
+button.rong-group-image {
+  background-image: url(images/group-notice-icon.svg);
+}
+
+.rong-tools-group-notice {
+  background-position: -9px -8px;
+}
+
+.rong-tools-group-notice[disabled] {
+  opacity: 0.4;
+}
+
+.rong-tools-group-notice[disabled]:hover {
+  background-position: -9px -8px;
+}
+
+.rong-tools-notice, .tong-tools-setting {
+  vertical-align: top;
+}
+
+.rong-tools-group-notice:hover {
+  background-position: -54px -8px;
+}
+
+.rong-tools-group-notice-title {
+  height: 56px;
+  border-bottom: 1px solid #ececed;
+}
+
+.rong-group-notice-bd {
+  position: relative;
+}
+
+.rong-group-notice {
+  position: absolute;
+  top: 8px;
+  bottom: 70px;
+  width: 92%;
+}
+
+.rong-group-notice-title {
+  height: 50px;
+}
+
+.rong-group-notice-sender {
+  float: left;
+  margin-right: 6px;
+}
+
+.rong-group-notice-info {
+  margin-left: 5px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.rong-group-notice-info-name {
+  height: 18px;
+}
+
+.rong-group-notice-info-time {
+  color: #797979;
+}
+
+.rong-group-notice-content {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+}
+
+.rong-group-notice-content-scroll {
+  overflow: auto;
+  height: 100%;
+  word-wrap: break-word;
+  user-select: text;
+}
+
+.rong-group-notice-empty {
+  text-align: center;
+  margin-top: 80px;
+  color: #b1b1b1;
+}
+
+.rong-group-notice-editor {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+}
+
+.rong-group-notice-btns {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  display: table;
+  text-align: center;
+}
+
+.rong-group-notice-btns button:hover {
+  color: #777;
+}
+
+.rong-group-notice-btns .rong-group-notice-select-btn {
+  color: #008af3;
+}
+
+.rong-group-notice-btns .rong-group-notice-select-btn:hover {
+  color: #008af3;
+}
+
+.rong-group-notice-btn {
+  display: table-cell;
+}
+
+.rong-group-notice-btn button {
+  width: 118px;
+  height: 37px;
+}
+
+.rong-resize-x {
+  float: right;
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  right: -10px;
+}
+
+.rong-resize-x-right {
+  cursor: e-resize;
+}
+
+.rong-resize-x-left {
+  cursor: w-resize;
+}
+
+.rong-resize-x-middle {
+  cursor: col-resize;
+}
+
+.rong-resize-y {
+  width: 100%;
+  height: 10px;
+  position: absolute;
+}
+
+.rong-resize-y-top {
+  cursor: n-resize;
+}
+
+.rong-resize-y-bottom {
+  cursor: s-resize;
+}
+
+.rong-resize-y-middle {
+  cursor: row-resize;
+}
+
+.rong-group-ban-button {
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+  color: #008af3;
+  white-space: nowrap;
+  float: right;
+}
+
+.rong-group-button-memo {
+  float: left;
+  line-height: 16px;
+  color: #adadad;
+  font-size: 12px;
+  position: relative;
+  top: -3px;
+}
+
+.rong-group-image {
+  background-image: url(images/group-notice-icon.svg);
+}
+
+.rong-group-transfer {
+  background-position: -54px -42px;
+}
+
+.rong-group-transfer:hover {
+  background-position: -100px -42px;
+}
+
+.rong-group-qrcode-image {
+  width: 15px;
+  height: 16px;
+  background-image: url(images/qrcode.png);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.rong-group-qrcode-image:hover {
+  cursor: pointer;
+}
+
+.rong-group-to-qrcode {
+  width: 12px;
+  height: 12px;
+  background-image: url(images/work.svg);
+  background-position: -28px -74px;
+  margin-top: 0;
+}
+
+.rong-group-to-qrcode:hover {
+  background-position: -10px -74px;
+}
+
+.rong-group-banned {
+  height: 420px;
+}
+
+.rong-group-banned-members, .rong-group-banned-list {
+  height: 100%;
+  width: 50%;
+}
+
+.rong-group-banned-members {
+  border-right: 1px solid #ececed;
+  float: left;
+}
+
+.rong-group-banned-switch {
+  border: 0;
+  margin: 0;
+}
+
+.rong-group-banned-switch li {
+  height: 54px;
+  width: 100%;
+  line-height: 60px;
+  border-bottom: 1px solid #e3e3e3;
+  overflow: hidden;
+}
+
+.rong-group-banned-switch .rong-group-banned-all-title {
+  position: relative;
+  float: left;
+  margin-left: 12px;
+  margin-right: 13px;
+  top: 0;
+  left: 0;
+}
+
+.rong-group-banned-switch span {
+  width: 56px;
+  display: inline-block;
+  position: absolute;
+  left: -60px;
+  top: -2px;
+}
+
+.rong-group-dialog .rong-group-banned-bd {
+  height: 322px;
+}
+
+.rong-group-dialog .rong-group-banned-members .rong-group-banned-bd {
+  height: 390px;
+}
+
+.rong-group-dialog .rong-group-banned-members .rong-group-banned-select-title {
+  height: 48px;
+  line-height: 48px;
+  padding: 9px 0 0 14px;
+}
+
+.rong-group-banned-icon {
+  background-position: -6px -38px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+
+.rong-group-banned-members-icon {
+  left: 16px;
+}
+
+.rong-group-banned-list {
+  float: right;
+}
+
+.rong-group-banned-tab-hd {
+  border: none;
+}
+
+.rong-group-banned-tab-hd a {
+  width: 42%;
+}
+
+a.rong-group-banned-disable-bar, a.rong-group-banned-disable-bar:hover {
+  cursor: default;
+  color: gainsboro;
+}
+
+.rong-group-banned-slient-bar, .rong-group-banned-slient-bar:hover {
+  margin-left: 20px;
+  color: #333;
+  cursor: default;
+}
+
+.rong-group-banned-tab-hd a.rong-group-banned-slient-bar, .rong-group-banned-tab-hd a.rong-group-banned-slient-bar:hover {
+  color: #333;
+  cursor: default;
+}
+
+.rong-group-banned-tab-hd a.rong-group-banned-speaker-bar, .rong-group-banned-tab-hd a.rong-group-banned-speaker-bar:hover {
+  color: #333;
+  cursor: default;
+}
+
+.rong-group-banned-tab-hd a.rong-group-banned-disable-bar, .rong-group-banned-tab-hd a.rong-group-banned-disable-bar:hover {
+  cursor: default;
+  color: gainsboro;
+}
+
+.rong-group-banned-members-bd li {
+  padding-left: 0;
+}
+
+.rong-group-banned-list-icon {
+  left: 17px;
+}
+
+.rong-group-banned-members-layer {
+  height: 36px;
+  width: 36px;
+  opacity: 0.7;
+  filter: alpha(opacity=0.7);
+  background: #333;
+  position: absolute;
+  z-index: 11;
+}
+
+.rong-conversation-banned-layer {
+  position: absolute;
+  z-index: 10;
+  margin-top: 34px;
+  margin-left: 10px;
+  color: #d5d5d5;
+  background-color: #fbfbfd;
+}
+
+.rong-group-dialog-transfer {
+  width: 315px;
+}
+
+.rong-group-transfer-title {
+  padding: 10px 0 0 15px;
+}
+
+.rong-group-dialog-transfer-buttons button + button {
+  margin-left: 30px;
+}
+
+.rong-group-dialog .rong-screen-bar {
+  position: relative;
+}
+
+.rong-group-dialog .rong-screen-bar .rong-group-recent {
+  height: 325px;
+  overflow: scroll;
+}
+
+.rong-group-banned-list .rong-conversation-switch .rong-group-banned-all {
+  float: left;
+  margin-top: 21px;
+}
+
+.rong-group-banned-tab-hd .rong-group-banned-title {
+  line-height: 37px;
+  height: 37px;
+  border: none;
+  margin: 0;
+  width: inherit;
+  padding: 0 14px 0 12px;
+}
+
+.rong-group-recent-empty {
+  padding: 0 15px;
+  height: 300px;
+  position: relative;
+}
+
+.rong-group-recent-empty span {
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rong-setting-filehelper {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.rong-setting-filehelper .rong-setting-helper-tip {
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+}
+
+.rong-setting-filehelper .rong-setting-helper-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  background-size: 60px 60px;
+  margin: 0 auto 5px auto;
+  font-size: 36px;
+  line-height: 60px;
+  color: #fff;
+  background-image: url(images/file_transfer_robot.png);
+}
+
+.rong-conversation-setting .rong-setting-no-border {
+  border: none;
+}
+
+.rong-conversation-public .rong-conversation-setting-hd {
+  border-bottom: 1px solid #ececed;
+}
+
+.rong-conversation-public .rong-setting-public {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.rong-conversation-public .rong-setting-public .rong-setting-public-tip {
+  color: #777;
+  font-size: 12px;
+  width: 200px;
+  text-align: left;
+  left: 50%;
+  margin-top: 8px;
+  margin-left: -100px;
+  position: relative;
+  height: 40px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.rong-conversation-public .rong-setting-public .rong-public-image .rong-avatar-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  background-size: 60px 60px;
+  margin: 26px auto 18px auto;
+}
+
+.rong-conversation-public .rong-public-button {
+  position: absolute;
+  bottom: 90px;
+  width: 90%;
+  text-align: center;
+}
+
+.rong-conversation-public .rong-public-button .rong-button {
+  min-width: 140px;
+  height: 38px;
+  color: #008af3;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.rong-group-nickname-box {
+  display: inline-block;
+  float: right;
+  height: 35px;
+  line-height: 35px;
+  width: 140px;
+}
+
+.rong-group-nickname-box .rong-group-nickname-field {
+  width: 70%;
+  height: 26px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: right;
+}
+
+.rong-group-nickname-box .rong-group-nickname-show {
+  float: right;
+  position: relative;
+}
+
+.rong-group-nickname-box .rong-group-nickname-show em {
+  color: #777;
+  display: inline-block;
+  height: 35px;
+  max-width: 100px;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.rong-group-nickname-box .rong-group-nickname-show .rong-group-edit {
+  height: 35px;
+  position: absolute;
+  top: 13px;
+  right: 0;
+}
+
+.rong-result-item {
+  position: relative;
+  width: 100%;
+}
+
+.rong-result-item .rong-result-item-aside {
+  width: 36px;
+  float: left;
+  margin-right: 8px;
+}
+
+.rong-result-item .rong-result-item-main {
+  vertical-align: middle;
+  line-height: 1.4;
+  overflow: hidden;
+  height: 36px;
+}
+
+.rong-result-item .rong-search-only-name {
+  line-height: 36px;
+}
+
+/*
+device-locking
+*/
+.rong-device-lock-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  z-index: 999;
+}
+
+.rong-device-lock-main {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+.rong-device-lock-img {
+  width: 164px;
+  height: 164px;
+  margin: auto;
+  background-image: url("images/deviceLocking.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rong-device-lock-text {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #262626;
+}
+
+.rong-device-lock-note {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #939393;
+}
+
+.rong-device-unlock-button {
+  height: 38px;
+  margin-top: 42px;
+  font-size: 14px;
+  color: #3A91F3;
+  letter-spacing: 0.98px;
+  border: 1px solid #E3E3E3;
+  border-radius: 8px;
+  padding: 4px 30px;
+}
+
+.rong-screen-lock-dialog .rong-device-lock-main {
+  top: 26%;
+}
+
+.rong-screen-lock-dialog .rong-screen-unlock-input {
+  position: relative;
+  margin-top: 50px;
+}
+
+.rong-screen-lock-dialog .rong-screen-unlock-input input {
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.rong-screen-lock-dialog .rong-screen-unlock-input ::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.rong-screen-lock-dialog .rong-device-unlock-button {
+  width: 150px;
+  margin-top: 30px;
+}
+
+.rong-screen-lock-dialog .rong-screen-unlock-error {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  margin-left: -75px;
+  width: 150px;
+  color: #ff7676;
+  font-size: 12px;
+}
+
+.rong-screen-lock-dialog .rong-screen-unlock-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: #939393;
+}
+
+.rong-group-qrcode {
+  width: 340px;
+  height: 420px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.rong-group-qrcode .rong-avatar {
+  cursor: default;
+}
+
+.rong-group-qrcode .rong-avatar-group {
+  cursor: default;
+}
+
+.rong-group-qrcode .rong-profile {
+  width: auto;
+  margin: 0 0 0 65px;
+}
+
+.rong-group-qrcode .rong-profile .rong-profile-main .rong-qrcode-group-name {
+  max-width: 160px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.rong-group-qrcode .rong-profile .rong-profile-main .rong-profile-count {
+  text-align: left;
+}
+
+.rong-group-qrcode .rong-group-qrcode-main {
+  padding: 15px 0 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.rong-group-qrcode .rong-group-qrcode-main li {
+  position: relative;
+}
+
+.rong-group-qrcode .rong-group-qrcode-qrcode {
+  width: 207px;
+  height: 209px;
+  margin-left: 65px;
+  padding: 4px 0;
+  margin-top: 15px;
+}
+
+.rong-group-qrcode .rong-group-qrcode-tips {
+  font-size: 12px;
+  color: #1e1e20;
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+.rong-group-qrcode .rong-group-qrcode-button-box {
+  width: 260px;
+  display: inline;
+  margin-left: 38px;
+}
+
+.rong-group-qrcode .rong-group-qrcode-button-box .left {
+  margin-right: 27px;
+}
+
+.rong-group-qrcode .rong-button {
+  width: 114px;
+  height: 38px;
+  color: #000;
+  cursor: pointer;
+}
+
+.rong-group-qrcode .rong-button:hover {
+  color: #3a91f3;
+}
+
+.rong-group-qrcode-download {
+  width: 620px;
+  height: 740px;
+  position: absolute;
+  left: -1000px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.rong-group-qrcode-download .rong-avatar {
+  cursor: default;
+}
+
+.rong-group-qrcode-download .rong-avatar-group {
+  cursor: default;
+}
+
+.rong-group-qrcode-download .rong-profile {
+  width: auto;
+  margin: 0 0 0 40px;
+}
+
+.rong-group-qrcode-download .rong-profile .rong-profile-main {
+  padding-left: 30px;
+}
+
+.rong-group-qrcode-download .rong-profile .rong-profile-main .rong-qrcode-group-name {
+  max-width: 320px;
+  overflow: hidden;
+  font-size: 40px;
+  text-align: left;
+}
+
+.rong-group-qrcode-download .rong-profile .rong-profile-main .rong-profile-count {
+  text-align: left;
+  font-size: 26px;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-main {
+  width: 620px;
+  height: 640px;
+  padding-top: 40px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-main li {
+  position: relative;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-qrcode {
+  width: 400px;
+  height: 400px;
+  margin-left: 110px;
+  padding: 4px 0;
+  margin-top: 40px;
+}
+
+.rong-group-qrcode-download hr {
+  height: 0;
+  border: 1px solid #E5E5E5;
+  margin: 40px;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-tips {
+  font-size: 26px;
+  color: #939393;
+  display: block;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-button-box {
+  width: 260px;
+  display: inline;
+  margin-left: 38px;
+}
+
+.rong-group-qrcode-download .rong-group-qrcode-button-box .left {
+  margin-right: 27px;
+}
+
+.rong-group-qrcode-download .rong-button {
+  width: 114px;
+  height: 38px;
+  color: #000;
+  cursor: pointer;
+}
+
+.rong-group-qrcode-download .rong-button:hover {
+  color: #3a91f3;
+}
+
+.rong-group-qrcode-box {
+  height: 100%;
+  background-color: #fff;
+}
+
+.rong-quote-panel {
+  position: absolute;
+  z-index: 10;
+  padding: 8px 10px;
+  width: 100%;
+  background-color: #f9f9fa;
+  border-top: 1px solid #ececed;
+}
+
+.rong-quote-panel .rong-quote-container {
+  color: #777777;
+}
+
+.rong-quote-panel .rong-quote-content {
+  max-height: 170px;
+  overflow: auto;
+}
+
+.rong-panel-close {
+  position: absolute;
+  z-index: 10;
+  right: 12px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  font-size: 0;
+  background-image: url("images/cancel-quote.png");
+  background-size: cover;
+}
+
+.rong-quote-container {
+  position: relative;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.rong-quote-container .rong-file-progress {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -6px;
+}
+
+.rong-quote-username {
+  display: block;
+  height: 20px;
+  color: #777777;
+}
+
+.rong-quote-content {
+  word-break: break-all;
+}
+
+.rong-quote-text {
+  word-break: break-all;
+  margin-top: 13px;
+  padding: 8px 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.rong-quote-filemessage {
+  width: 260px;
+}
+
+.rong-quote-filemessage .rong-quote-content {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.rong-quote-file-basename {
+  display: inline-block;
+  max-width: 130px;
+  vertical-align: text-bottom;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rong-quote-richcontentmessage {
+  width: 253px;
+}
+
+.rong-quote-richcontentmessage .rong-quote-content {
+  max-height: 30px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rong-quote-image-img {
+  max-width: 240px;
+  max-height: 240px;
+  cursor: pointer;
+}
+
+.rong-message-quote .rong-quote-imagetext-link,
+.rong-message-quote .rong-quote-file-name {
+  color: #008bf6;
+}
+
+.rong-message-quote .rong-quote-imagetext-link span,
+.rong-message-quote .rong-quote-file-name span {
+  vertical-align: text-bottom;
+}
+
+.rong-collect-position-message {
+  display: flex;
+  background-image: url(images/position.svg);
+  background-repeat: no-repeat;
+  background-size: 40px auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.rong-collect-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.rong-collect-img img {
+  border-radius: 5px;
+}
+
+.rong-img-collect-bd {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rong-locationmessage-hd-collect {
+  padding-left: 38px;
+  position: relative;
+  top: -10px;
+}
+
+.rong-audio-length-collect-dialog {
+  display: inline-block;
+  position: absolute;
+  top: 65px;
+  margin-left: 8px;
+}
+
+.rong-at-tip {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  height: 48px;
+  width: 48px;
+  z-index: 9;
+  border-radius: 50px;
+  cursor: pointer;
+  background-image: url(images/at-icon.png);
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
+
+.rong-at-tip .rong-at-number {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  background-color: #008af3;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 22px;
+  left: 14px;
+  top: -5px;
+}
+
+.rong-at-click {
+  cursor: pointer;
+}
+
+.rong-at-highlight {
+  height: 20px;
+  padding: 0 5px;
+  background-color: #008af3;
+  border-radius: 20px;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 20px;
+}
+
+.rong-at-onlyblue {
+  display: inline-block;
+  color: #008af3;
+}
+
+.rong-multiselect {
+  float: left;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.rong-multiselect-summary {
+  float: left;
+  margin-left: 10px;
+}
+
+a.rong-disable-profile:hover {
+  color: #777;
+}
+/*# sourceMappingURL=conversation.css.map */
+
+.rong-main {
+  margin: 0;
+  background: none;
+}
+
+.rong-conversation-border {
+  border: 1px solid red;
+}

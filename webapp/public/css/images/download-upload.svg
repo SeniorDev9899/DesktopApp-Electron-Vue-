@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="279px" height="370px" viewBox="0 0 279 370" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>发送文件图标</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="发送文件图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" transform="translate(28.000000, 27.000000)">
+            <circle id="Oval" stroke="#E0E0E0" cx="15" cy="15" r="14.5"></circle>
+            <g id="Group-9" transform="translate(9.000000, 8.000000)">
+                <circle id="Combined-Shape" stroke="#777777" cx="6" cy="6" r="5.5"></circle>
+                <path d="M9.81868927,10.1404649 L13.3541533,13.6759289 C13.5414398,13.8632154 13.5414398,14.1668668 13.3541533,14.3541533 C13.1668668,14.5414398 12.8632154,14.5414398 12.6759289,14.3541533 L9.14046487,10.8186893 C8.95317838,10.6314028 8.95317838,10.3277514 9.14046487,10.1404649 C9.32775137,9.95317838 9.63140277,9.95317838 9.81868927,10.1404649 Z" id="Rectangle-2" fill="#777777"></path>
+            </g>
+        </g>
+        <g id="Group-8-Copy" transform="translate(108.000000, 27.000000)" stroke="#777777">
+            <circle id="Oval" cx="15" cy="15" r="14.5"></circle>
+        </g>
+        <g id="Group-8-Copy-2" transform="translate(188.000000, 27.000000)" stroke="#3D3D3D">
+            <circle id="Oval" cx="15" cy="15" r="14.5"></circle>
+        </g>
+        <g id="Group-5" transform="translate(28.000000, 207.000000)">
+            <rect id="Rectangle-7" fill="#777777" x="9" y="21" width="12" height="1" rx="0.5"></rect>
+            <g id="Group-4">
+                <g id="Group-2" transform="translate(9.500000, 9.000000)" fill="#777777">
+                    <rect id="Rectangle-4" x="5" y="0" width="1" height="12" rx="0.5"></rect>
+                    <path d="M3,10 L8.5,10 C8.77614237,10 9,10.2238576 9,10.5 C9,10.7761424 8.77614237,11 8.5,11 L2.5,11 C2.22385763,11 2,10.7761424 2,10.5 L2,4.5 C2,4.22385763 2.22385763,4 2.5,4 C2.77614237,4 3,4.22385763 3,4.5 L3,10 Z" id="Combined-Shape" transform="translate(5.500000, 7.500000) rotate(-45.000000) translate(-5.500000, -7.500000) "></path>
+                </g>
+                <circle id="Oval-Copy" stroke="#E0E0E0" cx="15" cy="15" r="14.5"></circle>
+            </g>
+        </g>
+        <g id="Group-5-Copy" transform="translate(108.000000, 207.000000)">
+            <rect id="Rectangle-7" fill="#777777" x="9" y="21" width="12" height="1" rx="0.5"></rect>
+            <g id="Group-4">
+                <g id="Group-2" transform="translate(9.500000, 9.000000)" fill="#777777">
+                    <rect id="Rectangle-4" x="5" y="0" width="1" height="12" rx="0.5"></rect>
+                    <path d="M3,10 L8.5,10 C8.77614237,10 9,10.2238576 9,10.5 C9,10.7761424 8.77614237,11 8.5,11 L2.5,11 C2.22385763,11 2,10.7761424 2,10.5 L2,4.5 C2,4.22385763 2.22385763,4 2.5,4 C2.77614237,4 3,4.22385763 3,4.5 L3,10 Z" id="Combined-Shape" transform="translate(5.500000, 7.500000) rotate(-45.000000) translate(-5.500000, -7.500000) "></path>
+                </g>
+                <circle id="Oval-Copy" stroke="#777777" cx="15" cy="15" r="14.5"></circle>
+            </g>
+        </g>
+        <g id="Group-5-Copy-2" transform="translate(188.000000, 207.000000)">
+            <rect id="Rectangle-7" fill="#3D3D3D" x="9" y="21" width="12" height="1" rx="0.5"></rect>
+            <g id="Group-4">
+                <g id="Group-2" transform="translate(9.500000, 9.000000)" fill="#3D3D3D">
+                    <rect id="Rectangle-4" x="5" y="0" width="1" height="12" rx="0.5"></rect>
+                    <path d="M3,10 L8.5,10 C8.77614237,10 9,10.2238576 9,10.5 C9,10.7761424 8.77614237,11 8.5,11 L2.5,11 C2.22385763,11 2,10.7761424 2,10.5 L2,4.5 C2,4.22385763 2.22385763,4 2.5,4 C2.77614237,4 3,4.22385763 3,4.5 L3,10 Z" id="Combined-Shape" transform="translate(5.500000, 7.500000) rotate(-45.000000) translate(-5.500000, -7.500000) "></path>
+                </g>
+                <circle id="Oval-Copy" stroke="#3D3D3D" cx="15" cy="15" r="14.5"></circle>
+            </g>
+        </g>
+        <g id="Group-7" transform="translate(28.000000, 147.000000)">
+            <circle id="Oval-Copy-4" stroke="#E0E0E0" cx="15" cy="15" r="14.5"></circle>
+            <g id="Group-3" transform="translate(9.500000, 8.000000)" fill="#777777">
+                <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                <g id="Group-2-Copy" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle-4" x="5" y="3" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,8 L8.5,8 C8.77614237,8 9,8.22385763 9,8.5 C9,8.77614237 8.77614237,9 8.5,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 C2.77614237,2 3,2.22385763 3,2.5 L3,8 Z" id="Combined-Shape" transform="translate(5.500000, 5.500000) rotate(-45.000000) translate(-5.500000, -5.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-7-Copy" transform="translate(108.000000, 147.000000)">
+            <circle id="Oval-Copy-4" stroke="#777777" cx="15" cy="15" r="14.5"></circle>
+            <g id="Group-3" transform="translate(9.500000, 8.000000)" fill="#777777">
+                <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                <g id="Group-2-Copy" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle-4" x="5" y="3" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,8 L8.5,8 C8.77614237,8 9,8.22385763 9,8.5 C9,8.77614237 8.77614237,9 8.5,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 C2.77614237,2 3,2.22385763 3,2.5 L3,8 Z" id="Combined-Shape" transform="translate(5.500000, 5.500000) rotate(-45.000000) translate(-5.500000, -5.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-7-Copy-2" transform="translate(188.000000, 147.000000)">
+            <circle id="Oval-Copy-4" stroke="#3D3D3D" cx="15" cy="15" r="14.5"></circle>
+            <g id="Group-3" transform="translate(9.500000, 8.000000)" fill="#3D3D3D">
+                <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                <g id="Group-2-Copy" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle-4" x="5" y="3" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,8 L8.5,8 C8.77614237,8 9,8.22385763 9,8.5 C9,8.77614237 8.77614237,9 8.5,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 C2.77614237,2 3,2.22385763 3,2.5 L3,8 Z" id="Combined-Shape" transform="translate(5.500000, 5.500000) rotate(-45.000000) translate(-5.500000, -5.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-2" transform="translate(28.000000, 87.000000)">
+            <g id="Group-6" stroke="#E0E0E0">
+                <circle id="Oval-Copy-3" cx="15" cy="15" r="14.5"></circle>
+            </g>
+            <g id="Group-3" transform="translate(15.000000, 15.000000) scale(1, -1) translate(-15.000000, -15.000000) translate(9.500000, 8.000000)" fill="#777777">
+                <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                <g id="Group-2-Copy" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle-4" x="5" y="3" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,8 L8.5,8 C8.77614237,8 9,8.22385763 9,8.5 C9,8.77614237 8.77614237,9 8.5,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 C2.77614237,2 3,2.22385763 3,2.5 L3,8 Z" id="Combined-Shape" transform="translate(5.500000, 5.500000) rotate(-45.000000) translate(-5.500000, -5.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-2-Copy-2" transform="translate(108.000000, 87.000000)">
+            <g id="Group-6" stroke="#777777">
+                <circle id="Oval-Copy-3" cx="15" cy="15" r="14.5"></circle>
+            </g>
+            <g id="Group-3" transform="translate(15.000000, 15.000000) scale(1, -1) translate(-15.000000, -15.000000) translate(9.500000, 8.000000)" fill="#777777">
+                <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                <g id="Group-2-Copy" transform="translate(0.000000, 3.000000)">
+                    <rect id="Rectangle-4" x="5" y="3" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,8 L8.5,8 C8.77614237,8 9,8.22385763 9,8.5 C9,8.77614237 8.77614237,9 8.5,9 L2.5,9 C2.22385763,9 2,8.77614237 2,8.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 C2.77614237,2 3,2.22385763 3,2.5 L3,8 Z" id="Combined-Shape" transform="translate(5.500000, 5.500000) rotate(-45.000000) translate(-5.500000, -5.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-2-Copy-3" transform="translate(188.000000, 87.000000)">
+            <g id="Group-6" stroke="#3D3D3D">
+                <circle id="Oval-Copy-3" cx="15" cy="15" r="14.5"></circle>
+            </g>
+            <g id="Group-3" transform="translate(15.000000, 15.000000) scale(1, -1) translate(-15.000000, -15.000000) translate(9.500000, 8.000000)" fill="#3D3D3D">
+                <g id="Group-2-Copy">
+                    <rect id="Rectangle-8" x="5" y="0" width="1" height="4" rx="0.5"></rect>
+                    <rect id="Rectangle-4" x="5" y="6" width="1" height="7" rx="0.5"></rect>
+                    <path d="M3,11 L8.5,11 C8.77614237,11 9,11.2238576 9,11.5 C9,11.7761424 8.77614237,12 8.5,12 L2.5,12 C2.22385763,12 2,11.7761424 2,11.5 L2,5.5 C2,5.22385763 2.22385763,5 2.5,5 C2.77614237,5 3,5.22385763 3,5.5 L3,11 Z" id="Combined-Shape" transform="translate(5.500000, 8.500000) rotate(-45.000000) translate(-5.500000, -8.500000) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group" transform="translate(28.000000, 267.000000)">
+            <g id="Group-3">
+                <circle id="Oval-Copy-4" stroke="#E0E0E0" cx="15" cy="15" r="14.5"></circle>
+                <path d="M15,14.9416451 L14.9416451,15 L19.5120857,19.5704406 C19.4959714,19.5543263 19.4959714,19.5282 19.5120857,19.5120857 C19.5282,19.4959714 19.5543263,19.4959714 19.5704406,19.5120857 L15,14.9416451 Z M14.9416451,15 L10.4295594,19.5120857 C10.4456737,19.4959714 10.4718,19.4959714 10.4879143,19.5120857 C10.5040286,19.5282 10.5040286,19.5543263 10.4879143,19.5704406 L19.5704406,10.4879143 C19.5543263,10.5040286 19.5282,10.5040286 19.5120857,10.4879143 C19.4959714,10.4718 19.4959714,10.4456737 19.5120857,10.4295594 L15,14.9416451 L10.4879143,10.4295594 C10.5040286,10.4456737 10.5040286,10.4718 10.4879143,10.4879143 C10.4718,10.5040286 10.4456737,10.5040286 10.4295594,10.4879143 L14.9416451,15 Z" id="Combined-Shape-Copy-4" stroke="#777777"></path>
+            </g>
+        </g>
+        <g id="Group-Copy" transform="translate(108.000000, 267.000000)" stroke="#777777">
+            <g id="Group-3">
+                <circle id="Oval-Copy-4" cx="15" cy="15" r="14.5"></circle>
+                <path d="M15,14.9416451 L14.9416451,15 L19.5120857,19.5704406 C19.4959714,19.5543263 19.4959714,19.5282 19.5120857,19.5120857 C19.5282,19.4959714 19.5543263,19.4959714 19.5704406,19.5120857 L15,14.9416451 Z M14.9416451,15 L10.4295594,19.5120857 C10.4456737,19.4959714 10.4718,19.4959714 10.4879143,19.5120857 C10.5040286,19.5282 10.5040286,19.5543263 10.4879143,19.5704406 L19.5704406,10.4879143 C19.5543263,10.5040286 19.5282,10.5040286 19.5120857,10.4879143 C19.4959714,10.4718 19.4959714,10.4456737 19.5120857,10.4295594 L15,14.9416451 L10.4879143,10.4295594 C10.5040286,10.4456737 10.5040286,10.4718 10.4879143,10.4879143 C10.4718,10.5040286 10.4456737,10.5040286 10.4295594,10.4879143 L14.9416451,15 Z" id="Combined-Shape-Copy-4"></path>
+            </g>
+        </g>
+        <g id="Group-Copy-2" transform="translate(188.000000, 267.000000)" stroke="#3D3D3D">
+            <g id="Group-3">
+                <circle id="Oval-Copy-4" cx="15" cy="15" r="14.5"></circle>
+                <path d="M15,14.9416451 L14.9416451,15 L19.5120857,19.5704406 C19.4959714,19.5543263 19.4959714,19.5282 19.5120857,19.5120857 C19.5282,19.4959714 19.5543263,19.4959714 19.5704406,19.5120857 L15,14.9416451 Z M14.9416451,15 L10.4295594,19.5120857 C10.4456737,19.4959714 10.4718,19.4959714 10.4879143,19.5120857 C10.5040286,19.5282 10.5040286,19.5543263 10.4879143,19.5704406 L19.5704406,10.4879143 C19.5543263,10.5040286 19.5282,10.5040286 19.5120857,10.4879143 C19.4959714,10.4718 19.4959714,10.4456737 19.5120857,10.4295594 L15,14.9416451 L10.4879143,10.4295594 C10.5040286,10.4456737 10.5040286,10.4718 10.4879143,10.4879143 C10.4718,10.5040286 10.4456737,10.5040286 10.4295594,10.4879143 L14.9416451,15 Z" id="Combined-Shape-Copy-4"></path>
+            </g>
+        </g>
+        <g id="Group-9" transform="translate(117.000000, 35.000000)">
+            <circle id="Combined-Shape" stroke="#777777" cx="6" cy="6" r="5.5"></circle>
+            <path d="M9.81868927,10.1404649 L13.3541533,13.6759289 C13.5414398,13.8632154 13.5414398,14.1668668 13.3541533,14.3541533 C13.1668668,14.5414398 12.8632154,14.5414398 12.6759289,14.3541533 L9.14046487,10.8186893 C8.95317838,10.6314028 8.95317838,10.3277514 9.14046487,10.1404649 C9.32775137,9.95317838 9.63140277,9.95317838 9.81868927,10.1404649 Z" id="Rectangle-2" fill="#777777"></path>
+        </g>
+        <g id="Group-9-Copy" transform="translate(197.000000, 35.000000)">
+            <circle id="Combined-Shape" stroke="#3D3D3D" cx="6" cy="6" r="5.5"></circle>
+            <path d="M9.81868927,10.1404649 L13.3541533,13.6759289 C13.5414398,13.8632154 13.5414398,14.1668668 13.3541533,14.3541533 C13.1668668,14.5414398 12.8632154,14.5414398 12.6759289,14.3541533 L9.14046487,10.8186893 C8.95317838,10.6314028 8.95317838,10.3277514 9.14046487,10.1404649 C9.32775137,9.95317838 9.63140277,9.95317838 9.81868927,10.1404649 Z" id="Rectangle-2" fill="#3D3D3D"></path>
+        </g>
+    </g>
+</svg>

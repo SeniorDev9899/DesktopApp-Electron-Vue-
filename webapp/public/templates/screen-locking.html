@@ -1,0 +1,13 @@
+<div class="rong-device-lock-dialog rong-screen-lock-dialog" v-if="show">
+	<div class="rong-device-lock-main">
+		<div class="rong-device-lock-img"></div>
+		<div class="rong-device-lock-text">{{locale.tips}}</div>
+		<div class="rong-device-lock-note">{{locale.note}}</div>
+		<div class="rong-screen-unlock-input">
+			<input type="text" v-model="unlockPwd" :placeholder="locale.placeholder" @input="input()" @keydown.enter="unlock()">
+			<div v-show="error" class="rong-screen-unlock-error">{{locale.error}}</div>
+		</div>
+		<button class="rong-button rong-device-unlock-button" @click="unlock()">{{locale.button}}</button>
+	</div>
+	<div class="rong-screen-unlock-footer">{{locale.footer}}</div>
+</div>

@@ -1,0 +1,93 @@
+$blue: #008af3;
+$fontfamily: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+.about_container {
+    font-family: $fontfamily;
+    .about-titlebar {
+        /* still bad on picking color */
+        background: #FF5F58;
+        color: #000;
+        /* make a round button */
+        border-radius: 12px;
+        /* center text */
+        line-height: 12px;
+        text-align: center;
+        height: 12px;
+        width: 12px;
+        font-size: 12px;
+        padding: 1px;
+        &:hover {
+            cursor: pointer;
+            &:before {
+                content: "\2716";
+            }
+        }
+        top: 10px;
+        left: 10px;
+        position: absolute;
+    }
+    .top {
+        background-color: #F2F9FF;
+        width: 100%;
+        height: 190px;
+        vertical-align: middle;
+        .info {
+            height: 90px;
+            float: left;
+            margin: 50px 0 0 60px;
+        }
+        .title {
+            font-size: 32px;
+            color: #4D4D4D;
+            padding-top: 10px;
+        }
+        .version {
+            font-size: 16px;
+            color: #4D4D4D;
+        }
+        .logo {
+            background-image: url(images/logo.png);
+            width: 90px;
+            height: 90px;
+            float: right;
+            margin: 50px 60px 0 0;
+        }
+    }
+    .bottom {
+        background-color: #FFF;
+        width: 100%;
+        line-height: 100px;
+        .controls {
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+    .about-button {
+        font-family: $fontfamily;
+        height: 40px;
+        width: 120px;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #777;
+        text-align: center;
+        font-size: 14px;
+        &:hover {
+            border: 1px solid $blue;
+            color: $blue;
+        }
+        &:focus {
+            outline: 0;
+        }
+        &[disabled] {
+            color: #777777;
+        }
+    }
+}

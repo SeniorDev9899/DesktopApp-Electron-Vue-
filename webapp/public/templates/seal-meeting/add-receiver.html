@@ -1,0 +1,138 @@
+<div
+    class="rong-dialog"
+    :class="{'rong-dialog-addmembers': groupIdExisted}"
+    v-if="show"
+    @dragover.prevent.stop=""
+    @drop.prevent.stop=""
+>
+    <div class="rong-dialog-inner rong-group-dialog rong-select-user">
+        <a
+            href=""
+            class="rong-dialog-close"
+            :title="locale.btns.close"
+            @click.prevent="close"
+        ></a>
+
+        <div class="rong-clearfix">
+            <div
+                class="rong-group-userlist"
+                :class="['rong-group-selected-' + tab]"
+            >
+                <div
+                    class="rong-group-tab-hd rong-clearfix"
+                    :class="{'rong-group-staff': isStaff}"
+                >
+                    <a
+                        v-if="isStaff"
+                        class="rong-group-hd-org"
+                        href="#org"
+                        @click.prevent="setTab('org')"
+                        >{{locale.contact.orgContact}}</a
+                    >
+                    <a
+                        v-if="enabledStar"
+                        class="rong-group-hd-star"
+                        href="#star"
+                        @click.prevent="setTab('star')"
+                        >{{locale.contact.star}}</a
+                    >
+                    <a
+                        v-if="enabledFriend"
+                        class="rong-group-hd-friend"
+                        href="#star"
+                        @click.prevent="setTab('friend')"
+                        >{{locale.contact.friend}}</a
+                    >
+                </div>
+
+                <div class="rong-group-tab-bd">
+                    <component
+                        v-if="tab === 'org'"
+                        is="org"
+                        :selected="selected"
+                        :defaultSelected="defaultSelected"
+                        :maxCount="maxCount"
+                        @added="added"
+                        @removed="removed"
+                        @maxCountLimit="maxCountLimit"
+                        :canNotSelected="canNotSelected"
+                    ></component>
+                    <component
+                        v-if="tab === 'star'"
+                        is="star"
+                        :selected="selected"
+                        :defaultSelected="defaultSelected"
+                        @added="added"
+                        @removed="removed"
+                    ></component>
+                    <component
+                        v-if="tab === 'friend'"
+                        is="friend"
+                        :selected="selected"
+                        :defaultSelected="defaultSelected"
+                        @added="added"
+                        @removed="removed"
+                    ></component>
+                </div>
+            </div>
+
+            <div class="rong-group-selected">
+                <h3 v-if="selected.length > 0" class="rong-group-selected-hd">
+                    {{localeFormat(locale.contact.selectedMember,
+                    selected.length)}}
+                </h3>
+                <h3 v-else class="rong-group-selected-hd">
+                    {{locale.contact.emptyMember}}
+                </h3>
+                <div
+                    class="rong-group-selected-bd"
+                    ref="list"
+                    v-rong-scroll-to-bottom="loadMore"
+                >
+                    <ul>
+                        <li
+                            class="rong-profile"
+                            v-for="item in selectedPageList"
+                        >
+                            <component
+                                is="avatar"
+                                :user="item"
+                                class="rong-profile-aside rong-avatar-small"
+                            ></component>
+                            <div class="rong-profile-main">
+                                {{getUsername(item)}}
+                            </div>
+                            <a
+                                v-if="!isDefault(item)"
+                                href="#remove"
+                                class="rong-item-remove"
+                                :title="locale.btns.remove"
+                                draggable="false"
+                                @click.prevent="removeMembers(item)"
+                            ></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="rong-group-buttons">
+            <button
+                class="rong-button"
+                type="button"
+                :disabled="busy"
+                @click.prevent="close"
+            >
+                {{locale.btns.cancel}}
+            </button>
+            <button
+                class="rong-button rong-submit"
+                type="button"
+                :disabled="selected.length <= defaultSelected.length || busy"
+                @click="submit()"
+            >
+                {{locale.btns.confirm}}
+            </button>
+        </div>
+    </div>
+</div>

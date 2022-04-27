@@ -1,0 +1,10 @@
+node_modules
+public/lib
+public/css
+public/modules/voip
+public/js/modules/upload
+public/templates
+public/sealrtcApp
+dist
+src/pages/voip/config.js
+src/pages/voip/js/*

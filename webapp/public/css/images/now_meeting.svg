@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>编组 2@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="60" rx="2"></rect>
+    </defs>
+    <g id="web-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.预约界面" transform="translate(-607.000000, -226.000000)">
+            <g id="编组-3" transform="translate(607.000000, 226.000000)">
+                <g id="编组-2">
+                    <g id="编组">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="蒙版" fill="#00AAFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="闪电" transform="translate(14.000000, 14.000000)" fill-rule="nonzero">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="31.7729032" height="31.7729032"></rect>
+                        <polygon id="路径" fill="#FFFFFF" points="17.6445197 13.525346 24.8980645 13.525346 12.0216774 31.7729032 13.7567706 18.2475573 6.50322581 18.2475573 19.3796129 -9.23705556e-14"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

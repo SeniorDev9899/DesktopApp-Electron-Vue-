@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>箭头@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="web-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4.视频全屏-hover" transform="translate(-921.000000, -854.000000)" fill-rule="nonzero">
+            <g id="底部条" transform="translate(0.000000, 830.000000)">
+                <g id="箭头">
+                    <g transform="translate(925.000000, 27.000000) rotate(-180.000000) translate(-925.000000, -27.000000) translate(917.000000, 19.000000)">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M4.66320464,5 L11.3324366,5 C11.7015132,5 12,5.30771373 12,5.69118408 C12,5.86943957 11.9341403,6.03068263 11.8284171,6.1528287 L8.53033074,10.7249379 C8.30932931,11.0277374 7.89321823,11.0913169 7.59939499,10.8617084 C7.54768742,10.8226311 7.50300843,10.776143 7.46775154,10.7248689 L4.13190079,6.10403146 C3.91334037,5.80116291 3.97209552,5.36651713 4.26589977,5.13930651 C4.38584158,5.04402113 4.52453261,5.00006908 4.66320464,5.00006908 L4.66320464,5.00006908 L4.66320464,5 Z" id="路径" fill="#2E3538"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

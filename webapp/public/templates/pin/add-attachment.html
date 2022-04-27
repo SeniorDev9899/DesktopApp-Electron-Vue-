@@ -1,0 +1,54 @@
+<div class="rong-dialog" v-if="show">
+    <div class="rong-dialog-inner rong-user rong-pin-dialog rong-dialog-attach">
+        <div class="rong-pin-attach-title">
+            <h3>{{locale.components.addAttachment.title}}</h3>
+            <a @click.prevent="close()" href="" class="rong-dialog-close" :title="locale.btns.close"></a>
+        </div>
+        <div class="rong-pin-attach-content">
+            <div class="rong-pin-attach-box" v-for="item in attachments">
+               <!--  <div v-if="isShowProgress(item)" class="rong-pin-attach-upload-progress" :style="{width: getProgressWidth(item)}">
+                </div> -->
+
+                <span v-if="isShowProgress(item)" class="rong-upload-progress-text">{{getProgress(item)}}</span>
+                <div class="rong-pin-file-box">
+                    <i class="rong-pin-file" :class="getFileIconClass(item.data.name)"></i>
+                </div>
+                <div class="rong-pin-attach-doc">
+                    <p class="rong-pin-doc-title" :title="item.data.name">{{getAttachName(item.data.name)}}</p>
+                    <p class="rong-pin-doc-size">{{formatFileSize(item.rawSize)}}  {{fileState(item)}}</p>
+                </div>
+                <a v-if="isShowRemove(item)" class="rong-upload-pin-remove" @click.prevent="removeAttachment(item)" href="">
+                <i></i>
+                {{locale.btns.remove}}</a>
+
+                <a v-if="isCancelUpload(item)" class="rong-pin-renew" href="" @click.prevent="resumeUpload(item)">
+                <i></i>
+                {{locale.components.addAttachment.resumeUpload}}</a>
+
+                <a v-if="isShowCancel(item)" class="rong-upload-pin-cancel" 
+                @click.prevent="cancelUpload(item)" href="">
+                <i></i>
+                {{locale.btns.cancel}}</a>
+
+                <div v-if="isShowProgress(item)" class="rong-pin-attach-upload-progress">
+                    <span :style="{width: getProgressWidth(item)}"></span>
+                </div>
+
+                <!-- <div v-if="isFaild(item)">
+                    <a>{{locale.components.addAttachment.uploadFaild}}</a>
+                    <a v-if="isShowRenew" class="rong-pin-renew" href="" @click.prevent="renewDownload(item)">{{locale.components.addAttachment.renewDownload}}</a>
+                </div>
+                <a v-if="isFaild(item)"></a> -->
+            </div>
+        </div>
+        <div class="rong-pin-attach-buttons">
+            <button @click.prevent="close()">{{locale.btns.confirm}}</button>
+            <p :class="[ isAttachFull ? 'rong-pin-attach-full' : '', 'rong-pin-attach-' + locale.name.toLowerCase() ]" class="rong-pin-attach-count">{{getAttachCount}}</p>
+            <div>
+                <a :class="{ 'rong-pin-attach-full': isAttachFull }" @click.prevent="" href="">{{locale.components.newPin.addAtta}}</a>
+                <input id="rongAddAttachmentInDetail" @change="addAttachment($event)" multiple="multiple" type="file" :disabled="isAttachFull" :class="{ 'rong-pin-attach-disabled': isAttachFull }" :name="locale.components.newPin.addAtta">
+            </div>
+        </div>
+        
+    </div>
+</div>

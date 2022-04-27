@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/tray.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+    <div id="trayApp" class="container traycontainer">
+        <div class="row trayheader navbar sticky-top">
+            <div class="col-6 traytitle">
+                <b>{{locale.title}}</b>
+            </div>
+            <div class="col-6 traysetting">
+                <span @click="closeTrayDialog" class="close-dlg">&times;</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="row traybody" v-if="renderList.length>0" v-for="item in renderList" 
+                :id="item.viewId" 
+                :key="item.viewKey"
+                v-on:click="viewConversation(item)"
+            >
+                <div class="col-2" v-if="item.imageType==1">
+                    <div v-html="item.svgElement" style="width: 50px; height: 50px;"></div>
+                </div>
+                <div class="col-2" v-if="item.imageType==2">
+                    <img class="alert-avatar" v-bind:src="item.svgElement"/>
+                </div>
+                <div class="col-2" v-if="item.imageType==3">
+                    <div v-html="item.svgElement" style="width: 50px; height: 50px;"></div>
+                </div>
+                <div class="col-8 alert-name">
+                    <b v-if="item.conversationType==3">{{item.group.name}}</b>
+                    <b v-if="item.conversationType==1 || item.conversationType === 7">{{item.user.name}}</b>
+                    <br>
+                    <small>{{formatConversation(item.latestMessage)}}</small>
+                </div>
+                <div class="col-2" style="margin: auto; padding: 0 !important;">
+                    <span class="badge badge-pill badge-danger alert-badge">{{item.unreadMessageCount}}</span>
+                </div>
+            </div>
+            <div class="row" v-if="renderList.length==0">
+                <div class="col-12">
+                    <p class="zero-conversation">
+                        {{locale.emptyMessage}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <hr style="border-color: #eee4;">
+        <div class="trayfooter">
+            <a href="#">{{locale.ignore}}</a>
+        </div> -->
+    </div>
+</body>
+<script src="../../../webapp/node_modules/vue/dist/vue.js"></script>
+<script src="../js/tray.js"></script>
+</html>

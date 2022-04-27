@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>应用</title>
+    <meta charset="UTF-8">
+    <script src="lib/jquery-3.1.1.js"></script>
+    <script src="lib/vue-2.3.4.min.js"></script>
+</head>
+<body>
+<div id="rong-psarticle" class="rong-psarticle">
+    <div class="rong-psarticle-inner" :class="['rong-os-'+os]">
+        <div class="rong-titlebar">
+            <div class="rong-titlebar-options">
+                <a class="rong-titlebar-goback" :class="{'rong-disabled': !canGoBack}" @click.prevent="goBack"></a>
+                <a class="rong-titlebar-reload" @click.prevent="reload"></a>|
+                <a class="rong-titlebar-copyurl" @click.prevent="copyUrl" title="复制链接地址"></a>
+                <a class="rong-titlebar-openbrowser" @click.prevent="openUrl" title="用默认浏览器打开"></a>
+            </div>
+            <div class="rong-titlebar-windowbtns">
+                <a class="rong-titlebar-min" @click.prevent="min"></a>
+                <a v-if="isMaxWindow" class="rong-titlebar-restore" @click.prevent="restore"></a>
+                <a v-else class="rong-titlebar-max" @click.prevent="max"></a>
+                <a class="rong-titlebar-close" @click.prevent="close"></a>
+            </div>
+        </div>
+        <webview ref="browser" src="" disablewebsecurity></webview>
+    </div>
+</div>
+</body>
+</html>

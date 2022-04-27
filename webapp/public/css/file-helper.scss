@@ -1,0 +1,52 @@
+.rong-file-helper{
+    width: 375px;
+    height: 190px;
+    position: absolute;
+}
+.rong-file-helper-title{
+    padding: 8px;
+}
+.rong-file-helper-buttons{
+    border: none;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .rong-submit {
+        min-width: 107px;
+        height: 35px;
+        margin-bottom: 22px;
+        padding: 0 10px;
+    }
+}
+.rong-file-helper-main{
+    height: 60px;
+    padding: 0 20px;
+    margin: 35px 0;
+    .rong-file-helper-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        .rong-avatar-item {
+            font-size: 36px;
+            line-height: 60px;
+        }
+    }
+}
+.rong-file-helper-avatar{
+    float: left;
+    margin-right: 10px;
+}
+.rong-felper-dialog-desc {
+    display: table-cell;
+    vertical-align: middle;
+    height: 60px;
+    .rong-helper-dialog-title {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .rong-helper-dialog-desc {
+        font-size: 13px;
+    }
+}

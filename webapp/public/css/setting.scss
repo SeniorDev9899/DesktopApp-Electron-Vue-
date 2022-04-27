@@ -1,0 +1,237 @@
+$blue: #3a91f3;
+.rong-setting {
+    width: 540px;
+    height: 600px;
+    overflow: hidden;
+}
+.rong-setting-aside {
+    float: left;
+    width: 120px;
+    height: 100%;
+    border-right: 1px solid #ececed;
+    padding-top: 30px;
+    li + li {
+        margin-top: 15px;
+    }
+    a {
+        display: block;
+        padding-left: 16px;
+    }
+    a:hover {
+        color: $blue;
+    }
+}
+.rong-setting-selected-account {
+    .rong-setting-account {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-password {
+    .rong-setting-password {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-system {
+    .rong-setting-system {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-screen {
+    .rong-setting-screen {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-about {
+    .rong-setting-about {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-videoSetting {
+    .rong-setting-videoSetting {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-selected-audioSetting {
+    .rong-setting-audioSetting {
+        color: $blue;
+        cursor: default;
+    }
+}
+.rong-setting-main {
+    margin-left: 120px;
+    .rong-system {
+        max-height: 560px;
+        overflow-y: auto;
+    }
+}
+.rong-setting-form {
+    padding-top: 35px;
+    li {
+        position: relative;
+        margin: 0 0 38px 105px;
+        width: 225px;
+    }
+    label {
+        position: absolute;
+        left: -105px;
+        top: 0;
+        width: 105px;
+        padding-left: 35px;
+        line-height: 30px;
+        text-align: right;
+    }
+    .rong-field {
+        display: block;
+        width: 100%;
+    }
+    .rong-button {
+        width: 120px;
+    }
+}
+.rong-setting-submit {
+    margin-top: 45px;
+    text-align: center;
+    .rong-submit {
+        height: 38px;
+    }
+}
+.rong-system {
+    padding: 25px 30px;
+    >li {
+        position: relative;
+        text-align: right;
+        margin-left: 130px;
+        + li {
+            margin-top: 30px;
+        }
+    }
+    .rong-setting-shortcut {
+        margin-left: 0;
+        text-align: left;
+        .rong-shortcut-content {
+            margin-top: 15px;
+            color: #777;
+            font-size: 12px;
+        }
+        .rong-shortcut-list {
+            margin-top: 20px;
+            span {
+                float: right; 
+            }
+            li {
+                margin-top: 16px;
+                line-height: 14px;
+            }
+        }
+    }
+    .rong-setting-screen-pwd {
+        margin-left: 96px;
+        .rong-system-text {
+            left: -96px;
+        }
+        input {
+            text-align: right;
+            width: 260px;
+        }
+        .rong-form-error {
+            left: 0;
+            width: 100%;
+        }
+    }
+    .rong-setting-screen-note {
+        margin-left: 0;
+        text-align: left;
+        font-size: 12px;
+        color: #AAAAAA;
+    }
+    .rong-custom-select,
+    .rong-custom-option {
+        color: #777;
+        text-align: left;
+        background-color: #f8f8f8;
+    }
+    .rong-screen-submit {
+        text-align: center;
+        margin-left: 0;
+        .rong-submit{
+            width: 120px;
+            height: 38px;
+        }
+    }
+}
+
+
+.rong-system-text {
+    position: absolute;
+    left: -130px;
+    top: 0;
+    text-align: left;
+}
+.rong-setting-shortcut {
+    li {
+        + li {
+            margin-top: 10px;
+        }
+    }
+}
+.rong-system-version {
+    line-height: 25px;
+    em {
+        color: #777;
+    }
+    button {
+        min-width: 80px;
+        height: 25px;
+        margin-left: 10px;
+        font-size: 12px;
+        line-height: 5px;
+    }
+}
+.rong-select-majorcompany {
+    width: 197px;
+}
+.rong-select-language {
+    width: 90px;
+}
+.rong-account {
+    padding-top: 60px;
+    text-align: center;
+    li + li {
+        margin-top: 10px;
+    }
+    .rong-avatar {
+        margin: 0 auto;
+        cursor: default;
+    }
+    .rong-avatar-item {
+        line-height: 60px;
+        font-size: 40px;
+    }
+}
+.rong-account-logout {
+    button {
+        display: inline-block;
+        margin-top: 30px;
+        width: 160px;
+        height: 38px;
+        color: #ff7676;
+    }
+}
+.rong-system-version-btn {
+    padding: 3px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
+    box-shadow: none;
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.meeting-setting {
+    width: 570px;
+}

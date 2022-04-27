@@ -1,0 +1,15 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner rong-dialog-ack">
+        <a href="" class="rong-dialog-close" :title="locale.close" @click.prevent="close"></a>
+        <div class="rong-dialog-hd">
+            <h2 class="rong-dialog-title"></h2>
+        </div>
+        <div style="margin-top:20px;padding-left:30px;padding-right:30px;">
+            <div style="font-size: 12px;color: #777">{{item.user.name}}</div>
+            <div style="margin-top:10px;margin-bottom:10px;">{{item.content.content}}</div>
+            <div>
+                <div style="text-align: right; font-size: 12px; color: rgb(119, 119, 119); border-top: 1px solid rgb(204, 204, 204);padding-top:10px;padding-bottom:50px">收藏于{{item.sentTime | dateFormat}}</div>
+            </div>
+        </div>
+    </div>
+</div>

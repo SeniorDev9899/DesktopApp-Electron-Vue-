@@ -1,0 +1,20 @@
+extends: airbnb-base
+globals:
+  window: true
+rules:
+  indent: [error, 4]
+  no-underscore-dangle: warn
+  func-names: warn
+  prefer-promise-reject-errors: warn
+  class-methods-use-this: warn
+  no-mixed-operators: [error, { groups: [[ "&&", "||" ]] }]
+  prefer-destructuring: warn
+  no-multi-assign: warn
+  radix: warn
+  global-require: warn
+  no-plusplus: warn
+  no-use-before-define: [error, { functions: false, classes: false }]
+  no-bitwise: warn
+  camelcase: warn
+  no-param-reassign: warn
+  "import/no-extraneous-dependencies": [error, { devDependencies: true, optionalDependencies: false, peerDependencies: false}]

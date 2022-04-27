@@ -1,0 +1,48 @@
+root: true
+env:
+  browser: true
+  jquery: true
+extends: airbnb-base/legacy
+globals:
+  RongVoIP: true
+  RCCall: true
+  RongCallLib: true
+  Voip: true
+  EXIF: true
+  RongIM: true
+  RongIMLib: true
+  RongIMClient: true
+  Vue: true
+  VueRouter: true
+  moment: true
+  RongDesktop: true
+  Electron: true
+  UploadClient: true
+  MessageCtrl: true
+  RongSticker: true
+  require: true
+  ImageViewer: true
+  domtoimage: true
+  JSEncrypt: true
+rules: {
+  indent: [error, 4, {
+    ignoredNodes: ["CallExpression > FunctionExpression.callee > BlockStatement.body"],
+    SwitchCase: 1
+  }],
+  no-underscore-dangle: warn,
+  no-param-reassign: 0,
+  #no-param-reassign: [warn, {props: false],
+  no-use-before-define: [error, { functions: false, classes: false }],
+  vars-on-top: 0,
+  func-names: 0,
+  no-console: [ error, {
+    allow: [ error, debug, info, warn, time, timeEnd ]
+  }],
+  linebreak-style: 0,
+  camelcase: 0,
+  max-len: [warn, 140],
+  no-restricted-globals: warn,
+  radix: 0,
+  no-multi-assign: 0,
+  no-mixed-operators: [error, { groups: [[ "&&", "||" ]] }]
+}

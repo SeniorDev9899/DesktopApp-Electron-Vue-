@@ -1,0 +1,164 @@
+.rong-select-user .rong-group-selected-bd {
+  height: 370px;
+}
+
+.content-container {
+  width: 384px;
+  margin: auto;
+}
+
+.content-container form {
+  margin-top: 50px;
+}
+
+.content-container form .members-list div {
+  display: inline-block;
+}
+
+.content-container form .rong-members {
+  height: 120px;
+  position: relative;
+}
+
+.content-container form .rong-members ul {
+  width: auto;
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.content-container form .rong-members ul li {
+  display: inline-block;
+  width: 36px;
+  height: 55px;
+  margin: 8px 10px 0 0;
+}
+
+.content-container form .rong-members .rong-scroll-bar-y {
+  width: 4px;
+}
+
+.content-container form .relative-line {
+  position: relative;
+}
+
+.content-container form .line-item {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  height: 54px;
+}
+
+.content-container form .line-item label {
+  width: 84px;
+  text-align: left;
+  display: inline-block;
+}
+
+.content-container form .line-item input {
+  border: 0;
+  border: 1px solid #D2D2D3;
+  border-radius: 2;
+  display: inline-block;
+  width: 300px;
+  height: 32px;
+}
+
+.content-container form .line-item .rong-custom-select {
+  width: 300px;
+}
+
+.content-container form .line-item .input-error {
+  border-color: #ff7676;
+}
+
+.content-container form .line-item .time-select {
+  display: inline-block;
+  width: 100%;
+  z-index: 120;
+  position: absolute;
+  left: 84px;
+}
+
+.content-container form .line-item .time-select .rong-pin-select-sepcific-time {
+  left: 0;
+  top: 36px;
+}
+
+.content-container form .line-item .position-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.content-container form .line-item .input-message-error {
+  font-size: 13px;
+  margin-top: 2px;
+  margin-left: 81px;
+  color: #ff7676;
+  white-space: nowrap;
+}
+
+.content-container form .form-buttons {
+  margin-top: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.content-container form .form-buttons .rong-button {
+  width: 116px;
+  background-color: #3499ff;
+  color: #ffffff;
+  height: 35px;
+  cursor: pointer;
+}
+
+.content-container form .form-buttons .rong-button:hover {
+  background-color: #5daeff;
+}
+
+.content-container form .form-buttons .rong-button:active {
+  background-color: #3499ff;
+}
+
+.content-container form .form-buttons .rong-button[disabled] {
+  border-color: #eee;
+  background-color: #fff;
+  color: #ccc;
+}
+
+.content-container .title {
+  font-size: 18px;
+  padding-top: 32px;
+  text-align: center;
+  font-weight: 400;
+  color: #333333;
+}
+
+.content-container .up-page {
+  position: absolute;
+  top: 32px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-image: url(images/left_arrow.svg);
+}
+
+.content-container .rong-item-remove {
+  background-image: url(images/remove.svg);
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.rong-im ::-webkit-scrollbar {
+  height: 0;
+}

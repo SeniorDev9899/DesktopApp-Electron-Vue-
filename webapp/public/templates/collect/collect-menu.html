@@ -1,0 +1,9 @@
+<ul class="rong-menu" :style="{left: context.style.left, top: context.style.top, bottom: context.style.bottom}" @contextmenu.prevent="close">
+   <li v-if="showForward" @click="forward">{{locale.btns.forward}}</li>
+   <li v-if="showSave" @click="save">{{locale.btns.saveAs}}</li>
+
+   <li v-if="showCopy" @click="copy" >{{locale.btns.copyAddress}}</li>
+   <li v-if="showRemove" @click="remove">{{locale.btns.remove}}</li>
+   
+   <!-- <li v-if="true" @click="remove">{{locale.btns.removeConversation}}</li> -->
+</ul>

@@ -1,0 +1,9 @@
+.rong-image-titlebar,
+.rong-image-dragable {
+    -webkit-app-region: drag;
+}
+a,
+input,
+button {
+   -webkit-app-region: no-drag;
+}

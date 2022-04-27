@@ -1,0 +1,87 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner rong-group-dialog rong-group-create">
+        <a href="" class="rong-dialog-close" :title="locale.btns.close" @click.prevent="close"></a>
+        <div class="rong-clearfix rong-group-banned">
+            <div class="rong-group-banned-members">
+                <div class="rong-group-banned-select-title">
+                    <label class="rong-item-label">{{locale.title}}</label>
+                </div>
+                <div class="rong-group-search-field">
+                    <input type="text" v-model.trim="keyword" @keyup.esc="clear" class="rong-field rong-field-search" :placeholder="locale.btns.search">
+                    <i class="rong-search-icon"></i>
+                    <button v-if="keyword" class="rong-group-search-clear" type="button" :title="locale.btns.clear" @click="clear"></button>
+                </div>
+                <div class="rong-screen-bar">
+                    <div v-show="loadingNextPage" class="rong-loading-bottom"><span>{{locale.tips.loading}}</span></div>
+                    <ul ref="list" class="rong-group-userlist-bd rong-group-banned-bd rong-group-recent" v-rong-scroll-bar-y v-rong-scroll-to-bottom="loadMore">
+                        <li v-for="item in pageList">
+                            <label class="rong-checkbox"><input v-model="checked" :id="item.id" type="checkbox" :value="item.id"><i></i></label>
+                            <div class="rong-profile">
+                                <label :for="item.id" class="rong-profile-aside rong-avatar-small">
+                                    <div v-show="getMemberBanned(item)" class="rong-group-banned-members-layer">
+                                        <span class="rong-group-image rong-group-banned-icon rong-group-banned-members-icon"></span>
+                                    </div>
+                                    <component is="avatar" :user="item"></component>
+                                </label>
+                                <div class="rong-profile-main">
+                                    <label :for="item.id" v-html="getUsername(item)"></label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rong-group-banned-list">
+                <ul class="rong-conversation-switch rong-group-banned-switch">
+                    <li class="rong-clearfix">
+                        <span class="rong-group-banned-all-title">{{locale.bannedAll}}</span>
+                        <label class="rong-switch rong-group-banned-all">
+                            <input type="checkbox" v-model="bannedAll"><i></i>
+                        </label>
+                    </li>
+                </ul>
+                <div class="rong-group-tab-hd rong-group-banned-tab-hd rong-clearfix">
+                    <a class="rong-group-banned-slient-bar rong-group-banned-title" :class="{'rong-group-banned-disable-bar': !showBannedList}">{{locale.silenterMembers}}<span v-show="showBannedList">({{silenters.length}})</span></a>
+                    <a class="rong-group-banned-speaker-bar rong-group-banned-title" :class="{'rong-group-banned-disable-bar': showBannedList}">{{locale.speakerMembers}}<span v-show="!showBannedList">({{speakers.length}})</span></a>
+                </div>
+                <div class="rong-group-banned-list-scroll">
+                    <ul v-if="showBannedList" class="rong-group-userlist-bd rong-group-banned-members-bd rong-group-banned-bd rong-group-recent" >
+                        <li v-for="item in silenters">
+                            <div class="rong-profile">
+                                <label class="rong-profile-aside rong-avatar-small">
+                                     <div v-show="getMemberBanned(item)" class="rong-group-banned-members-layer">
+                                        <span class="rong-group-image rong-group-banned-icon rong-group-banned-list-icon"></span>
+                                    </div>
+                                    <component is="avatar" :user="item"></component>
+                                </label>
+                                <div class="rong-profile-main">
+                                    <label :for="item.id" v-html="getUsername(item)"></label>
+                                </div>
+                                <button type="button" title="删除" class="rong-group-search-clear" @click.prevent="clearSilentMember(item)"></button>
+                            </div>
+                        </li>
+                    </ul>
+
+                     <ul v-if="!showBannedList" class="rong-group-userlist-bd rong-group-banned-members-bd rong-group-banned-bd rong-group-recent" >
+                        <li v-for="item in speakers">
+                            <div class="rong-profile">
+                                <label class="rong-profile-aside rong-avatar-small">
+                                    <component is="avatar" :user="item"></component>
+                                </label>
+                                <div class="rong-profile-main">
+                                    <label :for="item.id" v-html="getUsername(item)"></label>
+                                </div>
+                                <button type="button" title="删除" class="rong-group-search-clear" @click.prevent="clearSpeakMember(item)"></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rong-group-buttons">
+            <button class="rong-button" type="button" @click.prevent="close()">{{locale.btns.cancel}}</button>
+            <button class="rong-button rong-submit" type="button" @click="submit()">{{locale.btns.confirm}}</button>
+        </div>
+    </div>
+</div>

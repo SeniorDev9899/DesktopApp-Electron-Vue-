@@ -1,0 +1,11 @@
+webapp/*
+sealmeeting/*
+node_modules/*
+dist/*
+build/*
+src/modules/database/sqlite3/*
+src/modules/node-pinyin/*
+src/modules/screenshot/*
+gulpfile.js
+renderer/*
+*.asar.unpacked

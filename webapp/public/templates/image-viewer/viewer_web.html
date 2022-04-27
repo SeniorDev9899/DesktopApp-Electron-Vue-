@@ -1,0 +1,15 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="" @click.stop="">
+    <div class="rong-dialog-inner rong-media">
+       <!--  <a @click.prevent="close" href="" class="rong-dialog-close" :title="locale.btns.close"></a> -->
+        <div class="rong-image-titlebar">
+            <div class="rong-titlebar-logo"><span></span></div>
+            <div class="rong-image-titlebar-buttons">
+                <a @click.prevent="close" class="rong-icon rong-image-titlebar-close" href="" :title="locale.btns.close"></a>
+            </div>
+        </div>
+        <component is="image-viewer"
+            :image-list="imageList" ref='viewer'
+            :file-token="fileToken" :default-index="selectIndex"
+            :lan="lan" @close="close"></component>
+    </div>
+</div>

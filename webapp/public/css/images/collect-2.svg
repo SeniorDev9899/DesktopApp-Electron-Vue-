@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Custom Preset Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Custom-Preset-Copy-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(12.000000, 11.000000)" fill-rule="nonzero" stroke="#3A91F3">
+            <polygon id="Polygon" stroke-linecap="round" stroke-linejoin="round" points="12.375 0 24.066343 6.75 24.066343 20.25 12.375 27 0.683657049 20.25 0.683657049 6.75"></polygon>
+            <path d="M12.375,13.5 L23.625,6.75" id="Path-2" stroke-linecap="round"></path>
+            <path d="M12.375,13.5 L12.375,27" id="Path-3"></path>
+            <path d="M12.375,13.5 L1.125,6.75" id="Path-4"></path>
+        </g>
+    </g>
+</svg>

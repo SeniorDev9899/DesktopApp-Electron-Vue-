@@ -1,0 +1,280 @@
+<div class="rong-call " v-show=" status == 'call' " xmlns:v-bind="http://www.w3.org/1999/xhtml">
+    <div class="rong-title rong-titlebar">
+        <div class="rong-title-info rong-title-full" :class="{'rong-title-left': !isMac}">
+            <div v-if="waiting" :class="{'rong-title-audio': type==1}">
+                <span>{{locale.calling.waitingResponse}}</span>
+            </div>
+            <div v-else>
+                <div v-if="type==1" class="rong-title-audio">
+                    <span>{{secondToMinute(time)}}</span>
+                </div>
+                <div v-else class="rong-title-video">
+                    <div class="tong-title-video-box" v-if="isShareScreen">
+                        <span>
+                            {{locale.calling.shareScreen}}
+                        </span>
+                        <span>{{secondToMinute(time)}}</span>
+                    </div>
+                    <div class="tong-title-video-box" v-else>
+                        <span v-if="isPrivate">{{templateFormat(locale.calling.videoChat, otherPeople.name)}}</span>
+                        <span v-else>
+                            {{locale.calling.multiVideoChat}}
+                        </span>
+                        <span>{{secondToMinute(time)}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="rong-title-buttons" v-if="!isMac">
+            <a class="rong-title-min" href="#" @click.prevent="min()" :title="locale.btns.minimize"></a>
+            <a class="rong-title-unmax" href="#" v-if="isMaxWin" @click.prevent="unmax()"
+                :title="locale.btns.restore"></a>
+            <a class="rong-title-max" href="#" v-else @click.prevent="max()" :title="locale.btns.maximize"></a>
+            <a class="rong-title-close" href="#" @click.prevent="close()" :title="locale.btns.close"></a>
+        </div>
+    </div>
+    <!-- 信号 -->
+    <div id="signal"></div>
+    <!--白板-->
+    <div id="wb" class="wb" v-show="showWhiteBoard"></div>
+    <div class="rong-call-main-box">
+        <div v-show="self.id === main.id && isShareScreen" class="rong-call-main">
+            <span class="rong-share-screen-tip-text">{{locale.tips.sharingScreen}}</span>
+        </div>
+        <div v-show="!(self.id === main.id && isShareScreen)" class="rong-call-main"
+            :class="{'rong-hiddenvideo': hiddenVideo(main)}" v-video="main" v-show="!showWhiteBoard">
+            <div v-show="showAvatarImg(main)" class="rong-call-main-bg"
+                :style="{'background-image': 'url(' + main.avatar + ')'}"></div>
+            <div v-show="showAvatarImg(main)&& !isVideo " class="rong-avatar-img"
+                :style="{'background-image': 'url(' + main.avatar + ')'}">
+                <div class="rong-user-name">{{main.name}}</div>
+            </div>
+            <div v-show="showAvatarSign(main)" class="rong-avatar-item"
+                :class="['rong-avatar-theme-' + getThemeIndex(main.id)]">{{main.name | slice}}
+                <div class="rong-user-name">{{main.name}}</div>
+            </div>
+            <div v-show="main.waiting" class="rong-avatar-waiting">
+                <div class="rong-avatar-waiting-bd">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+            <div v-show="main.busy" class="rong-user-busy"><span>{{locale.tips.busy}}</span></div>
+        </div>
+
+        <ul v-show="!showWhiteBoard" class="rong-call-other"
+            :class="[isAudio && !isPrivate ? ('rong-call-other-width-' + memberList.length) : '']"
+            v-scrollbar-x="other.length">
+            <template v-for="item in other">
+                <li v-if="self.id === item.id && isShareScreen" class="rong-user rong-share-screen-bg"
+                    @click="switchMain(item)" :key=" 'sharescreen-' + item.id ">
+                    <span class="rong-share-screen-tip-text-small">{{locale.tips.sharingScreen}}</span>
+                </li>
+                <li v-else class="rong-user" :class="{'rong-hiddenvideo': hiddenVideo(item)}" @click="switchMain(item)"
+                    v-video="item" v-show="!audioHideSelf(item)" :key=" 'voip-' + item.id ">
+                    <div v-show="showAvatarImg(item)" class="rong-user-bg"
+                        :style="{'background-image': 'url(' + item.avatar + ')'}"></div>
+                    <div v-show="showAvatarImg(item) && !isVideo" class="rong-avatar-img"
+                        :style="{'background-image': 'url(' + item.avatar + ')'}"></div>
+                    <div v-show="showAvatarSign(item) && isPrivate && isVideo" class="rong-avatar-item-video"
+                        :class="['rong-avatar-theme-' + getThemeIndex(item.id)]">{{item.name | slice}}</div>
+                    <div v-show="showAvatarSign(item) && !(isPrivate && isVideo)" class="rong-avatar-item"
+                        :class="['rong-avatar-theme-' + getThemeIndex(item.id)]">{{item.name | slice}}</div>
+                    <div class="rong-user-name">{{item.name}}</div>
+                    <div v-show="item.waiting" class="rong-avatar-waiting">
+                        <div class="rong-avatar-waiting-bd">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div v-show="item.busy" class="rong-user-busy"><span>{{locale.tips.busy}}</span></div>
+                </li>
+            </template>
+        </ul>
+
+        <!--请求发言-->
+        <div v-show="reqSparkUser.userReqSpark" class="rong-user-request">
+            <i class="rong-user-request-i">
+                {{reqSparkUser.name}}{{locale.calling.requestSpeak}}
+            </i>
+
+            <div class="refuseUser" @click="refuse(reqSparkUser)">
+
+            </div>
+            <div class="agreeUser" @click="agree(reqSparkUser)">
+
+            </div>
+        </div>
+        <div v-if="!isPrivate && isVideo" v-show="openMember" class="rong-profile-meeting-main">
+            <li>
+                <!--自己-->
+                <div class="rong-meetting-main-div rong-profile-meeting-other">
+                    <div class="rong-meetting-main ">
+                        <div class="rong-meetting-main-div rong-avatar rong-profile-aside rong-avatar-small">
+                            <div v-if="self.avatar" class="rong-avatar-img-meet"
+                                :style="{'background-image': 'url(' + self.avatar + ')'}"></div>
+                            <div v-else="self.name" class="rong-avatar-item-meet rong-avatar-theme-3">
+                                {{self.name.substring(0,1)}}</div>
+                        </div>
+                        <span v-show="self.host" class="rong-host"><em class="rong-host-em">host</em></span>
+                        <div class="rong-meetting-main-div rong-meetting-main name"> ({{locale.btns.self}})</div>
+                        <!-- <div v-show="self.host && !self.oberser"></div> -->
+                        <div v-show="!self.host && !self.obeserver" class="rong-meetting-main-div"><button
+                                class="rong-meetting-host-button" type="button"
+                                @click="becomeHost(self)">{{locale.btns.hostMetting}}</button></div>
+                        <div v-show="self.obeserver" class="rong-meetting-main-div"><button
+                                class="rong-meetting-host-button" type="button"
+                                @click="requestBecomeUser(self)">{{locale.btns.raiseHand}}</button></div>
+
+
+                    </div>
+                </div>
+            </li>
+            <ul>
+                <li v-for="user in normalMeetUsers">
+                    <!--正常人员-->
+                    <div v-if="!user.waiting && user.id != self.id"
+                        class="rong-meetting-main-div rong-profile-meeting-other">
+                        <div class="rong-meetting-main">
+                            <div class="rong-meetting-main-div rong-avatar rong-profile-aside rong-avatar-small">
+                                <div v-if="user.avatar" class="rong-avatar-img-meet"
+                                    :style="{'background-image': 'url(' + user.avatar + ')'}"></div>
+                                <div v-else="user.name" class="rong-avatar-item-meet rong-avatar-theme-3">
+                                    {{user.name.substring(0,1)}}</div>
+                            </div>
+                            <!--<span class="rong-host-other"><em class="rong-host-em">host</em></span>-->
+                            <div class="rong-meetting-main-div rong-meetting-main name"> {{user.name.substring(0,6)}}
+                            </div>
+                            <div v-show="self.host && !user.waiting && user.audio "
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-closemic "
+                                @click="closeMic(user)"></div>
+                            <div v-show="self.host && !user.waiting && !user.audio "
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-openmic "
+                                @click="openMic(user)"></div>
+                            <div v-show="self.host && !user.waiting && user.video"
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-closecamera "
+                                @click="closeCamera(user)"></div>
+                            <div v-show="self.host && !user.waiting && !user.video"
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-opencamera "
+                                @click="openCamera(user)"></div>
+
+                            <div v-show="self.host && ! user.waiting "
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-up"
+                                @click="downUser(user)"></div>
+                            <div v-show="self.host && ! user.waiting "
+                                class="rong-meetting-main-div rong-meetting-control rong-meetting-control-remove"
+                                @click="removeUser(user)"></div>
+                        </div>
+                    </div>
+                </li>
+                <li v-for="user in obersers">
+                    <!--观察者-->
+                    <div class="rong-profile-meeting-other" v-show="!user.waiting && user.id != self.id">
+                        <div class="rong-meetting-main">
+                            <div class="rong-meetting-main-div rong-avatar rong-profile-aside rong-avatar-small">
+                                <div v-if="user.avatar" class="rong-avatar-img-meet"
+                                    :style="{'background-image': 'url(' + user.avatar + ')'}"></div>
+                                <div v-else="user.name" class="rong-avatar-item-meet rong-avatar-theme-3">
+                                    {{user.name.substring(0,1)}}</div>
+                            </div>
+                            <!--<span class="rong-observer" ><em class="rong-host-em">host1</em></span>-->
+                            <div class="rong-meetting-main-div rong-meetting-main name"> {{user.name.substring(0,6)}}
+                            </div>
+                            <div v-show="self.host && !user.waiting "
+                                class="rong-meetting-main-div rong-meetting-control-obeserver rong-meetting-control-down"
+                                @click="upUser(user)"></div>
+                            <div v-show="self.host && !user.waiting "
+                                class="rong-meetting-main-div rong-meetting-control-obeserver rong-meetting-control-remove"
+                                @click="removeUser(user)"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rong-call-foot" :class="{'rong-waiting': waiting}">
+        <div class="rong-control-btns">
+            <template v-if="isPrivate">
+                <div class="rong-control-button rong-switch-audio" @click="switchAudio()">
+                    <i></i>
+                    {{locale.btns.switchAudio}}
+                </div>
+            </template>
+            <template v-else>
+                <!-- <div v-show="!showWhiteBoard && !isPrivate && isVideo" class="rong-control-button rong-whiteBoard-open"
+                    @click="requestWhiteBoard()">
+                    <i></i>
+                    {{locale.btns.whiteboard}}
+                </div>
+                <div v-show="showWhiteBoard" class="rong-control-button rong-whiteBoard-close"
+                    @click="closeWhiteBoard()">
+                    <i></i>
+                    {{locale.btns.whiteboard}}
+                </div> -->
+                <!-- <div v-show="isShareScreen " class="rong-control-button rong-share-open" @click="endShareScreen()">
+                    <i></i>
+                    {{locale.btns.closeShare}}
+                </div>
+                <div v-show="!isShareScreen && !isPrivate && isVideo " class="rong-control-button rong-share"
+                    @click="shareScreen()">
+                    <i></i>
+                    {{locale.btns.shareScreen}}
+                </div> -->
+                <div class="rong-control-button rong-invitemember" @click="addMember()">
+                    <i></i>
+                    {{locale.btns.addMember}}
+                </div>
+                <!-- <div v-show="openMember && !isPrivate" class="rong-control-button rong-allMember-open" @click="closeMember()">
+                    <i></i>
+                   {{locale.btns.allMembers}}
+                </div>
+                <div v-show="!openMember  && !isPrivate && isVideo" class="rong-control-button rong-allMember-close" @click="closeMember()">
+                    <i></i>
+                   {{locale.btns.allMembers}}
+                </div> -->
+
+            </template>
+            <!--多人-->
+            <div v-show="!self.audio&& !isPrivate" class="rong-right rong-control-button rong-microphone"
+                @click="openAudio()">
+                <i></i>
+                {{locale.btns.openMicrophone}}
+            </div>
+            <div v-show="self.audio && !isPrivate" class="rong-right rong-control-button rong-microphone-close"
+                @click="closeAudio()">
+                <i></i>
+                {{locale.btns.closeMicrophone}}
+            </div>
+            <!--单人-->
+            <div v-show="!self.audio && isPrivate" class="rong-right-sigel rong-control-button rong-microphone"
+                @click="openAudio()">
+                <i></i>
+                {{locale.btns.openMicrophone}}
+            </div>
+            <div v-show="self.audio && isPrivate" class="rong-right-sigel rong-control-button rong-microphone-close"
+                @click="closeAudio()">
+                <i></i>
+                {{locale.btns.closeMicrophone}}
+            </div>
+            <div v-if="!isShareScreen" v-show="!self.video" class="rong-right rong-control-button rong-camera"
+                @click="openVideo()">
+                <i></i>
+                {{locale.btns.openCamera}}
+            </div>
+            <div v-if="!isShareScreen" v-show="self.video && !isPrivate"
+                class="rong-right rong-control-button rong-camera-close" @click="closeVideo()">
+                <i></i>
+                {{locale.btns.closeCamera}}
+            </div>
+            <div v-if="isShareScreen" class="rong-right rong-control-button rong-camera-enable" @click="">
+                <i></i>
+                {{locale.calling.shareScreen}}
+            </div>
+        </div>
+        <button class="rong-hangup " style="float: left" @click="hungup()"></button>
+    </div>
+</div>

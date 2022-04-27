@@ -1,0 +1,41 @@
+root: true
+env:
+  browser: true
+  commonjs: true
+  es6: true
+extends: [plugin:vue/essential, airbnb-base]
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+  RongDesktop: readonly
+  $: readonly
+  jQuery: readonly
+  RongIMLib: readonly
+  RongIMClient: readonly
+  moment: readonly
+  Vue: readonly
+  VueRouter: readonly
+  JSEncrypt: readonly
+  UploadClient: readonly
+  QRCode: readonly
+  IS_DESKTOP: readonly
+  APP_SERVER: readonly
+  EXIF: readonly
+  RCCall: readonly
+  domtoimage: readonly
+  MessageCtrl: readonly
+parserOptions:
+  parser: 'babel-eslint'
+  ecmaVersion: 2018
+rules: {
+  indent: [error, 4],
+  import/no-extraneous-dependencies: false,
+  no-underscore-dangle: warn,
+  radix: 0,
+  max-len: 0,
+  no-console: [ error, {
+    allow: [ error, debug, info, warn, time, timeEnd ]
+  }],
+  prefer-destructuring: 0,
+  no-use-before-define: [error, { functions: false, classes: false }]
+}

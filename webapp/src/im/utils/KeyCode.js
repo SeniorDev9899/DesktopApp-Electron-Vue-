@@ -1,0 +1,18 @@
+export default {
+    backspace: 8,
+    tab: 9,
+    enter: 13,
+    shift: 16,
+    ctrl: 17,
+    alt: 18,
+    caps: 20,
+    esc: 27,
+    left: 37,
+    up: 38,
+    right: 39,
+    down: 40,
+    delete: 46,
+    win: 91,
+    q: 81,
+    z: 90,
+};

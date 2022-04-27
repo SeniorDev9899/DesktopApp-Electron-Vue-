@@ -1,0 +1,202 @@
+$blue: #008af3;
+$bdc: #ececed;
+$fontfamily: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+.rong-psarticle {
+    height: 100%;
+    font-family: $fontfamily;
+    font-size: 14px;
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    input {
+        font-size: 100%;
+    }
+    ul {
+        list-style: none;
+    }
+    button {
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        outline: none;
+        cursor: pointer;
+        font-family: colorEmojiFont,"PingFangSC-Regular","Microsoft YaHei",sans-serif;
+        font-size: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: #3a91f3;
+    }
+    .rong-os-web, .rong-os-darwin, .rong-os-web-darwin, .rong-os-win32, .rong-os-web-win32, .rong-os-linux, .rong-os-web-linux {
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(75, 75, 75, 0.5);
+            border: 0;
+            border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(75, 75, 75, 0.8);
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+}
+.rong-psarticle-inner {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 35px;
+    border: 1px solid #ccc;
+    webview {
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+.rong-titlebar {
+  -webkit-app-region: drag;
+}
+.rong-titlebar a,
+.rong-titlebar input,
+.rong-titlebar button {
+   -webkit-app-region: no-drag;
+}
+.rong-os-darwin,.rong-os-OSX {
+    .rong-titlebar,
+    .rong-dragable {
+      -webkit-app-region: drag;
+    }
+    .rong-dragable a,
+    .rong-dragable input,
+    .rong-dragable button,
+    .rong-dragable ul li {
+       -webkit-app-region: no-drag;
+    }
+}
+.rong-titlebar {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 35px;
+    background: #f1f1f1;
+    user-select: none;
+}
+.rong-titlebar-options,
+.rong-titlebar-windowbtns {
+    display: inline-block;
+    a {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(images/icon.svg?v2);
+        cursor: pointer;
+    }
+}
+.rong-titlebar-windowbtns {
+    display: none;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.rong-os-win32 .rong-titlebar-windowbtns {
+    display: inline-block;
+    float: right;
+}
+.rong-os-linux .rong-titlebar-windowbtns {
+    display: inline-block;
+    float: right;
+}
+.rong-titlebar-min {
+    background-position: -19px -80px;
+    &:hover {
+        background-position: -54px -80px;
+    }
+}
+.rong-titlebar-max {
+    background-position: -19px -35px;
+    &:hover {
+        background-position: -54px -35px;
+    }
+}
+.rong-titlebar-restore {
+    background-position: -20px -58px;
+    &:hover {
+        background-position: -55px -58px;
+    }
+}
+.rong-titlebar-close {
+    background-position: -20px -11px;
+    &:hover {
+        background-position: -55px -11px;
+    }
+}
+.rong-titlebar-options {
+    margin-top: 5px;
+    margin-right: 20px;
+    color: #aaa;
+    a {
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+}
+.rong-titlebar-options .rong-titlebar-goback {
+    background-image: url('./images/work.svg');
+    background-position: -3px -43px;
+    background-size: 160px;
+    &.rong-disabled {
+        background-position: -22px -43px;
+        cursor: default;
+    }
+}
+.rong-titlebar-options .rong-titlebar-reload {
+    background-image: url('./images/work.svg');
+    background-position: -61px -43px;
+    background-size: 160px;
+    margin-right: 15px;
+}
+.rong-titlebar-copyurl {
+    background-position: -22px -109px;
+    .rong-titlebar-options & {
+        margin-left: 12px;
+    }
+    &:hover {
+        background-position: -56px -109px;
+    }
+}
+.rong-titlebar-openbrowser {
+    background-position: -20px -141px;
+    &:hover {
+        background-position: -56px -141px;
+    }
+}
+.rong-os-darwin,.rong-os-OSX {
+    .rong-titlebar-options {
+        float: right;
+    }
+}

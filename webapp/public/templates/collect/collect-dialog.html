@@ -1,0 +1,47 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner-collect rong-group-dialog rong-card">
+        <a href="" class="rong-dialog-close" :title="locale.btns.close" @click.prevent="close"></a>
+         <div class="rong-dialog-hd">
+            <h2 class="rong-dialog-title">{{locale.btns.collect}}</h2>
+        </div>
+        <div class="rong-group-tab-item rong-org">
+            <div class="rong-group-search-field rong-dialog-search">
+                <component class="rong-group-search-select" is="customSelect" v-model="currentView" 
+                :list="checkList"
+                :nameKey="'name'"
+                :valueKey="'value'"></component>
+                <input type="text" v-model.trim="keyword" @keyup.esc="clear" @keydown="down" @keyup="search" class="rong-field rong-field-search" style="width:510px;" :placeholder="locale.btns.search">
+                <i class="rong-search-icon"></i>
+                <button v-if="keyword" class="rong-group-search-clear" type="button" :title="locale.btns.clear" @click="clear"></button>
+            </div>
+        </div>
+        <div class="rong-collect-dialog-inner" v-rong-scroll-bar-y>
+            <div v-if="collectList.length === 0 && busy" class="rong-search-empty">{{locale.tips.loading}}</div>
+            <div v-else-if="collectList.length>0" class="rong-custom-collect-item rong-collect-list" v-for="(item,index) in collectList" @click="select(item,index)" :title="getItemName(item)" :class="{'rong-collect-selected':isEqual(item,index)}" :key="item.uid">
+                <div class="rong-conversation-other">
+                   <div class="rong-clearfix">
+                        <div class="rong-left">{{item.user==undefined?"":item.user.name}}</div>
+                        <div class="rong-right">{{item.sentTime | dateFormat}}</div>
+                    </div>
+                    <div :class="item.messageType === 'LocationMessage' ? 'rong-locationmessage' : ''">
+                        <div class="rong-dialog-item-no">
+                            <component :is="getMessageType(item)" :message="item" :message-list="filtedMessageList" :collect="true" :sendCollect="true"></component>
+                        </div>
+                    </div>
+                    <div style="height: 12px;" :class="{'rong-collect-list-border':index!=collectList.length-1}"></div> 
+                </div>
+            </div>
+            <div v-else-if="collectList.length === 0 && keyword" class="rong-recent-empty" v-html="localeFormat(locale.tips.searchEmpty, '<em>&quot;' + keyword + '&quot;</em>')"></div>
+            <div v-else-if="!busy" class="rong-empty-contact">
+                <div class="rong-empty-contact-hd rong-dragable"></div>
+                <div class="rong-empty-contact-bd rong-empty-collect-bd"><p>{{locale.components.collect.null}}</p></div>
+            </div>
+        </div>
+       <!--  <div v-if="collectList.length === 0 && keyword && busy" class="rong-search-empty">{{locale.tips.searching}}</div> -->
+        <div class="rong-group-buttons">
+            <button class="rong-button" type="button" @click.prevent="close">{{locale.btns.cancel}}</button>
+            <button class="rong-button rong-submit" type="button" :disabled="index < 0" @click="submit()">{{locale.btns.confirm}}</button>
+        </div>
+
+    </div>
+</div>

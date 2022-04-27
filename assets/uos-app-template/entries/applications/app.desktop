@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=RCE
+Comment=RCE Desktop Application
+Exec=/opt/apps/com.jetbrains.clion/files/bin/clion.sh
+Icon=RCE
+Terminal=false
+Categories=InstantMessaging
+Type=Application

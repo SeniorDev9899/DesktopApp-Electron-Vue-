@@ -1,0 +1,18 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner rong-file-helper">
+        <a href="" class="rong-dialog-close" :title="locale.btns.close" @click.prevent="close"></a>
+        <!-- <div class="rong-clearfix">
+               <div class="rong-file-helper-title">{{locale.title}}</div>
+        </div> -->
+        <div class="rong-file-helper-main">
+            <component is="avatar" class="rong-profile-aside rong-avatar-middle rong-file-helper-avatar" :user="helper"></component>
+            <ul class="rong-file-helper-desc rong-felper-dialog-desc">
+                <li class="rong-file-helper-desc-item rong-helper-dialog-title">{{locale.title}}</li>
+                <li class="rong-file-helper-desc-item rong-helper-dialog-desc">{{locale.desc}}</li>
+            </ul>
+        </div>
+        <div class="rong-file-helper-buttons">
+            <button class="rong-button rong-submit" type="button" @click.prevent="start">{{locale.start}}</button>
+        </div>
+    </div>
+</div>

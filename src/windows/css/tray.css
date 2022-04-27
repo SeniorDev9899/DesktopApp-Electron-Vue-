@@ -1,0 +1,82 @@
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border-top: 3px solid #6495ed;
+}
+
+.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.traycontainer {
+    font-family: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+}
+
+.traytitle {
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.traysetting {
+    text-align: right;
+    font-size: 1.3em;
+}
+
+.alert-avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.trayheader {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: #fff;
+}
+
+.traybody {
+    margin-bottom: 1em;
+    padding: 5px;
+}
+
+.traybody:hover {
+    background-color: #eeee;
+    cursor: pointer;
+}
+
+.close-dlg {
+    cursor: pointer;
+}
+
+.trayfooter {
+    position: absolute;
+    margin-bottom: 1em;
+    bottom: 10px;
+}
+
+.alert-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 20px;
+}
+
+.zero-conversation {
+    text-align: center;
+    color: #808080;
+}

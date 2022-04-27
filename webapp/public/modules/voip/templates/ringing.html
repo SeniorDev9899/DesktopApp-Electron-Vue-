@@ -1,0 +1,22 @@
+<div class="rong-ringing rong-titlebar" v-show=" status == 'ringing' ">
+    <div class="rong-title-buttons" v-if="!isMac">
+        <a class="rong-title-min" href="#" @click.prevent="min()" :title="locale.btns.minimize"></a>
+        <a class="rong-title-close" href="#" @click.prevent="close()" :title="locale.btns.close"></a>
+    </div>
+    <div class="rong-callinfo">
+        <img class="rong-avatar-img-info" v-if="senderUser.avatar" :src="senderUser.avatar">
+        <div v-else class="rong-avatar-item" :class="['rong-avatar-theme-' + getThemeIndex(senderUser.id)]">{{senderUser.name | slice}}</div>
+        <div>{{senderUser.name}} 
+        <span v-if="isShareScreen">{{locale.ringing.shareDesktop}}</span>
+        <span v-else>
+            <span v-show="isVideo">{{locale.ringing.videoInvite}}</span>
+            <span v-show="isAudio">{{locale.ringing.audioInvite}}</span>
+        </span>
+        </div>
+        <div v-if="!isPrivate" class="rong-other-name">{{locale.ringing.member}}{{getOtherName()}}</div>
+    </div>
+    <div class="rong-ringing-buttons">
+        <button class="rong-accept" @click="accept()"></button>
+        <button class="rong-hangup" @click="reject()"></button>
+    </div>
+</div>

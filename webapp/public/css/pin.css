@@ -1,0 +1,1357 @@
+.rong-list-pin a {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  line-height: 36px;
+}
+
+.rong-list-pin a:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+.rong-list-pin a:hover {
+  background-color: #ecf0f6;
+  color: #333;
+}
+
+.rong-list-pin .rong-selected {
+  background-color: #e0e8f2;
+}
+
+.rong-list-pin-received:before {
+  background-image: url(images/icon.svg);
+  background-size: 170px auto;
+  background-position: -15px -2270px;
+  background-repeat: no-repeat;
+}
+
+.rong-list-pin-sent:before {
+  background-image: url(images/icon.svg);
+  background-size: 170px auto;
+  background-position: -53px -2269px;
+  background-repeat: no-repeat;
+}
+
+.rong-pin-list {
+  padding-top: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rong-pin-list .rong-main-content {
+  padding-bottom: 28px;
+  margin-left: -10px;
+}
+
+.rong-pin-item {
+  float: left;
+  width: 268px;
+  margin: 28px 0 0 27px;
+  padding: 12px 12px 0 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.rong-pin-item-right {
+  margin-right: 0;
+}
+
+.rong-pin-item-inner {
+  position: relative;
+}
+
+.rong-pin-item-hd {
+  margin-bottom: 10px;
+  height: 36px;
+}
+
+.rong-pin-item-hd .rong-avatar {
+  float: left;
+  margin-right: 8px;
+}
+
+.rong-pin-item-hd .rong-pin-item-time-box {
+  height: 18px;
+  line-height: 18px;
+}
+
+.rong-pin-item-hd .rong-pin-item-time-box .rong-pin-item-delayed {
+  background: url("images/icon.svg?v2") no-repeat -17px -1982px;
+  background-size: 155px auto;
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  position: relative;
+  top: 9%;
+}
+
+.rong-pin-item-hd .rong-pin-item-time-box .rong-pin-item-datetime {
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+}
+
+.rong-pin-item-hd .rong-pin-item-time-box .rong-pin-attachment {
+  height: 18px;
+  line-height: 18px;
+}
+
+.rong-pin-item-read {
+  float: left;
+  color: #a0a0a0;
+}
+
+.rong-pin-item-username {
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+  /* 42544 - 【PIN】pin详情页面，用户名过长与pin回复时间重叠 */
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rong-pin-item-username a:hover {
+  color: #333;
+}
+
+.rong-pin-item-username a {
+  display: inline-block;
+  height: 18px;
+  max-width: 114px;
+  overflow: hidden;
+  padding-right: 10px;
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rong-pin-item-datetime {
+  color: #777;
+  font-size: 12px;
+}
+
+.rong-pin-attachment {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background: url(images/icon.svg) no-repeat -56px -2120px;
+  background-size: 166px auto;
+  font-size: 12px;
+  padding-left: 18px;
+  color: #777;
+  margin-left: 8px;
+  font-style: normal;
+}
+
+.rong-pin-item-bd {
+  display: -webkit-box;
+  margin-bottom: 10px;
+  height: 73px;
+  line-height: 1.3;
+  overflow: hidden;
+  word-break: break-all;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.rong-pin-item-bd a {
+  color: #008af3;
+}
+
+.rong-pin-item-bd a:hover {
+  text-decoration: underline;
+}
+
+.rong-pin-item-ft {
+  border-top: 1px solid #e3e3e3;
+  text-align: right;
+  line-height: 30px;
+  font-size: 12px;
+  height: 31px;
+  width: 100%;
+  position: relative;
+}
+
+.rong-pin-item-ft a {
+  color: #008af3;
+  position: absolute;
+  right: 0;
+}
+
+.rong-pin-status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1px 6px;
+  border-radius: 3px;
+  line-height: 16px;
+  background: #dddfe1;
+  font-size: 12px;
+  color: #fff;
+}
+
+.rong-pin-confirmed {
+  background-color: #f56b2f;
+}
+
+.rong-pin-detail {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 290px;
+  height: 100%;
+  border-left: 1px solid #ececed;
+  padding-top: 56px;
+  background: #fff;
+  z-index: 10;
+}
+
+.rong-pin-detail .rong-main-hd {
+  padding-left: 0;
+  text-align: center;
+}
+
+.rong-pin-detail .rong-pin-reply-bd {
+  min-height: 44px;
+}
+
+.rong-pin-detail .rong-pin-item-bd {
+  height: inherit;
+  user-select: text;
+  -webkit-line-clamp: inherit;
+}
+
+.rong-pin-detail .rong-pin-content {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.rong-pin-detail .rong-pin-confirm-btn {
+  position: absolute;
+  bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  color: #008af3;
+  background: white;
+  width: 160px;
+  height: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rong-pin-detail .rong-pin-content-confirm {
+  padding-bottom: 75px;
+}
+
+.rong-pin-detail-bd {
+  height: 100%;
+  padding: 12px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.rong-pin-content {
+  width: 265px;
+}
+
+.rong-pin-users {
+  font-size: 12px;
+}
+
+.rong-pin-users-bd .rong-pin-reveived-add {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  border: none;
+  background: #fff url(images/icon.svg) no-repeat -10px -338px;
+  background-size: 150px auto;
+}
+
+.rong-pin-detail-received {
+  margin-top: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.rong-pin-detail-received a {
+  position: relative;
+  float: left;
+  padding-right: 12px;
+  color: #008af3;
+}
+
+.rong-pin-detail-received a:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 5px;
+  transition: all 0.5s;
+  transform: rotate(135deg);
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #008af3;
+  border-right: 1px solid #008af3;
+}
+
+.rong-pin-detail-received .rong-pin-received-expand:after {
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+.rong-list-new-pin {
+  position: relative;
+}
+
+.rong-pin-file-box {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  float: left;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rong-list-new-pin em {
+  position: absolute;
+  min-width: 8px;
+  top: 50%;
+  height: 8px;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  background: #f45349;
+  z-index: 10;
+  transform: translate(50%, -50%);
+  right: 22px;
+}
+
+.rong-pin-receive-confirm em {
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.rong-pin-users-hd {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.rong-pin-users-hd a {
+  position: relative;
+  float: left;
+  padding-right: 12px;
+  color: #008af3;
+}
+
+.rong-pin-users-hd span {
+  float: right;
+  color: #777;
+}
+
+.rong-pin-users-hd a:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 5px;
+  transition: all 0.5s;
+  transform: rotate(135deg);
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #008af3;
+  border-right: 1px solid #008af3;
+}
+
+.rong-pin-expand .rong-pin-users-hd a:after {
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+.rong-pin-user {
+  margin-top: 10px;
+}
+
+.rong-pin-user h3 {
+  color: #777;
+}
+
+.rong-pin-reply {
+  margin-top: 10px;
+  border-top: none;
+}
+
+.rong-pin-reply-bottom {
+  border-top: 1px solid #e3e3e3;
+}
+
+.rong-pin-reply-bd {
+  margin-top: 10px;
+}
+
+.rong-pin-reply-bd .rong-avatar {
+  float: left;
+}
+
+.rong-pin-reply-bd p {
+  margin-top: 5px;
+  word-break: break-all;
+  color: #777;
+  padding-right: 12px;
+}
+
+.rong-pin-reply-text {
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.rong-pin-reply-text p {
+  margin-top: 0;
+  user-select: text;
+}
+
+.rong-pin-reply-form {
+  position: absolute;
+  bottom: 0;
+  width: 94%;
+  margin-top: 10px;
+  height: 62px;
+  left: 3%;
+  right: 3%;
+  background-color: white;
+  z-index: 10;
+}
+
+.rong-pin-reply-form form {
+  position: relative;
+  transform: translateY(-50%);
+  top: 45%;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.rong-pin-reply-form .rong-pin-reply-box {
+  width: 78%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  position: relative;
+}
+
+.rong-pin-reply-form textarea {
+  width: 100%;
+  max-height: 300px;
+  resize: none;
+  line-height: 20px;
+  border: none;
+  position: absolute;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rong-pin-reply-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 208px;
+  width: 54px;
+  font-size: 14px;
+}
+
+.rong-pin-dialog {
+  width: 660px;
+  padding-bottom: 0;
+}
+
+.rong-pin-dialog .rong-group-search-field {
+  margin: 10px 15px;
+}
+
+.rong-pin-dialog .rong-group-userlist-bd {
+  height: 229px;
+}
+
+.rong-pin-dialog .rong-pin-content {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+  height: 366px;
+}
+
+.rong-pin-dialog .rong-pin-content .rong-pin-userlist-tab {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.rong-pin-dialog .rong-pin-content .rong-pin-userlist-tab a {
+  font-size: 14px;
+  color: #333;
+  width: 33%;
+  float: left;
+  line-height: 47px;
+  text-align: center;
+}
+
+.rong-pin-dialog .rong-pin-content .rong-pin-userlist-tab a.rong-pin-tab-selected {
+  border-bottom: 3px solid #008af3;
+}
+
+.rong-pin-dialog .rong-pin-userlist {
+  border-right: 1px solid #e3e3e3;
+  position: relative;
+}
+
+.rong-pin-dialog .rong-pin-selected-title {
+  line-height: 30px;
+  margin: 10px 0 0 12px;
+  font-weight: 600;
+  color: #868686;
+}
+
+.rong-pin-dialog .rong-pin-selected-border {
+  margin: 0 12px 0 12px;
+  padding: 0 10px;
+  width: auto;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  height: 34px;
+  overflow: auto;
+  position: relative;
+}
+
+.rong-pin-dialog .rong-pin-selected-border ul {
+  float: left;
+  height: 100%;
+}
+
+.rong-pin-dialog .rong-pin-selected-border ul li {
+  float: left;
+  border-radius: 5px;
+  color: white;
+  line-height: 20px;
+  font-size: 12px;
+  background: #54a6ff;
+  padding: 0 0 0 6px;
+  margin: 6px 10px 6px 0;
+}
+
+.rong-pin-dialog .rong-pin-selected-border ul span {
+  line-height: 18px;
+  float: right;
+  width: 16px;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.rong-pin-dialog .rong-pin-selected-border .hide {
+  display: none;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-title {
+  margin-top: 13px;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border {
+  height: 238px;
+  width: calc(100% - 24px);
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 25px 0;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border textarea {
+  width: 100%;
+  border: none;
+  height: 100%;
+  resize: none;
+  outline: none;
+  padding: 8px 10px 0 10px;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border a.rong-pin-attach-number {
+  position: absolute;
+  right: 86px;
+  bottom: 7px;
+  font-size: 12px;
+  color: #54a6ff;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border .rong-pin-add-attachment {
+  position: absolute;
+  right: 10px;
+  bottom: 7px;
+  font-size: 12px;
+  color: #54a6ff;
+  z-index: 0;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border .rong-pin-add-attachment .rong-pin-add-attachment-logo {
+  position: absolute;
+  left: -16px;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-image: url("images/icon.svg?v2");
+  background-size: 150px auto;
+  background-position: -84px -1918px;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border .rong-pin-add-files {
+  width: 62px;
+  opacity: 0;
+  font-size: 100px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border .rong-pin-attach-disabled {
+  cursor: default;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border a.rong-pin-attach-number-english {
+  right: 60px;
+}
+
+.rong-pin-dialog .rong-pin-selected-content-border a.rong-pin-scan-attach-full {
+  right: 10px;
+}
+
+.rong-pin-dialog .rong-pin-buttons {
+  height: 116px;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #e3e3e3;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-send-box {
+  line-height: 25px;
+  height: 25px;
+  width: 100%;
+  margin-top: 13px;
+  font-size: 13px;
+  position: relative;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box button {
+  width: 120px;
+  height: 38px;
+  font-size: 15px;
+  border: 1px solid #e3e3e3;
+  color: #8c8c8c;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box .rong-pin-button-cancel {
+  margin-right: 40px;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box .rong-pin-button-cancel:hover {
+  color: #008af3;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box .rong-pin-button-send {
+  border-color: #eee;
+  background-color: #fff;
+  color: #ccc;
+  margin-left: 40px;
+  cursor: default;
+}
+
+.rong-pin-dialog .rong-pin-buttons .rong-pin-button-box .rong-pin-button-send-sel {
+  color: #008af3;
+  cursor: pointer;
+}
+
+.rong-pin-dialog .rong-pin-add-attach-english input.rong-pin-add-files {
+  width: 38px;
+}
+
+.rong-pin-send-select {
+  float: left;
+  position: relative;
+  margin-left: 28px;
+}
+
+.rong-pin-send-select span {
+  float: left;
+  margin-right: 8px;
+}
+
+.rong-pin-send-select .rong-pin-select-time-box {
+  width: 160px;
+}
+
+.rong-pin-send-select .rong-pin-select-type-box {
+  width: 120px;
+}
+
+.rong-pin-send-select button {
+  font-size: 13px;
+  position: relative;
+  float: left;
+  border: 1px solid #e3e3e3;
+  background: white;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.rong-pin-send-select button:after {
+  right: 8px;
+  top: 6px;
+  content: "";
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  position: absolute;
+  border-bottom: 1px solid #d7d7d7;
+  border-right: 1px solid #d7d7d7;
+}
+
+.rong-pin-send-select .rong-pin-time-selecting {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-color: #aad1fe;
+  border-left-color: #aad1fe;
+  border-right-color: #aad1fe;
+  color: #a0a0a0;
+}
+
+.rong-pin-send-select .rong-pin-sepcific-selecting {
+  border-bottom-color: #aad1fe;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.rong-pin-send-select ul {
+  position: absolute;
+  right: 0;
+  width: 160px;
+  top: 100%;
+  border-radius: 3px;
+  border: 1px solid #aad1fe;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: white;
+}
+
+.rong-pin-send-select ul li {
+  text-align: center;
+  font-size: 13px;
+  height: 25px;
+}
+
+.rong-pin-send-select ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+.rong-pin-send-select ul li:hover {
+  background-color: #dfe8f3;
+}
+
+.rong-pin-send-select ul.rong-pin-select-type {
+  width: 120px;
+}
+
+.rong-dialog-attach {
+  height: 484px;
+  background-color: white;
+}
+
+.rong-dialog-attach .rong-pin-attach-title {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: 40px;
+  background-color: #f2f5f9;
+}
+
+.rong-dialog-attach .rong-pin-attach-title h3 {
+  height: 100%;
+  line-height: 40px;
+  margin-left: 22px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content {
+  height: 384px;
+  overflow: auto;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box {
+  height: 60px;
+  position: relative;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-attach-upload-progress {
+  position: absolute;
+  top: 86%;
+  left: 0;
+  height: 2px;
+  background-color: #E3E3E3;
+  width: 88%;
+  margin-left: 63px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-attach-upload-progress span {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #2689fb;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-upload-progress-text {
+  text-align: center;
+  color: #2689fb;
+  line-height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-upload-pin-remove i {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  margin-top: -6px;
+  background-position: -18px -2322px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-upload-pin-remove i:hover {
+  background-position: -53px -2322px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-upload-pin-cancel i {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  background-position: -18px -2345px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-upload-pin-cancel i:hover {
+  background-position: -54px -2345px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-file-box {
+  margin-left: 18px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box i {
+  background-image: url("images/icon.svg?v2");
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-attach-doc {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left;
+  margin-left: 8px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-attach-doc p.rong-pin-doc-title {
+  display: -webkit-box;
+  font-size: 14px;
+  overflow: hidden;
+  height: 22px;
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-box-orient: verical;
+  color: #272950;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-attach-doc .rong-pin-doc-size {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box a {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #777777;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-renew {
+  right: 102px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-renew i {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  width: 8px;
+  height: 11px;
+  margin-top: -6px;
+  background-position: -18px -2369px;
+}
+
+.rong-dialog-attach .rong-pin-attach-content .rong-pin-attach-box .rong-pin-renew i:hover {
+  background-position: -50px -2369px;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons {
+  height: 57px;
+  line-height: 57px;
+  position: relative;
+  text-align: center;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons button {
+  width: 123px;
+  height: 39px;
+  background-color: white;
+  border-radius: 5px;
+  color: #008af3;
+  border: 1px solid #e3e3e3;
+  font-size: 14px;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons div, .rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count {
+  position: absolute;
+  height: 15px;
+  right: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons div a, .rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count a {
+  cursor: default;
+  z-index: 0;
+  display: block;
+  line-height: 15px;
+  color: #008af3;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons div .rong-pin-attach-full, .rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count .rong-pin-attach-full {
+  color: #c6c6c6;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons div input[type="file"], .rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  font-size: 100px;
+  cursor: pointer;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons div input.rong-pin-attach-disabled[type='file'], .rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count input.rong-pin-attach-disabled[type='file'] {
+  cursor: default;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-count {
+  right: 85px;
+  line-height: 1;
+  font-size: 14px;
+  color: #008af3;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-english {
+  right: 60px;
+}
+
+.rong-dialog-attach .rong-pin-attach-buttons .rong-pin-attach-full {
+  color: #c6c6c6;
+}
+
+.rong-pin-item-hasatta {
+  margin-bottom: 0;
+}
+
+.rong-pin-detail .rong-pin-attach-list {
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.rong-pin-detail .rong-pin-attach-box {
+  height: 52px;
+  position: relative;
+}
+
+.rong-pin-detail .rong-pin-attach-box i {
+  background-image: url("images/icon.svg?v2");
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+}
+
+.rong-pin-detail .rong-pin-attach-box .rong-pin-attach-doc {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left;
+  margin-left: 8px;
+}
+
+.rong-pin-detail .rong-pin-attach-box .rong-pin-attach-doc .rong-pin-doc-title {
+  display: -webkit-box;
+  height: 21px;
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-width: 170px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.rong-pin-detail .rong-pin-attach-box .rong-pin-attach-doc .rong-pin-doc-size {
+  font-size: 12px;
+  color: #949494;
+}
+
+.rong-pin-detail .rong-pin-attach-box a {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -17px;
+  margin-right: 20px;
+  display: flex;
+  background-image: url(images/download-upload.svg);
+  background-repeat: no-repeat;
+  background-size: 279px auto;
+  background-color: transparent;
+  background-position: -28px -207px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a:hover {
+  cursor: pointer;
+}
+
+.rong-pin-detail .rong-pin-attach-box a:hover {
+  background-position: -108px -207px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a:active {
+  background-position: -188px -207px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-resume {
+  background-position: -28px -147px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-resume:hover {
+  background-position: -108px -147px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-resume:active {
+  background-position: -188px -147px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-un-download {
+  background-position: -28px -267px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-un-download:hover {
+  background-position: -108px -267px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-un-download:active {
+  background-position: -188px -267px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-ready {
+  background-position: -28px -27px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-ready:hover {
+  background-position: -108px -27px;
+}
+
+.rong-pin-detail .rong-pin-attach-box a.rong-pin-download-ready:active {
+  background-position: -188px -27px;
+}
+
+.rong-pin-attach-progress-bk {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #dfe7f3;
+}
+
+.rong-pin-attach-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background: #2d8cfa;
+}
+
+.rong-pin-file {
+  background-position: -55px -1037px;
+}
+
+.rong-pin-file-expired {
+  background-position: -57px -2217px;
+}
+
+.rong-pin-file-doc, .rong-pin-file-docx, .rong-pin-file-docm, .rong-pin-file-dotx, .rong-pin-file-dotm {
+  background-position: -11px -990px;
+}
+
+.rong-pin-file-doc-expired, .rong-pin-file-docx-expired, .rong-pin-file-docm-expired, .rong-pin-file-dotx-expired, .rong-pin-file-dotm-expired {
+  background-position: -13px -2170px;
+}
+
+.rong-pin-file-xls, .rong-pin-file-xlsx, .rong-pin-file-xlsm, .rong-pin-file-xltx, .rong-pin-file-xltm, .rong-pin-file-xlsb, .rong-pin-file-xlam {
+  background-position: -99px -990px;
+}
+
+.rong-pin-file-xls-expired, .rong-pin-file-xlsx-expired, .rong-pin-file-xlsm-expired, .rong-pin-file-xltx-expired, .rong-pin-file-xltm-expired, .rong-pin-file-xlsb-expired, .rong-pin-file-xlam-expired {
+  background-position: -101px -2170px;
+}
+
+.rong-pin-file-pptx, .rong-pin-file-pptm, .rong-pin-file-ppsx, .rong-pin-file-ppsx, .rong-pin-file-pptx, .rong-pin-file-potm, .rong-pin-file-ppam, .rong-pin-file-ppt {
+  background-position: -99px -1037px;
+}
+
+.rong-pin-file-pptx-expired, .rong-pin-file-pptm-expired, .rong-pin-file-ppsx-expired, .rong-pin-file-ppsx-expired, .rong-pin-file-pptx-expired, .rong-pin-file-potm-expired, .rong-pin-file-ppam-expired, .rong-pin-file-ppt-expired {
+  background-position: -101px -2217px;
+}
+
+.rong-pin-file-pdf {
+  background-position: -11px -1037px;
+}
+
+.rong-pin-file-pdf-expired {
+  background-position: -13px -2217px;
+}
+
+.rong-pin-file-mp3, .rong-pin-file-cda, .rong-pin-file-wav, .rong-pin-file-ra, .rong-pin-file-midi {
+  background-position: -55px -990px;
+}
+
+.rong-pin-file-mp3-expired, .rong-pin-file-cda-expired, .rong-pin-file-wav-expired, .rong-pin-file-ra-expired, .rong-pin-file-midi-expired {
+  background-position: -57px -2170px;
+}
+
+.rong-pin-file-avi, .rong-pin-file-rmvb, .rong-pin-file-rm, .rong-pin-file-wmv, .rong-pin-file-vcd, .rong-pin-file-svcd, .rong-pin-file-dat, .rong-pin-file-vob, .rong-pin-file-mov, .rong-pin-file-mp4, .rong-pin-file-mkv, .rong-pin-file-asf, .rong-pin-file-flv {
+  background-position: -9px -1801px;
+}
+
+.rong-pin-file-avi-expired, .rong-pin-file-rmvb-expired, .rong-pin-file-rm-expired, .rong-pin-file-wmv-expired, .rong-pin-file-vcd-expired, .rong-pin-file-svcd-expired, .rong-pin-file-dat-expired, .rong-pin-file-vob-expired, .rong-pin-file-mov-expired, .rong-pin-file-mp4-expired, .rong-pin-file-mkv-expired, .rong-pin-file-asf-expired, .rong-pin-file-flv-expired {
+  background-position: -13px -2264px;
+}
+
+.rong-pin-file-rar,
+.rong-pin-file-zip {
+  background-position: -53px -1801px;
+}
+
+.rong-pin-file-rar-expired,
+.rong-pin-file-zip-expired {
+  background-position: -57px -2264px;
+}
+
+.rong-pin-receiver-selected-org .rong-group-hd-org {
+  border-bottom-color: #008af3;
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-org .rong-group-hd-star {
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-org .rong-group-hd-friend {
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-star .rong-group-hd-star {
+  border-bottom-color: #008af3;
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-star .rong-group-hd-org {
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-star .rong-group-hd-friend {
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-friend .rong-group-hd-friend {
+  border-bottom-color: #008af3;
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-friend .rong-group-hd-org {
+  width: 33%;
+}
+
+.rong-pin-receiver-selected-friend .rong-group-hd-star {
+  width: 33%;
+}
+
+.rong-pin-received-add .rong-group-selected-bd {
+  height: 100%;
+}
+
+.rong-pin-detail-shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rong-pin-status-unconfirm {
+  background: #ff6000;
+  color: white;
+}
+
+.rong-nav-pin-comment .rong-message-count {
+  right: -5px;
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.rong-pin-reply-count-box {
+  position: relative;
+}
+
+.rong-pin-reply-count-box .rong-pin-reply-mark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #f45349;
+  right: -2px;
+  top: 5px;
+  border-radius: 50%;
+}
+
+.rong-empty-pin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rong-empty-pin .rong-empty-pin-hd {
+  height: 55px;
+}
+
+.rong-empty-pin .rong-empty-pin-bd {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  padding-top: 182px;
+  background: url(images/empty-pin.png) no-repeat center top;
+  text-align: center;
+  color: #717579;
+}
+
+.rong-pin-select-sepcific-time {
+  position: absolute;
+  left: 88px;
+  top: calc(100% + 2px);
+  height: 75px;
+  border-radius: 3px;
+  padding: 0 8px;
+  background-color: white;
+  border: 1px solid #aad1fe;
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content {
+  float: left;
+  height: 55px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content .rong-pin-specific-year {
+  width: 47px;
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content .rong-pin-specific-t {
+  min-width: 40px;
+  float: left;
+  height: 100%;
+  text-align: center;
+  border: 1px solid #e3e3e3;
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content .rong-pin-specific-t p {
+  height: 13px;
+  line-height: 13px;
+  font-size: 13px;
+  color: #008af3;
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content .rong-pin-specific-t a {
+  display: block;
+  height: 21px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  color: #a9afb8;
+}
+
+.rong-pin-select-sepcific-time .rong-pin-sepcific-time-content .rong-pin-specific-mark {
+  float: left;
+  padding: 0 3px;
+  height: 55px;
+  line-height: 55px;
+  color: gray;
+}

@@ -1,0 +1,23 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner rong-dialog-ack">
+        <a href="" class="rong-dialog-close" :title="locale.close" @click.prevent="close"></a>
+
+        <div class="rong-dialog-hd">
+            <h2 class="rong-dialog-title"></h2>
+        </div>
+        <div class="rong-collect-dialog-content" v-rong-scroll-bar-y>
+            <div class="rong-collect-dialog-user rong-disable-select">
+                <span v-if="self">{{self}} - {{item.user.name}}</span>
+                <span v-else>{{item.user.name}}</span>
+            </div>
+            <div class="rong-conversation-other">
+                <component :is="getMessageType(item)"
+                    height="104px" :message="item" :detail="true"></component>
+            </div>
+            <div>
+                <div class="rong-collect-dialog-border rong-disable-select"><span>{{locale.components.collect.collected}}</span> {{item.sentTime | dateFormat}}</div>
+            </div>
+            
+        </div>
+    </div>
+</div>

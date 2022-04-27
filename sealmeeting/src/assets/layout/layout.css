@@ -1,0 +1,192 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 0;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 75, 75, 0.5);
+  border: 0;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 75, 75, 0.8);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.rong-scroll-bar-y {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  width: 9px;
+  height: 100%;
+  overflow: auto;
+  z-index: 10;
+  opacity: 0;
+}
+
+.rong-scroll-bar-show {
+  opacity: 1;
+}
+
+.rong-scroll-content::-webkit-scrollbar {
+  width: 0;
+}
+
+.blue {
+  color: #00aaff;
+  border: 1px solid #00aaff;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "font-family:PingFangSC-Medium,PingFang SC";
+  color: #2e3538;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.el-textarea .el-textarea__inner {
+  resize: none;
+}
+
+.el-checkbox__inner {
+  width: 12px;
+  height: 12px;
+}
+
+.el-form--label-top .el-form-item__label {
+  padding: 0px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.el-dialog__title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.el-dropdown-menu {
+  text-align: center;
+}
+
+.el-message-box {
+  padding-bottom: 30px;
+}
+
+.el-message-box .el-message-box__btns {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e3538;
+  line-height: 20px;
+}
+
+.el-message-box .el-message-box__btns button {
+  padding: 10px 53px;
+  border-radius: 2px;
+}
+
+.el-message-box .el-message-box__container {
+  margin: auto;
+  width: 266px;
+  margin-top: 30px;
+  margin-bottom: 56px;
+}
+
+.el-dialog .el-dialog__body {
+  padding: 12px 0px;
+  min-height: 70px;
+}
+
+.no-icon-class {
+  display: none;
+}
+
+.prompt-update-name .el-message-box__container {
+  display: none !important;
+}
+
+.prompt-update-name .el-message-box__input {
+  width: 274px;
+  margin: auto;
+}

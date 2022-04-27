@@ -1,0 +1,112 @@
+<div class="rong-viewer-main" v-if="currentMedia">
+    <transition name="rong-dialog-tip">
+        <div v-if="tip" class="rong-dialog-tip">{{tip}}</div>
+    </transition>
+    <div class="rong-media-show" v-if="loadError" :class="{'rong-media-show-high': gallery.show}">
+        <div ref="mediaContainer" class="rong-media-main" :class="{'rong-media-main-web': isWeb}" @mousemove="mousemove"  @mouseleave="disableNav" @click="areaClick">
+            <img class="rong-media-image rong-media-load-error" style="transform: translateX(-50%) translateY(-50%)"/>
+
+            <button :disabled="currentState.isFirst" class="rong-media-nav rong-media-prev" type="button" :title="lastPicTips" v-show="showNav.prev" @click="clickPrev"></button>
+            <button :disabled="currentState.isLast" class="rong-media-nav rong-media-next" type="button" :title="nextPicTips" v-show="showNav.next" @click="clickNext"></button>
+        </div>
+    </div>
+    <div class="rong-media-show" v-else :class="{'rong-media-show-high': gallery.show}" :key="currentMedia.thumbnail">
+        <div v-if="currentState.isVideo"  ref="mediaContainer" class="rong-media-main" :class="{'rong-media-main-web': isWeb}" @mousemove="mousemove"  @mouseleave="disableNav" @click="areaClick">
+            <video ref="mediaMain" id="videoMedia" class="rong-media-video" @play="play" @ended="ended">
+            您的浏览器不支持 video 标签。
+            </video>
+            <img class="rong-media-image" ref="poster" :src="getBase64(currentMedia.thumbnail)" style="transform: translateX(-50%) translateY(-50%);" v-show="!loadDone && !currentState.isCache"/>
+            <div v-if="!loadDone" class="rong-media-loading">
+                <span></span>
+                <p>{{locale.tips.loading}}</p>
+            </div>
+            <a class="rong-sight-play" @click.prevent="playVideo" v-show="loadDone && !playing"></a>
+            <div class="rong-video-control" ref="videoControl" v-if="playing">
+                <span class="rong-video-control-play" :class="currentVideo.paused ? 'rong-video-control-pause' : 'rong-video-control-playing'" @click="playVideo"></span>
+                <div class="rong-video-progress-control">
+                    <span class="rong-video-progress-time-start">{{currentVideo.currentTime}}</span>
+                    <div class="rong-video-progress-wrap" ref="progressWrap" @mousedown="videoSeek($event)">
+                        <div class="rong-video-progress-play" :style="{width: currentVideo.progress + '%'}"></div>
+                        <span class="rong-video-progress-circle" @mousedown="dragPlayButton($event)" :style="{left: changedProgress + '%'}"></span>
+                    </div>
+                    <span class="rong-video-progress-time-end">{{currentVideo.duration}}</span>
+                </div>
+                <span class="rong-video-control-voice" :class=" videoVoice == 0 ? 'rong-video-control-voice-mute' : 'rong-video-control-voice-common'" @click.self="muted()">
+                    <div class="rong-video-voice-content">
+                        <div class="rong-video-voice-wrap" @mousedown="voiceSeek($event)">
+                            <div class="rong-video-voice-wrap-content">
+                                <div class="rong-video-voice-value" :style="{height: videoVoice + '%'}"></div>
+                                <span class="rong-video-voice-circle" @mousedown="dragVoiceButton($event)" :style="{top: (100 - videoVoice) + '%'}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <button :disabled="currentState.isFirst" class="rong-media-nav rong-media-prev" type="button" :title="lastPicTips" v-show="showNav.prev" @click="clickPrev"></button>
+            <button :disabled="currentState.isLast" class="rong-media-nav rong-media-next" type="button" :title="nextPicTips" v-show="showNav.next" @click="clickNext"></button>
+        </div>
+        <div v-else ref="mediaContainer" class="rong-media-main" 
+        :class="{'rong-image-dragable': winDragable, 'rong-media-main-web': isWeb}"
+        @mousemove="mousemove" 
+        @mouseleave="disableNav"
+        @mousewheel="wheelZoom($event)"
+        @click="areaClick">
+            <img ref="mediaMain" class="rong-media-image" draggable="false"
+            v-show="loadDone" 
+            :style="{transform: 'scale(' + scale + ')' + 'rotate(' + angle + 'deg)' + 'translateX(-50%) translateY(-50%)'}"
+            @mousedown="dragImg($event)" />
+            <img class="rong-media-image" v-show="!loadDone" ref="thumbnail" :src="getBase64(currentMedia.thumbnail)" style="transform: translateX(-50%) translateY(-50%)"/>
+            <div v-if="!loadDone" class="rong-media-loading">
+                <span></span>
+                <p>{{locale.tips.loading}}</p>
+            </div>
+            <transition name="rong-dialog-ratio">
+                <div v-if="showScale" class="rong-dialog-ratio">{{currentState.scale}}%</div>
+            </transition>
+            <button :disabled="currentState.isFirst" class="rong-media-nav rong-media-prev" type="button" :title="lastPicTips" v-show="showNav.prev" @click="clickPrev"></button>
+            <button :disabled="currentState.isLast" class="rong-media-nav rong-media-next" type="button" :title="nextPicTips" v-show="showNav.next" @click="clickNext"></button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="rong-gallery" v-show="gallery.show">
+            <div class="rong-gallery-nav" v-show="showPageIndex">
+                <button :title="lastTips" class="rong-gallery-prev" :disabled="isFirst" @click="prevPage"></button>
+            </div>
+            <ul class="rong-image-gallery">
+                <li v-for="(item, index) in imageList">
+                    <a v-show="isVisible(index)" @click.prevent="showImage(index)">
+                        <div class="rong-image-preview-box" :class="{'rong-image-preview-selected': index == selectIndex}">
+                            <img :src="getBase64(item.thumbnail)" class="rong-image-preview"/>
+                            <div class="rong-image-mask"></div>
+                        </div>
+                    </a>
+                    <div v-if="isVisible(index) && isVideo(item)" class="rong-gallery-video-icon"></div>
+                </li>
+            </ul>
+            <div class="rong-gallery-nav" v-show="showPageIndex">
+                <button :title="nextTips" class="rong-gallery-next":disabled="isLast" @click="nextPage"></button>
+            </div>
+        </div>
+        <div class="rong-media-toolbar">
+            <div class="rong-toolbar-item rong-toolbar-resize">
+                <button :title="locale.btns.preview" class="rong-toolbar-preview" @click="toggle"></button>
+            </div>
+            <div class="rong-toolbar-item">
+                <button :title="locale.btns.zoomIn" class="rong-toolbar-zoomin" @click="zoomIn" :disabled="currentState.isVideo || isZoomMax(zoomState)"></button>
+            </div>
+            <div class="rong-toolbar-item">
+                <button :title="locale.btns.zoomOut" class="rong-toolbar-zoomout" @click="zoomOut" :disabled="currentState.isVideo || isZoomMin(zoomState)"></button>
+            </div>
+            <div class="rong-toolbar-item">
+                <button :title="locale.btns.rotate" class="rong-toolbar-rotate" @click="rotate" :disabled="currentState.isVideo"></button>
+            </div>
+            <div class="rong-toolbar-item">
+                <!--  36513 - 【图片】图片下载过程中应不能保存.
+                     下载过程中, 不可用 saveAs 纽扣.
+                -->
+                <button type="button" :title="locale.btns.saveAs" class="rong-toolbar-download" :disabled="!loadDone" @click="download"></button>
+            </div>
+        </div>
+    </div>
+</div>

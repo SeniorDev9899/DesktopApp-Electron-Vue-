@@ -1,0 +1,17 @@
+{
+    "appid": "",
+    "name": "",
+    "version": "",
+    "arch": ["arm64"],
+    "permissions": {
+        "autostart": false,
+        "notification": true,
+        "trayicon": true,
+        "clipboard": true,
+        "account": true,
+        "bluetooth": false,
+        "camera": true,
+        "audio_record": true,
+        "installed_apps": false
+    }
+}

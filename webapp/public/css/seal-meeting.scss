@@ -1,0 +1,168 @@
+$blue: #008af3;
+$normal-border: 1px solid #e3e3e3;
+
+.rong-select-user .rong-group-selected-bd {
+    height: 370px;
+}
+
+.content-container {
+    width: 384px;
+    margin: auto;
+
+    form {
+        margin-top: 50px;
+
+        .members-list div {
+            display: inline-block;
+        }
+
+        .rong-members {
+            height: 120px;
+            position: relative;
+            ul {
+                li {
+                    display: inline-block;
+                    width: 36px;
+                    height: 55px;
+                    margin: 8px 10px 0 0;
+                }
+                width: auto;
+                position: relative;
+                overflow-y: auto;
+                height: 100%;
+            }
+
+            .rong-scroll-bar-y {
+                width: 4px;
+            }
+        }
+
+        .relative-line {
+            position: relative;
+        }
+
+        .line-item {
+            width: 100%;
+            margin-bottom: 10px;
+            position: relative;
+            height: 54px;
+            label {
+                width: 84px;
+                text-align: left;
+                display: inline-block;
+            }
+
+            input {
+                border: 0;
+                // background: transparent;
+                border: 1px solid #D2D2D3;
+                border-radius: 2;
+                display: inline-block;
+                width: 300px;
+                height: 32px;
+            }
+            .rong-custom-select {
+                width: 300px;
+            }
+
+            .input-error {
+                border-color: #ff7676;
+            }
+            .time-select {
+                display: inline-block;
+                width: 100%;
+                z-index: 120;
+                position: absolute;
+                left: 84px;
+                .rong-pin-select-sepcific-time {
+                    left: 0;
+                    top: 36px;
+                }
+            }
+
+            .position-right {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .input-message-error {
+                font-size: 13px;
+                margin-top: 2px;
+                margin-left: 81px;
+                color: #ff7676;
+            }
+        }
+
+        .form-buttons {
+            margin-top: 0;
+            text-align: center;
+            margin-top: 30px;
+            .rong-button {
+                width: 116px;
+                background-color: #3499ff;
+                color: #ffffff;
+                height: 35px;
+                cursor: pointer;
+                &:hover {
+                    background-color: lighten(#3499ff, 8%);
+                }
+                &:active {
+                    background-color: lighten(#3499ff, 0%);
+                }
+            }
+            .rong-button[disabled] {
+                border-color: #eee;
+                background-color: #fff;
+                color: #ccc;
+            }
+        }
+    }
+
+    .title {
+        font-size: 18px;
+        padding-top: 32px;
+        text-align: center;
+        font-weight: 400;
+        color: #333333;
+    }
+    .up-page {
+        position: absolute;
+        top: 32px;
+        left: 14px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-image: url(images/left_arrow.svg);
+    }
+
+    .rong-item-remove {
+        background-image: url(images/remove.svg);
+        position: absolute;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-repeat: no-repeat;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        background-size: contain;
+        cursor: pointer;
+    }
+}
+
+.rong-im {
+
+    // .rong-os-darwin,
+    // .rong-os-web-darwin,
+    // .rong-os-win32,
+    // .rong-os-web-win32,
+    // .rong-os-linux,
+    // .rong-os-web-linux {
+    ::-webkit-scrollbar {
+        height: 0;
+    }
+
+    // }
+}
+

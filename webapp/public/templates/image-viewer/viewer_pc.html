@@ -1,0 +1,12 @@
+<div class="rong-viewer-inner">
+    <div v-if="os === 'win32' || os === 'linux' "  class="rong-image-titlebar">
+        <div class="rong-titlebar-logo"><span></span></div>
+        <div class="rong-image-titlebar-buttons">
+            <a @click.prevent="min" class="rong-image-titlebar-min" href="" :title="locale.btns.minimize"></a>
+            <a @click.prevent="restore" v-if="isMaxWindow" class="rong-image-titlebar-restore" href="" :title="locale.btns.restore"></a>
+            <a @click.prevent="max" v-else class="rong-image-titlebar-max" href="" :title="locale.btns.maximize"></a>
+            <a @click.prevent="close" class="rong-icon rong-image-titlebar-close" href="" :title="locale.btns.close"></a>
+        </div>
+    </div>
+    <component ref='imageViewer' is="image-viewer" :file-token="fileToken" :image-list="imageList" :default-index="selectIndex" :lan="lan" :is-max-window="isMaxWindow" @close="close"></component>
+</div>

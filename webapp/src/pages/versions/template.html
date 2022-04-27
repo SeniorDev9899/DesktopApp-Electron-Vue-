@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>版本管理</title>
+<script src="lib/vue-2.3.4.min.js"></script>
+<script src="lib/jquery-3.1.1.js"></script>
+<script src="lib/moment-2.17.1.js"></script>
+<script src="setting.js"></script>
+</head>
+<body>
+<div id="appversion" class="rong-appversion">
+    <div class="rong-appversion-inner" :class="['rong-os-' + os]">
+        <div v-if="os === 'win32' || os === 'linux' || os === 'darwin'" class="rong-titlebar rong-dragable" :class="'rong-titlebar-' + os">
+            <div class="rong-titlebar-buttons" v-if="os === 'win32' || os === 'linux'">
+                <a @click.prevent="min" class="rong-titlebar-min" href="" :title="locale.btns.minimize"></a>
+                <a @click.prevent="restore" v-if="isMaxWindow" class="rong-titlebar-restore" href="" :title="locale.btns.restore"></a>
+                <a @click.prevent="max" v-else class="rong-titlebar-max" href="" :title="locale.btns.maximize"></a>
+                <a @click.prevent="close" class="rong-titlebar-close" href="" :title="locale.btns.close"></a>
+            </div>
+            <!-- 39331 - 【设置】英文语言模式下，功能介绍及版本更新没有变成英文显示 -->
+            <span>{{locale.components.feature.title}}</span>
+        </div>
+        <div class="rong-version-main" :class="'rong-version-main-' + os">
+            <div class="rong-version-list">
+                <template v-if="versionList.length">
+                    <ul>
+                        <li v-for="version in versionList" class="rong-version-intro" :class="{ 'rong-version-selected': version === selected }" @click.prevent="selectVersion(version)">
+                            <div class="rong-version-subtitle">v {{version.version_name}} {{locale.components.feature.releaseNote}}</div>
+                            <div class="rong-version-time">{{getTime(version)}}</div>
+                        </li>
+                    </ul>
+                </template>
+            </div>
+            <template v-if="selected">
+                <div class="rong-version-detail">
+                    <div class="rong-version-detail-box">
+                        <h3>v {{selected.version_name}} {{locale.components.feature.releaseNote}}</h3>
+                        <p class="rong-version-time">{{getTime(selected)}}</p>
+                        <ul class="rong-version-detail-list">
+                            <li v-for="note in selectedNote">
+                                {{note}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.rong-titlebar {
+  display: none;
+}
+.rong-titlebar,
+.rong-dragable {
+  -webkit-app-region: drag;
+}
+.rong-dragable a,
+.rong-dragable input,
+.rong-dragable button {
+  -webkit-app-region: no-drag;
+}
+
+.rong-rtc .rong-rtc-opt .rong-user-title {
+  padding-left: 100px;
+}
+.rong-rtc .rong-rtc-opt .rong-user-timer {
+  left: 260px!important;
+}
+.rong-login .rong-login-content,
+.rong-login .rong-opt-resolution {
+  -webkit-app-region: no-drag;
+}

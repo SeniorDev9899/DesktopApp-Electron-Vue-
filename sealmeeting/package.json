@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "web:serve": "vue-cli-service serve",
+    "web:build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "readJenkins": "node ./build/scripts/readJenkins.js"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "@rongcloud/engine": "4.4.0-enterprise.2",
+    "@rongcloud/imlib-v2": "2.9.0-enterprise.5",
+    "@rongcloud/plugin-rtc": "5.1.0-enterprise.4",
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1",
+    "config-ini-parser": "^1.5.9",
+    "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.39",
+    "fs": "^0.0.1-security",
+    "log4js": "^6.3.0",
+    "moment": "^2.29.1",
+    "qiniu-js": "^3.1.4",
+    "sass-loader": "^8.0.2",
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.1.4",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "electron": "11.1.1",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-notarize": "^1.0.0",
+    "filemanager-webpack-plugin": "^6.1.4",
+    "node-sass": "^4.13.1",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-electron-builder": "^2.0.0"
+  },
+  "name": "RCMeeting",
+  "version": "2.1.1",
+  "homepage": "http://www.rongcloud.cn",
+  "description": "Meeting Description",
+  "author": "RongCloud, Inc."
+}

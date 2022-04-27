@@ -1,0 +1,6 @@
+[submodule "webapp"]
+	path = webapp
+	url = git@gitee.com:rongcloud-enterprise/rce_desktopclient_developer.git
+[submodule "sealmeeting"]
+	path = sealmeeting
+	url = git@gitee.com:rongcloud-enterprise/sealmeeting-pc.git

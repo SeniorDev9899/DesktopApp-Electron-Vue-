@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="../css/about.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="about_container">
+    <div class="top">
+      <div class="info">
+        <div class="title" id="title"></div>
+        <div class="version" id="version"></div>
+      </div>
+      <div class="logo"></div>
+    </div>
+    <div class="bottom">
+      <div class="controls">
+        <button id="home_page" type="button" class="about-button" onclick="goHome()">进入官网</button>
+        <button id="introduction" type="button" class="about-button" onclick="showInfo()">功能介绍</button>
+      </div>
+    </div>
+  </div>
+  <script> 
+    const appConfig = require('./config');
+    const aboutConfig = appConfig.ABOUT;
+    const title = $('title');
+    const version = $('version');
+    // const copyRight = $('copy-right');
+    const homePage = $('home_page');
+    const introduction = $('introduction');
+    const locale = require('./windows/locale/' + RongDesktop.locale).about;
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    title.innerHTML = aboutConfig.TITLE;
+    version.innerHTML = aboutConfig.VERSION;
+
+    homePage.innerHTML = locale.homePage;
+    homePage.style.display = 'none';
+    introduction.innerHTML = locale.introduction;
+
+    function closeWin() {
+      RongDesktop.closeWin();
+    }
+
+    function goHome() {
+      window.open(aboutConfig.URL_HOMEPAGE);  
+    }
+    function showInfo() {
+      RongDesktop.ipcRenderer.send('create', {isLocal: true, path: aboutConfig.URL_INTRODUCTION});
+    }
+  </script>
+</body>
+
+</html>

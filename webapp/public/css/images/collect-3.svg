@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Custom Preset Copy 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.3775726,7.91689914 L25.7446323,0.570131027 C25.9820424,0.429095337 26.2888333,0.507222215 26.429869,0.744632293 C26.5709047,0.982042371 26.4927778,1.28883328 26.2553677,1.42986897 L13.875,8.78454286 L13.875,24 C13.875,24.2761424 13.6511424,24.5 13.375,24.5 C13.0988576,24.5 12.875,24.2761424 12.875,24 L12.875,8.78162974 L0.740849142,1.42759892 C0.504692782,1.28447385 0.429276017,0.977005502 0.572401084,0.740849142 C0.715526151,0.504692782 1.0229945,0.429276017 1.25915086,0.572401084 L13.3775726,7.91689914 Z" id="path-1"></path>
+    </defs>
+    <g id="Custom-Preset-Copy-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(11.000000, 11.000000)">
+            <polygon id="Polygon" stroke="#3A91F3" fill="#3A91F3" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" points="13.375 0 25.066343 6.75 25.066343 20.25 13.375 27 1.68365705 20.25 1.68365705 6.75"></polygon>
+            <g id="Polygon" transform="translate(0.000000, 5.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <polygon stroke="#ECECED" fill="#ECECED" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="13.375 -5 25.066343 1.75 25.066343 15.25 13.375 22 1.68365705 15.25 1.68365705 1.75"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,708 @@
+$blue: #008af3;
+$bdc: #ececed;
+$fontfamily: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+.rong-work {
+    height: 100%;
+    font-family: $fontfamily;
+    font-size: 14px;
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    input {
+        font-size: 100%;
+    }
+    ul {
+        list-style: none;
+    }
+    button {
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        outline: none;
+        cursor: pointer;
+        font-family: colorEmojiFont, "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+        font-size: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: #3a91f3;
+    }
+    .rong-os-web, .rong-os-darwin, .rong-os-web-darwin, .rong-os-win32, .rong-os-web-win32, .rong-os-linux, .rong-os-web-linux {
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(75, 75, 75, 0.5);
+            border: 0;
+            border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(75, 75, 75, 0.8);
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+    .rong-os-win32 {
+        .rong-dialog {
+            top: 0;
+        }
+    }
+    .rong-os-linux {
+        .rong-dialog {
+            top: 0;
+        }
+    }
+}
+.rong-work-inner {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.rong-os-win32 {
+    padding-top: 40px;
+    border: 1px solid #ccc;
+    .rong-titlebar {
+        -webkit-app-region: drag;
+    }
+    .rong-titlebar a,
+    .rong-titlebar input,
+    .rong-titlebar button {
+        -webkit-app-region: no-drag;
+    }
+}
+.rong-os-linux {
+    padding-top: 40px;
+    border: 1px solid #ccc;
+    .rong-titlebar {
+        -webkit-app-region: drag;
+    }
+    .rong-titlebar a,
+    .rong-titlebar input,
+    .rong-titlebar button {
+        -webkit-app-region: no-drag;
+    }
+}
+.rong-os-darwin, .rong-os-OSX {
+    .rong-work-list {
+        padding-top: 20px;
+    }
+    .rong-titlebar,
+    .rong-dragable {
+        -webkit-app-region: drag;
+    }
+    .rong-dragable a,
+    .rong-dragable input,
+    .rong-dragable button,
+    .rong-dragable ul li {
+        -webkit-app-region: no-drag;
+    }
+}
+.rong-titlebar {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: $blue;
+}
+.rong-titlebar-logo {
+    float: left;
+    margin-left: 15px;
+    color: #fff;
+    line-height: 40px;
+}
+.rong-titlebar-buttons {
+    float: right;
+    margin-right: 15px;
+    a {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 10px 0 0 5px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+.rong-titlebar-min {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMTIgMSI+CiAgPG1ldGFkYXRhPjw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIvPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz48L21ldGFkYXRhPgo8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cmVjdCBpZD0i5ZyG6KeS55+p5b2iXzI5IiBkYXRhLW5hbWU9IuWchuinkuefqeW9oiAyOSIgY2xhc3M9ImNscy0xIiB3aWR0aD0iMTIiIGhlaWdodD0iMSIgcng9IjAuNSIgcnk9IjAuNSIvPgo8L3N2Zz4K);
+}
+.rong-titlebar-max,
+.rong-titlebar-restore {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDM5LjEgKDMxNzIwKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5SZWN0YW5nbGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cmVjdCBpZD0icGF0aC0xIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiPjwvcmVjdD4KICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBtYXNrQ29udGVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFza1VuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeD0iMCIgeT0iMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgPC9tYXNrPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHVzZSBpZD0iUmVjdGFuZ2xlIiBzdHJva2U9IiNmZmYiIG1hc2s9InVybCgjbWFzay0yKSIgc3Ryb2tlLXdpZHRoPSIyIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgIDwvZz4KPC9zdmc+);
+}
+.rong-titlebar-restore {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSIwIDAgMTIgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDM5LjEgKDMxNzIwKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPHJlY3QgaWQ9InBhdGgtMSIgeD0iMCIgeT0iNCIgd2lkdGg9IjkiIGhlaWdodD0iOSI+PC9yZWN0PgogICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIG1hc2tDb250ZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXNrVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiB4PSIwIiB5PSIwIiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgPC9tYXNrPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Ikdyb3VwLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAtMS4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiPgogICAgICAgICAgICAgICAgPHVzZSBpZD0iUmVjdGFuZ2xlIiBzdHJva2U9IiNGRkZGRkYiIG1hc2s9InVybCgjbWFzay0yKSIgc3Ryb2tlLXdpZHRoPSIyIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zLjUsMy41IEwzLjUsMi41IiBpZD0iTGluZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTAuNSwxLjUgTDMuNSwxLjUiIGlkPSJMaW5lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMS41LDguNSBMMTEuNSwxLjUiIGlkPSJMaW5lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik05LjUsOS41IEwxMS41LDkuNSIgaWQ9IkxpbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+}
+.rong-titlebar-close {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDM5LjEgKDMxNzIwKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiPgogICAgICAgIDxnIGlkPSJHcm91cCIgc3Ryb2tlPSIjZmZmZmZmIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAuNSwwLjUgTDkuNSw5LjUiIGlkPSJMaW5lIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjUsOS41IEw5LjUsMC41IiBpZD0iTGluZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+}
+
+.rong-work-list {
+    float: left;
+    position: relative;
+    z-index: 15;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid $bdc;
+    background: #f9f9fa;
+    cursor: default;
+    overflow: auto;
+}
+.rong-work-list-content {
+    height: 100%;
+    overflow: auto;
+}
+.rong-welcome {
+    position: relative;
+    height: 100%;
+    margin-left: 200px;
+    background: url(images/home.png) no-repeat center;
+}
+.rong-welcaome-text {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -110px;
+    font-size: 30px;
+    color: #46576E;
+}
+.rong-work-main {
+    position: relative;
+    height: 100%;
+    margin-left: 200px;
+}
+.rong-app-group-title {
+    height: 52px;
+    line-height: 52px;
+    padding: 0 12px;
+    .rong-edit-btn {
+        float: right;
+    }
+}
+.rong-app-list-types{
+    .rong-app-item-types{
+        .sort-title{
+            height: 52px;
+            line-height: 52px;
+            padding: 0 12px;
+        }
+        .rong-app-item{
+            padding: 5px 15px;
+            img {
+                margin-right: 10px;
+            }
+        }
+        .rong-app-item:hover {
+            background-color: #ecf0f6;
+        }
+    }
+}
+.rong-app-none {
+    text-align: center;
+}
+.rong-app-item-list {
+    li {
+        padding: 5px 15px;
+        img {
+            margin-right: 10px;
+        }
+    }
+    li.rong-selected,
+    li:hover {
+        background-color: #ecf0f6;
+    }
+}
+.rong-app-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-size: 40px 40px;
+}
+.rong-app-name {
+    display: inline-block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.rong-work-control {
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid $bdc;
+    z-index: 1000;
+    user-select: none;
+    .rong-button {
+        width: 30px;
+        height: 30px;
+    }
+}
+.rong-icon-back{
+    background-image: url(images/work.svg);
+    background-position: -9px -63px;
+    &[disabled] {
+        background-position: -36px -63px;
+    }
+}
+.rong-icon-go {
+    background-image: url(images/work.svg);
+    background-position: -9px -105px;
+    &[disabled] {
+        background-position: -36px -105px;
+    }
+}
+.rong-icon-fresh {
+    background-image: url(images/work.svg);
+    background-position: -130px -62px;
+    &[disabled] {
+        opacity: 0.5;
+    }
+}
+.rong-work .rong-work-buttons {
+    float: left;
+    margin-top: 5px;
+    .rong-button {
+        height: 25px;
+        border-width: 0;
+    }
+}
+.rong-tab {
+    padding-right: 5px;
+}
+.rong-tab-list {
+    display: table;
+    font-size: 14px;
+    width: 100%;
+}
+.rong-tab-item {
+    position: relative;
+    max-width: 200px;
+    top: 5px;
+    float: left;
+    // display: table-cell;
+    // max-width: 200px;
+    // width: 20%;
+    // padding: 0 25px 0 10px;
+    line-height: 30px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+    padding-right: 20px;
+    &:hover {
+        background-color: #ecf0f6;
+    }
+    &.rong-selected {
+        background-color: #fff;
+    }
+}
+.rong-close {
+    position: absolute;
+    display: inline-block;
+    right: 5px;
+    top: 50%;
+    margin-top: -10px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    background-image: url(images/work.svg);
+    background-position: -15px -147px;
+    &:hover{
+        background-position: -40px -147px;
+    }
+}
+.rong-work-content {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
+    .rong-work-public {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 50%;
+            margin-top: 120px;
+            margin-left: -50px;
+        }
+        .rong-app-name {
+            position: relative;
+            width: 100%;
+            margin-top: 28px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .rong-app-description {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+            color: #ccc;
+        }
+        .rong-enter-public {
+            position: relative;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            left: 50%;
+            color: #fff;
+            margin-left: -75px;
+            margin-top: 28px;
+            border-radius: 5px;
+            background-color: #3a91f3;
+        }
+    }
+}
+.rong-edit-app-none, .rong-edit-otherapp, .rong-iframe {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    padding-top: 40px;
+    height: 100%;
+    width: 100%;
+}
+.rong-edit-app-none {
+    background:transparent url(images/none.png) no-repeat center;
+    .rong-tip {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 60px;
+        color: #777;
+        transform: translateX(-50%);
+    }
+}
+.rong-edit-otherapp {
+    overflow-y: auto;
+}
+.rong-edit-otherapp {
+    .rong-all-apps {
+        .rong-all-list {
+            .rong-work-edit-apptitle {
+                font-size: 15px;
+                background-color: #f9f9fa;
+                padding-left: 30px;
+                height: 70px;
+                line-height: 70px;
+                color: #606266;
+                font-weight: 700;
+                border-bottom: 1px solid #ececed;
+            }
+        }
+        
+    }
+    
+}
+.rong-selected-apps {
+    margin-bottom: 25px;
+    .rong-app-info,
+    .rong-app-none {
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .rong-app-none {
+        line-height: 80px;
+        border: 1px dashed #d6d6d6;
+        color: #d6d6d6;
+    }
+    .rong-app-name {
+        margin-left: -10px;
+    }
+}
+.rong-apps-hd {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+    color: #777;
+    font-size: 16px;
+    .sort-btn {
+       color: #3a91f3;
+       cursor: pointer;
+       display: inline-block;
+       height: 40px;
+       line-height: 40px;
+       margin-left: 20px;
+       font-size: 14px;
+    }
+}
+.rong-all-apps {
+    .rong-apps-hd{
+        background-color: #f9f9fa;
+        margin-bottom: 10px;
+    }
+}
+.rong-selected-apps-bd{
+    min-height: 70px;
+    margin-right: 120px;
+    overflow: hidden;
+    border-right: 1px solid $bdc;
+    .rong-app-icon {
+        display: block;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
+        margin-bottom: 5px;
+    }
+}
+.rong-app-remove {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    font-style: normal;
+    background-color: #ff6c6c;
+    cursor: pointer;
+}
+.rong-selected-apps-ft {
+    position: absolute;
+    right: 0;
+    top: 110px;
+    width: 120px;
+    text-align: center;
+    .rong-button {
+        width: 80px;
+        height: 34px;
+        background-color: #3a91f3;
+        border-radius: 5px;
+        color: white;
+    }
+}
+.rong-all-apps {
+    .rong-app-info {
+        height: 70px;
+        padding: 15px 10px 15px 30px;
+        border-bottom: 1px solid $bdc;
+    }
+    .rong-app-icon {
+        display: inline-block;
+        margin-right: 10px;
+        // float: left;
+    }
+    .rong-app-detail {
+        float: left;
+        .rong-app-description {
+            color: #777777;
+            font-size: 12px;
+        }
+    }
+    .rong-button {
+        float: right;
+        width: 80px;
+        height: 34px;
+        border-radius: 5px;
+        color: $blue;
+        border: 1px solid $bdc;
+        &.rong-selected-btn{
+            border: none;
+            color: #777;
+            cursor: default;
+        }
+        &.rong-selected-btn:hover{
+            color: #777;
+        }
+    }
+}
+
+.rong-work .rong-button,
+.rong-field {
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+}
+.rong-work {
+    .rong-button:hover{
+        color: #008af3;
+    }
+    .rong-selected-apps-ft {
+        .rong-button:hover {
+            color: white;
+        }
+    }
+}
+.rong-button {
+    background-color: #fff;
+    color: #777;
+    text-align: center;
+    &:hover {
+        color: $blue;
+    }
+    &[disabled] {
+        color: #777;
+        cursor: default;
+    }
+}
+.rong-dialog {
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    .rong-os-win32 & {
+        top: 40px;
+        &:-webkit-full-screen {
+            top: 0;
+        }
+    }
+    .rong-os-linux & {
+        top: 40px;
+        &:-webkit-full-screen {
+            top: 0;
+        }
+    }
+}
+.rong-dialog-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid #bebebe;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    background: #fff;
+    @media (max-height: 500px) {
+        transform: translateX(-50%);
+        top: 40px;
+    }
+}
+.rong-dialog-tip-error {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 2px;
+    transform: translateX(-50%) translateY(0);
+    max-width: 60%;
+    border-radius: 5px;
+    background: #ff949a;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 50px;
+}
+.rong-dialog-tip-success {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 2px;
+    transform: translateX(-50%) translateY(0);
+    max-width: 60%;
+    border-radius: 5px;
+    background: #b6eeb3;
+    color: #08a201;
+    font-size: 12px;
+    padding: 8px 50px;
+}
+.rong-dialog-tip-enter-active {
+    transition: opacity 0.5s all;
+}
+.rong-dialog-tip-enter {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+}
+.rong-dialog-close {
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+    
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    background-image: url(images/work.svg);
+    background-position: -15px -147px;
+    &:hover{
+        background-position: -40px -147px;
+    }
+}
+.rong-dialog-hd {
+    height: 37px;
+    border-bottom: 1px solid #ececed;
+    background: #f2f5f8;
+    border-radius: 8px 8px 0 0;
+}
+.rong-dialog-title {
+    padding-left: 16px;
+    line-height: 36px;
+}
+.rong-messagebox {
+    width: 340px;
+    .rong-dialog-hd {
+        border-bottom: 0;
+        background-color: transparent;
+    }
+}
+.rong-messagebox-bd {
+    padding: 40px 20px 50px 20px;
+    text-align: center;     
+    span {
+        display: inline-block;
+        text-align: left;
+    }
+}
+.rong-message-box-left-bd {
+    text-align: left;
+}
+.rong-messagebox-ft {
+    padding-bottom: 30px;
+    text-align: center;
+    .rong-button {
+        margin: 0 10px;
+        width: 115px;
+        height: 38px;
+    }
+    .rong-submit {
+        color: #008af3;
+    }
+}

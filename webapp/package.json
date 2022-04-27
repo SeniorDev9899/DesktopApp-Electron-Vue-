@@ -1,0 +1,53 @@
+{
+  "name": "desktop-client",
+  "version": "1.8.0",
+  "description": "desktop-client",
+  "main": "js/im.js",
+  "private": true,
+  "scripts": {
+    "preinstall": "node ./scripts/preinstall.js",
+    "eslint:public": "eslint public --quiet",
+    "sasslint:public": "sass-lint -v -q public/css/**/*.scss",
+    "lint": "vue-cli-service lint --quiet --no-fix",
+    "lint:fix": "vue-cli-service lint --fix",
+    "dev": "node ./scripts/dev.js",
+    "build": "node ./scripts/build.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run eslint:public && npm run sasslint:public",
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab2.rongcloud.net/rce-web/desktop-client.git"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1",
+    "dom-to-image": "^2.6.0",
+    "fingerprintjs": "^0.5.3",
+    "platform": "^1.3.6",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-plugin-eslint": "^3.9.2",
+    "@vue/cli-service": "^3.9.2",
+    "config-ini-parser": "^1.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "husky": "^1.3.1",
+    "node-sass": "^4.12.0",
+    "raw-loader": "^3.1.0",
+    "sass-lint": "^1.12.1",
+    "sass-loader": "^7.1.0",
+    "validate-commit-msg": "^2.14.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.3"
+  }
+}

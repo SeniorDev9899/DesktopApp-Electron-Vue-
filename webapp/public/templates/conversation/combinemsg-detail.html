@@ -1,0 +1,14 @@
+<div class="rong-dialog" v-if="show" @dragover.prevent.stop="" @drop.prevent.stop="">
+    <div class="rong-dialog-inner rong-dialog-ack">
+        <a href="" class="rong-dialog-close" :title="locale.close" @click.prevent="close"></a>
+        <div class="rong-dialog-hd">
+            <h2 class="rong-dialog-title">{{dialogTitle}}</h2>
+        </div>
+        <!-- 43397 - 【合并转发】关闭合并转发消息记录详情中点击发达的图片和位置信息直接将当前消息记录窗口关闭 -->
+        <!-- 返回箭头修改为【返回】按钮 -->
+        <div style="margin-top: 0.5em;">
+            <span @click="goback" style="font-size: 1.1em; margin-left: 1em; cursor: pointer;color: grey;">{{locale.btns.back}}</span>
+        </div>
+        <iframe ref="iframe" :src="combineMsg" style="border: none; width: 100%; height: 500px;"></iframe>
+    </div>
+</div>

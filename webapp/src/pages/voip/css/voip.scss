@@ -1,0 +1,1190 @@
+.rong-voip {
+    font-family: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+}
+
+.rong-voip button {
+    outline: none;
+    cursor: pointer;
+}
+
+.rong-voip a {
+    text-decoration: none;
+}
+
+.rong-voip a:focus {
+    outline: none;
+}
+
+.rong-voip h1, .rong-voip h2, .rong-voip h3, .rong-voip h4, .rong-voip h5, .rong-voip h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+.rong-voip video {
+    height: 100%;
+    //width: 100%;
+    background-color: #000;
+}
+.rong-voip .rong-call-other video {
+   //height: 105px;
+   // width: 140px;
+}
+
+.rong-voip ul {
+    padding: 0;
+    margin: 0;
+}
+
+.rong-voip li {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    vertical-align: top;
+}
+.rong-voip.rong-video .rong-voip.rong-audio.rong-multi li {
+    margin-left: 10px;
+}
+
+.rong-voip button, .rong-voip input, .rong-voip select, .rong-voip textarea {
+    font-family: "PingFangSC-Regular", "Microsoft YaHei", sans-serif;
+    font-size: 100%;
+}
+
+.rong-voip ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.rong-voip ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+
+.rong-voip .rong-titlebar {
+    -webkit-app-region: drag;
+}
+
+.rong-voip .rong-titlebar a,
+.rong-voip .rong-titlebar input,
+.rong-voip .rong-titlebar button {
+    -webkit-app-region: no-drag;
+}
+
+.rong-icon, .rong-accept, .rong-hangup, .rong-title-icon, .rong-title-min, .rong-title-max, .rong-title-unmax, .rong-title-close, .rong-control-button i {
+    background-image: url(images/meet.svg);
+    background-repeat: no-repeat;
+    background-size: 312px auto;
+}
+
+.rong-ringing {
+    width: 100%;
+    height: 100%;
+    // border-radius: 5px;
+    background-color: #002032;
+    overflow: hidden;
+}
+
+.rong-other-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding: 0 20px;
+    line-height: 16px;
+    height: 32px;
+}
+
+.rong-callinfo {
+    margin-top: 36px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.rong-ringing-buttons {
+    bottom: 10px;
+    text-align: center;
+}
+
+.rong-ringing-buttons .rong-hangup {
+    margin-left: 98px;
+}
+
+.rong-accept, .rong-hangup {
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.rong-accept {
+    background-color: #41d936;
+    background-position: -34px -674px;
+    background-size: 388px auto;
+}
+
+.rong-hangup {
+    background-color: #ff5454;
+    background-position: -50px -774px;
+    background-size: 488px auto;
+}
+
+.rong-button {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #777;
+    text-align: center;
+}
+
+.rong-button:hover {
+    color: #4899F4;
+}
+
+.rong-button[disabled] {
+    color: #777;
+}
+
+.rong-submit {
+    color: #4899F4;
+}
+
+.rong-call {
+    width: 100%;
+    height: 100%;
+    background-color: #002032;
+    // border-radius: 5px;
+}
+
+.rong-title {
+    height: 50px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.rong-title-protrait {
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+}
+
+.rong-title-info {
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+}
+
+.rong-title-full {
+    width: 100%;
+    position: relative;
+}
+
+.rong-title-full .rong-title-audio {
+    text-align: center;
+}
+
+.rong-title-full .rong-title-video .tong-title-video-box {
+    width: 100%;
+    position: absolute;
+    top: 53%;
+    transform: translateY(-50%);
+    height: 40px;
+}
+
+.rong-title-full .rong-title-video .tong-title-video-box span {
+    height: 20px;
+    line-height: 20px;
+    display: block;
+}
+
+.rong-title-buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.rong-title-icon, .rong-title-min, .rong-title-max, .rong-title-close, .rong-title-unmax {
+    height: 20px;
+    width: 20px;
+    margin-right: 4px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.rong-title-min {
+    background-position: -137px -806px;
+}
+
+.rong-title-max {
+    background-position: -60px -802px;
+}
+
+.rong-title-unmax {
+    background-position: -98px -802px;
+}
+
+.rong-title-close {
+    background-position: -34px -802px;
+}
+
+.rong-call-foot {
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+}
+
+.rong-call-foot .rong-hangup {
+    position: absolute;
+    margin-top: 12px;
+    right: 20px;
+    top: 0;
+}
+
+.rong-audio .rong-call-foot .rong-hangup {
+    margin-right: 20px;
+}
+
+.rong-waiting .rong-hangup {
+    right: 0;
+    left: 50%;
+    margin-left: -23px;
+}
+
+.rong-waiting .rong-switch-audio, .rong-waiting .rong-camera, .rong-waiting .rong-camera-close, .rong-waiting .rong-microphone, .rong-waiting .rong-microphone-close {
+    display: none;
+}
+
+.rong-control-button {
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0px -8px 6px 5px;
+    float: left;
+}
+
+.rong-control-button-right {
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0px -8px 6px 5px;
+    float: right;
+}
+
+.rong-control-button i {
+    width: 65px;
+    height: 46px;
+    display: block;
+}
+
+.rong-whiteBoard-open i {
+    background-position: -75px -10px;
+
+}
+
+.rong-whiteBoard-close i {
+    background-position: -137px -10px;
+
+}
+
+.rong-share i {
+    background-position: -78px -60px;
+
+}
+
+.rong-share-open i {
+    background-position: -139px -60px;
+}
+
+.rong-allMember-open i {
+    background-position: -141px -154px;
+
+}
+
+.rong-allMember-close i {
+    background-position: -79px -154px;
+
+}
+
+.rong-switch-audio i {
+    background-position: -15px -211px;
+}
+
+.rong-camera i {
+    background-position: -141px -210px;
+}
+
+.rong-camera-close i {
+    background-position: -78px -210px;
+}
+
+.rong-camera-enable i {
+    background-position: -15px -210px;
+}
+
+.rong-microphone i {
+    background-position: -133px -275px;
+
+}
+
+.rong-microphone-close i {
+    background-position: -74px -275px;
+
+}
+
+.rong-invitemember {
+    display: none;
+}
+
+.rong-invitemember i {
+    background-position: -78px -104px;
+
+}
+
+.rong-control-btns {
+    text-align: center;
+    padding-right: 40px;
+}
+
+.rong-call-main-box {
+    position: absolute;
+    top: 50px;
+    bottom: 70px;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+}
+
+.rong-call-main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.rong-share-screen-bg {
+    background-color: #000;
+}
+.rong-share-screen-tip-text {
+    position: absolute;
+    height: 25px;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -12px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    color: #fff;
+}
+.rong-share-screen-tip-text-small {
+    position: absolute;
+    height: 16px;
+    width: 90px;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -45px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.rong-call-main .rong-call-main-bg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+}
+
+.rong-avatar-waiting {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.rong-avatar-waiting-bd {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 0;
+}
+
+.rong-avatar-waiting-bd i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    margin-left: 5px;
+    animation: waiting 1.4s infinite;
+}
+
+.rong-avatar-waiting-bd i:first-child {
+    margin-left: 0;
+    animation-delay: -0.32s;
+}
+
+.rong-avatar-waiting-bd i:nth-of-type(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes waiting {
+    0%, 49% {
+        background: rgba(0, 0, 0, 0.6);
+    }
+    50%, 100% {
+        background: #fff;
+    }
+}
+
+.rong-avatar-img {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 10px;
+}
+.rong-avatar-img-info {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.rong-avatar-img-1 {
+
+    width: 34px;
+
+}
+
+.rong-call .rong-avatar-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: no-repeat center center;
+    background-size: 100%;
+}
+
+.rong-avatar-item {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+    cursor: default;
+    margin-bottom: 10px;
+}
+.rong-avatar-item-video {
+    display: inline-block;
+    height: 100px;
+    width: 140px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+    cursor: default;
+    margin-bottom: 10px;
+}
+
+.rong-call .rong-avatar-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rong-avatar-theme-0 {
+    background-color: #3a91f3;
+}
+
+.rong-avatar-theme-1 {
+    background-color: #74cfde;
+}
+
+.rong-avatar-theme-2 {
+    background-color: #f14e7d;
+}
+
+.rong-avatar-theme-3 {
+    background-color: #5585a5;
+}
+
+.rong-avatar-theme-4 {
+    background-color: #f9cb4f;
+}
+
+.rong-avatar-theme-5 {
+    background-color: #f56b2f;
+}
+
+.rong-call-other {
+    position: absolute;
+    z-index: 10;
+}
+
+.rong-call-other li * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.rong-user {
+    display: inline-block;
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+
+.rong-user-name {
+    display: none;
+    position: absolute;
+    line-height: 1;
+    bottom: 5px;
+    left: 2px;
+    color: #fff;
+    width: 67px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.rong-call-main .rong-user-name {
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rong-user-busy {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    span {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -8px;
+    }
+}
+
+.rong-hiddenvideo > video {
+    width: 0;
+    height: 0;
+}
+
+// .rong-audio.rong-multi .rong-call-other-width-1 {
+//     width: 160px;
+// }
+
+.rong-audio.rong-multi .rong-call-other-width-2 {
+    width: 80px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-3 {
+    width: 160px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-4 {
+    width: 160px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-5 {
+    width: 240px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-6 {
+    width: 240px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-7 {
+    width: 240px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-8 {
+    width: 240px;
+}
+
+.rong-audio.rong-multi .rong-call-other-width-9 {
+    width: 240px;
+}
+
+.rong-audio .rong-call-main {
+    display: none;
+}
+
+// .rong-audio .rong-user + .rong-user {
+//     margin-left: 40px;
+// }
+
+.rong-audio .rong-call-other {
+    width: 100%;
+    text-align: center;
+}
+
+.rong-audio .rong-switch-audio, .rong-audio .rong-camera, .rong-audio .rong-camera-close {
+    display: none;
+}
+
+.rong-audio .rong-microphone, .rong-audio .rong-microphone-close {
+    float: left;
+    left: 20px;
+}
+
+.rong-audio.rong-multi .rong-call-main {
+    display: none;
+}
+
+.rong-audio.rong-multi .rong-waiting .rong-control-btns {
+    width: 150px;
+}
+
+.rong-audio.rong-multi .rong-user {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.rong-audio.rong-multi .rong-call-other {
+    text-align: left;
+    margin-left: -10px;
+}
+
+.rong-audio.rong-multi .rong-switch-audio, .rong-audio.rong-multi .rong-camera, .rong-audio.rong-multi .rong-camera-close {
+    display: none;
+}
+
+.rong-audio.rong-multi .rong-control-btns {
+    width: 226px;
+}
+
+.rong-audio .rong-title-max, .rong-audio.rong-multi .rong-title-max {
+    display: none;
+}
+
+.rong-audio .rong-call-main-box, .rong-audio.rong-multi .rong-call-main-box {
+    background-color: transparent;
+}
+
+.rong-audio .rong-call-other, .rong-audio.rong-multi .rong-call-other {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 320px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+.rong-audio.rong-multi .rong-call-other {
+    padding-left: 10px;
+}
+
+.rong-video .rong-call-main {
+    display: block;
+    bottom: 0;
+}
+
+.rong-video .rong-call-other {
+    width: 160px;
+    height: 100px;
+    right: 10px;
+    bottom: 10px;
+    text-align: left;
+}
+
+.rong-video .rong-user {
+    width: 140px;
+    height: 100%;
+    background-color: black;
+}
+
+.rong-video .rong-user-bg {
+    width: 140px;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+}
+
+.rong-video.rong-multi .rong-call-main {
+    //bottom: 100px;
+}
+
+.rong-video.rong-multi .rong-call-other {
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    right: 0px;
+    left: -15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.rong-video.rong-multi .rong-call-other > b::-webkit-scrollbar {
+    height: 6px;
+}
+
+.rong-video.rong-multi .rong-call-other > b {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    overflow-x: auto;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.rong-video.rong-multi .rong-call-other > b i {
+    display: block;
+    height: 1px;
+}
+
+.rong-video .rong-multi .rong-user {
+    width: 140px;
+    height: 100px;
+    margin-left: 8px;
+    overflow: hidden;
+    //right: 28px;
+    background-color: black;
+}
+
+.rong-video.rong-multi .rong-call .rong-avatar-img {
+    width: 140px;
+    height: 100px;
+}
+
+.rong-video.rong-multi .rong-call .rong-avatar-item {
+    height: 100px;
+    width: 140px;
+    line-height: 100px;
+    font-size: 60px;
+}
+
+.rong-video.rong-multi .rong-waiting .rong-control-btns {
+    width: 200px;
+}
+
+.rong-video.rong-multi .rong-control-btns {
+    padding-right: 100px;
+}
+
+.rong-multi .rong-user-name {
+    display: block;
+}
+
+.rong-multi .rong-invitemember {
+    display: inline-block;
+}
+
+.rong-dialog {
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.rong-dialog-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid #bebebe;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    background: #fff;
+}
+
+.rong-dialog-close {
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    color: #bebebe;
+    text-align: center;
+}
+
+.rong-dialog-close:hover {
+    color: #000;
+}
+
+.rong-dialog-hd {
+    height: 37px;
+    border-bottom: 1px solid #ececed;
+    background: #f2f5f8;
+    border-radius: 8px 8px 0 0;
+}
+
+.rong-dialog-title {
+    padding-left: 16px;
+    line-height: 36px;
+}
+
+.rong-messagebox {
+    width: 300px;
+}
+
+.rong-messagebox .rong-dialog-hd {
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+.rong-messagebox-bd {
+    padding: 30px 20px 40px 20px;
+    text-align: center;
+}
+
+.rong-messagebox-ft {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.rong-messagebox-ft .rong-button {
+    margin: 0 10px;
+    width: 115px;
+    height: 38px;
+}
+
+.rong-meetting-user {
+    font-size: 10px;
+    overflow: scroll
+}
+
+.rong-meetting-control {
+    float: left;
+    display: inline-block;
+    margin: 6px 0px !important;
+    height: 35px !important;
+    width: 35px !important;
+    background-repeat: no-repeat;
+    background-image: url(images/meet.svg);
+    background-repeat: no-repeat;
+}
+
+.rong-meetting-control-obeserver {
+    float: left;
+    display: inline-block;
+    margin: 6px !important;
+    height: 35px !important;
+    width: 35px !important;
+    background-repeat: no-repeat;
+    background-image: url(images/meet.svg);
+    background-repeat: no-repeat;
+}
+
+.rong-meetting-control-remove {
+    background-size: 287px auto;
+    background-position: -77px -451px;
+}
+
+.rong-meetting-control-up {
+    background-size: 295px auto;
+    background-position: -74px -810px;
+
+}
+
+.rong-meetting-control-down {
+    background-size: 295px auto;
+    background-position: -75px -857px;
+
+}
+
+.rong-meetting-control-closecamera {
+    background-size: 302px auto;
+    background-position: -83px -378px;
+}
+
+.rong-meetting-control-opencamera {
+    background-size: 302px auto;
+    background-position: -140px -378px;
+}
+
+.rong-meetting-control-openmic {
+    background-size: 298px auto;
+    background-position: -141px -325px;
+}
+
+.rong-meetting-control-closemic {
+    background-size: 298px auto;
+    background-position: -86px -325px;
+}
+
+.rong-meetting-main-div {
+    float: left;
+    display: inline-block;
+    margin: 0px 0px;
+    height: 52px;
+    width: 52px;
+}
+
+.rong-meetting-main .name {
+    // height: 20px;
+    width: 54px;
+    margin: 0px 10px 0px 0px;
+    color: white;
+    line-height: 46px;
+    font-family: "Microsoft Yahei";
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rong-profile-meeting-other {
+    position: relative;
+    top: 6px;
+    float: right;
+    clear: both;
+    width: 100%;
+
+}
+
+.rong-meetting-host {
+    width: 185px;
+    position: absolute;
+    height: 6%;
+    right: 5px;
+    top: 10px;
+    color: #FFFFFF;
+    font-size: 10px;
+    opacity: 0.7;
+
+    background-color: #000;
+}
+
+.rong-profile-meeting-main {
+    width: 270px;
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    top: 0px;
+    opacity: 0.8;
+    filter: alpha(opacity=30);
+    background-color: #000;
+    overflow: scroll;
+    z-index: 99;
+
+}
+
+.rong-avatar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 36px;
+    height: 36px;
+    background: #dddfe1;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+    top: 6px;
+    margin: 0px 12px 0px 8px;
+
+}
+
+.rong-avatar-img-meet {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: no-repeat center center;
+    background-size: cover;
+    z-index: 2;
+    opacity: 1;
+}
+
+.rong-avatar-item-meet {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #00b8d4;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.rong-meetting-host-button {
+    color: white;
+    display: block;
+    // width: 65px;
+    width: 71px;
+    height: 24px;
+    margin: 13px 56px 5px;
+    border-radius: 120px;
+    border-color: #0099FF;
+    background-color: #0099FF;
+    font-size: 87% !important;
+
+}
+
+.rong-host {
+    position: relative;
+    display: inline-block;
+    min-width: 19px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: #F5B300;
+    line-height: 11px;
+    text-align: center;
+    font-size: 9px;
+    top: 23px;
+    right: 170px;
+    z-index: 99;
+    width: 21px;
+
+}
+
+.rong-host-em {
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+}
+
+.rong-host-other {
+    position: relative;
+    display: inline-block;
+    min-width: 17px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: #F5B300;
+    line-height: 11px;
+    text-align: center;
+    font-size: 9px;
+    top: 17px;
+    right: 145px;
+    z-index: 99;
+    width: 10px;
+}
+
+#signal {
+    position: absolute;
+    width: 24px;
+    height: 26px;
+    z-index: 99;
+    margin-top: -29px;
+    margin-left: 15px;
+    background-image: url(images/meet.svg);
+    background-repeat: no-repeat;
+    background-position: -1560px -43px;
+}
+
+.wbarea {
+    display: block;
+}
+
+.rong-observer {
+    position: relative;
+    display: inline-block;
+    min-width: 17px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: #F5B300;
+    line-height: 11px;
+    text-align: center;
+    font-size: 5px;
+    top: 16px;
+    right: 107px;
+    z-index: 99;
+    width: 10px;
+}
+
+.rong-user-request {
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    top: 20px;
+    left: 15px;
+    background-color: #C9CAC9;
+    z-index: 99;
+    border-radius: 10px
+}
+
+.rong-user-request-i {
+    font-size: 10px;
+    font-family: 'Microsoft YaHei UI';
+    text-align: center;
+    line-height: 40px;
+}
+
+.wb {
+    position: absolute;
+    top: 46px;
+    width: 100%;
+    height: 81%;
+    z-index: 500;
+}
+
+.rong-right {
+    float: right;
+    margin-left: 20px;
+
+}
+
+.rong-right-sigel {
+    /*float: right;
+    margin-left: 20px;
+    margin-right: 450px;*/
+}
+
+.refuseUser {
+    background-image: url(images/refuse.png);
+    float: right;
+    height: 30px;
+    width: 30px;
+    background-size: 100% 100%;
+    margin: 4px 5px 0px 0px;
+    cursor: pointer
+}
+
+.agreeUser {
+    background-image: url(images/agree.png);
+    float: right;
+    height: 30px;
+    width: 30px;
+    background-size: 100% 100%;
+    margin: 4px 20px 0px 0px;
+    cursor: pointer
+}
